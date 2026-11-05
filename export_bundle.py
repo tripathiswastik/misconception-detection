@@ -86,6 +86,15 @@ included_files = [
     "artifacts/test_hierarchical_m17.npy",
     "artifacts/test_adaptive_prior.npy",
     "artifacts/taxonomy_embeddings_384.npy",
+    # Modern SOTA 0.54716 Peak Distillation & Vision Checkpoints
+    "artifacts/oof_arcface_dualhead_448_soft.npy",
+    "artifacts/test_arcface_dualhead_448_soft.npy",
+    "artifacts/oof_arcface_composite_448.npy",
+    "artifacts/test_arcface_composite_448.npy",
+    "artifacts/oof_arcface_pseudo_3500.npy",
+    "artifacts/test_arcface_pseudo_3500.npy",
+    "artifacts/oof_m18_tuned_convex.npy",
+    "artifacts/test_m18_tuned_convex.npy",
     # Extracted feature vectors
     "artifacts/train_perceptual_strokes.npy",
     "artifacts/test_perceptual_strokes.npy",
@@ -180,6 +189,11 @@ required_sota_files = [
     "submissions/multimodal_m17_hierarchical_decoupled_submission.csv",
     "artifacts/oof_hierarchical_m17.npy",
     "artifacts/test_hierarchical_m17.npy",
+    "submissions/blend_rank1_locked_quad_champion_submission.csv",
+    "submissions/blend_rank1_locked_consensus_peak_submission.csv",
+    "artifacts/test_arcface_dualhead_448_soft.npy",
+    "artifacts/test_arcface_composite_448.npy",
+    "artifacts/test_arcface_pseudo_3500.npy",
 ]
 
 print("\n[Bundle] Checking key SOTA items:")
