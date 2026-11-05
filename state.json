@@ -41,14 +41,25 @@
         "public_leaderboard_map3": 0.40949
       },
       "sota_leaderboard_benchmark": {
-        "model": "Active SOTA Champion: Rank-1 Locked Quad Champion (100% Locked R1 + 80/15/5 Quad-Blend R2 & R3) (blend_rank1_locked_quad_champion_submission.csv)",
+        "model": "Active SOTA Champion: Secondary NONE Recalibration SNR-85 (100% Locked R1 + 15% NONE Penalty on Misconception Rows) (blend_rank1_locked_snr85_champion_submission.csv)",
+        "honest_oof_map3": 0.54044,
+        "cv_delta": "+0.00233",
+        "public_leaderboard_map3": 0.54799,
+        "lb_delta_vs_previous_sota": "+0.00083",
+        "top1_none_rate": "70.10% (2,452 / 3,498)",
+        "differences_vs_54716_champion": "109 / 3,498 (3.12%)",
+        "rank1_differences_vs_54716_champion": "0 / 3,498 (0.00%) [STRICTLY_LOCKED]",
+        "status": "ACTIVE_SOTA_CHAMPION_ALL_TIME_PEAK_RECORD"
+      },
+      "previous_sota_054716_quad_champion": {
+        "model": "Previous SOTA Champion: Rank-1 Locked Quad Champion (100% Locked R1 + 80/15/5 Quad-Blend R2 & R3) (blend_rank1_locked_quad_champion_submission.csv)",
         "honest_oof_map3": 0.53967,
         "standalone_arcface_3500_oof_map3": 0.46433,
         "public_leaderboard_map3": 0.54716,
         "top1_none_rate": "70.10% (2,452 / 3,498)",
         "differences_vs_previous_54616_champion": "62 / 3,498 (1.77%)",
         "rank1_differences_vs_previous_54616_champion": "0 / 3,498 (0.00%) [STRICTLY_LOCKED]",
-        "status": "ACTIVE_SOTA_CHAMPION_ALL_TIME_PEAK_RECORD"
+        "status": "SUPERSEDED_BY_0.54799"
       },
       "sota_tied_champion_conservative_locked": {
         "model": "Tied SOTA Champion: Conservative Rank-1 Locked Quad Champion (100% Locked R1 + 85/10/5 Quad-Blend R2 & R3) (blend_rank1_locked_conservative_champion_submission.csv)",
@@ -83,10 +94,11 @@
         "model": "Optimal CV Secondary NONE Recalibration SNR-85 (blend_rank1_locked_snr85_champion_submission.csv)",
         "honest_oof_map3": 0.54044,
         "cv_delta": "+0.00233",
+        "public_leaderboard_map3": 0.54799,
         "top1_none_rate": "70.10% (2,452 / 3,498)",
         "differences_vs_54716_champion": "109 / 3,498 (3.12%)",
         "rank1_differences_vs_54716_champion": "0 / 3,498 (0.00%) [STRICTLY_LOCKED]",
-        "status": "READY_FOR_EVALUATION"
+        "status": "VERIFIED_PUBLIC_LEADERBOARD_ALL_TIME_PEAK_RECORD"
       },
       "previous_champion_recalibrated_composite_448": {
         "model": "Previous Champion: Recalibrated Composite 448 Tri-Blend Multimodal Deep ArcFace + M15 (blend_m15_recalibrated_composite_triblend_448_submission.csv)",
@@ -473,6 +485,15 @@
         "honest_oof_map3": 0.53444,
         "features": "Recalibrated Pseudo Champion: Applies frequency-balanced class recalibration on top of the 0.54483 Active Champion. Down-weights over-predicted generic classes (VIS-01 at 5.12x, WOP-01 at 4.70x) and promotes under-predicted specific classes (ANG-01, EXP-06, FRA-04, ALG-06, FRM-01). Preserves Top-1 NONE at exactly 2,452 (70.10%), identical to the 0.54483 Champion. Modifies 102 rows (2.92%).",
         "status": "READY_FOR_LEADERBOARD_SUBMISSION"
+      },
+      {
+        "file": "submissions/blend_rank1_locked_snr85_champion_submission.csv",
+        "rows": 3498,
+        "validation_status": "PASSED",
+        "honest_oof_map3": 0.54044,
+        "leaderboard_map3": 0.54799,
+        "features": "Active Champion: 100% Rank-1 Locked + Secondary NONE Recalibration (SNR-85). 15% NONE penalty applied strictly on non-NONE Rank-1 rows to prevent wasted secondary slots. Exactly 2,452 Top-1 NONE (70.10%). 109 rows modified vs 0.54716 Peak.",
+        "status": "ACTIVE_SOTA_CHAMPION_ALL_TIME_PEAK_RECORD"
       },
       {
         "file": "submissions/blend_m15_dualhead_soft_distillation_submission.csv",

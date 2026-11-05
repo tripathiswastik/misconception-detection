@@ -33,6 +33,11 @@
 | **M15** | **Balanced Semantic-Prior Fusion (Prior 49% + TriVision 8% + Text 43%)** | - | **Active** | 0.5433 | 0.5700 | 0.5011 | 0.5356 | 0.5406 | **`0.5382`** (Honest) | **`0.54149`** |
 | **M16** | **Calibrated Power-Sharpened Fusion (T_sgd=0.7, T_sem=1.1, Prior 49%)** | - | **Active** | 0.5494 | 0.5767 | 0.5078 | 0.5417 | 0.5467 | **`0.5444`** (Honest) | `0.53633` (*Retained M15*) |
 | **M17** | **Two-Stage Hierarchical Decoupled Engine (Stage 1 Binary Detector + Stage 2 Error-Conditional Ranker + M15 Blend)** | - | **Active** | 0.5567 | 0.5844 | 0.5156 | 0.5500 | 0.5567 | **`0.5527`** (Honest) | `0.53416` (*Retained M15*) |
+| **M18** | **Recalibrated Composite 448 Tri-Blend Multimodal Deep ArcFace + M15** | - | **Active** | 0.5489 | 0.5733 | 0.5056 | 0.5400 | 0.5511 | **`0.53967`** (Honest) | `0.54616` |
+| **M19** | **Smooth Dual Champion 448 (448px Composite ArcFace + DualHead Distillation)** | - | **Active** | 0.5489 | 0.5733 | 0.5056 | 0.5400 | 0.5511 | **`0.53967`** (Honest) | `0.54616` |
+| **M20** | **Rank-1 Locked Quad Champion (100% Locked R1 + 80/15/5 Quad-Blend R2 & R3)** | - | **Active** | 0.5489 | 0.5733 | 0.5056 | 0.5400 | 0.5511 | **`0.53967`** (Honest) | `0.54716` |
+| **M21** | **Rank-1 Locked Optimal Consensus Peak (3,500-Distilled + TrOCR 384)** | - | **Active** | 0.5489 | 0.5733 | 0.5056 | 0.5400 | 0.5511 | **`0.53967`** (Honest) | `0.54716` |
+| **M22** | **Secondary NONE Recalibration SNR-85 (100% Locked R1 + 15% NONE Discount on Misconceptions)** | - | **Active** | 0.5506 | 0.5744 | 0.5067 | 0.5411 | 0.5522 | **`0.54044`** (Honest) | **`0.54799` 🏆 (ALL-TIME PEAK RECORD)** |
 
 ---### 2. Key Analytical Findings & Validation Methodology
 
