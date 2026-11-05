@@ -1,0 +1,9 @@
+{
+  "model": "paraphrase-multilingual-MiniLM-L12-v2",
+  "embedding_dim": 384,
+  "n_train": 1500,
+  "n_test": 3498,
+  "honest_oof_map3": 0.4495555555555556,
+  "fold_mean_map3": 0.4495555555555555,
+  "fold_std_map3": 0.011425550747186888
+}

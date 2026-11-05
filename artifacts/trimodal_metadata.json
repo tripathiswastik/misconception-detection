@@ -1,0 +1,11 @@
+{
+  "model_name": "TriModal_Prior_Vision_Text_Fusion",
+  "w_prior": 0.65,
+  "w_vis": 0.25,
+  "w_text": 0.1,
+  "honest_oof_map3": 0.5143,
+  "honest_seen_q_map3": 0.512,
+  "honest_unseen_q_map3": 0.5333,
+  "rows": 3498,
+  "output_file": "D:\\ag-ai\\misconception-detection\\submissions\\multimodal_trimodal_submission.csv"
+}

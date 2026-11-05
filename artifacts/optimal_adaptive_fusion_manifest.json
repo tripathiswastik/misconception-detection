@@ -1,0 +1,24 @@
+{
+  "m10_baseline_map3": 0.506,
+  "champion_model": "Global_Fine_Adaptive_Fusion",
+  "champion_map3": 0.5204444444444445,
+  "delta": 0.014447166666666667,
+  "ci_95": [
+    0.006666666666666667,
+    0.022333333333333334
+  ],
+  "p_value": 0.0003,
+  "is_significant": true,
+  "weights": {
+    "seen": {
+      "prior": 0.7,
+      "vis": 0.14,
+      "text": 0.16
+    },
+    "unseen": {
+      "prior": 0.7,
+      "vis": 0.14,
+      "text": 0.16
+    }
+  }
+}

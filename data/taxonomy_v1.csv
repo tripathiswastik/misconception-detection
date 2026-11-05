@@ -1,0 +1,76 @@
+id,name,description,nature,default_severity,severity_note,grade_band,section
+PV-01,Place value ignored,Each digit treated as a separate number instead of valuing it by its place (ones/tens/…).,conceptual,major,,4,NUMBER — Place Value & Operations
+OPS-01,Carrying/borrowing error,Technical error in the carry/borrow mechanics of column (long-form) arithmetic. e.g. 305 − 78,procedural,minor,,4,NUMBER — Place Value & Operations
+OPS-02,Long division procedure error,"Technical error in the long-division algorithm itself (setting up the division, bringing down digits, placing quotient digits) — for whole numbers or when converting a fraction to a decimal by dividing. Distinct from OPS-01, which only covers +/- carrying/borrowing.",procedural,major,,4-6,NUMBER — Place Value & Operations
+OOO-01,Order of operations ignored,Worked strictly left→right without doing × and ÷ first. 2+3×4 = 20,conceptual,major,,5–7,NUMBER — Place Value & Operations
+OOO-02,+/− sign associated with wrong term,In same-level +/− chains a sign gets attached to the wrong operand / not processed left→right. 2/3 + 1/10 − 2/3 computed as 2/3 − 1/10,procedural,major,,5–7,NUMBER — Place Value & Operations
+KPF-01,KPK vs FPB (LCM vs GCF) concept confused,"Confuses when to apply KPK/LCM (periodic/repeating-event scenarios) versus FPB/GCF (equal-grouping/fair-division scenarios), or vice versa, despite executing the chosen (wrong) procedure correctly.",conceptual,major,,5-7,NUMBER — Place Value & Operations
+KPF-02,Off-by-one when counting periodic occurrences (LCM word problems),Miscounts which multiple of the LCM corresponds to the Nth simultaneous/periodic occurrence being asked about — most often by not counting the shared starting instant as the first occurrence.,procedural,minor,,7,NUMBER — Place Value & Operations
+KPF-03,Omits a given number when finding FPB/KPK of 3+ numbers,"When finding the FPB or KPK of three or more numbers, the working only actually uses a subset of the given numbers.",procedural,major,,5,NUMBER — Place Value & Operations
+KPF-04,Incomplete factor listing when manually enumerating factors,"When manually listing all factors of a number to find an FPB/KPK, one or more valid factors are missing from the list.",careless,minor,,5,NUMBER — Place Value & Operations
+INT-01,Comparing negatives,−5 considered greater than −2 because 5 > 2 (whole-number logic).,conceptual,major,,6,NUMBER — Integers
+INT-02,Multiplication sign rules,Negative × negative treated as negative; wrong sign of the product.,conceptual,major,,6–7,NUMBER — Integers
+INT-03,Subtracting a negative,a − (−b) not converted to a + b.,procedural,major,,6,NUMBER — Integers
+INT-04,Sign handling in integer +/−,−40 − 20 = −20; a minus sign silently dropped; subtraction order reversed (ȳ−y instead of y−ȳ).,procedural,major,,6–11,NUMBER — Integers
+FRA-01,Adding tops and bottoms,a/b + c/d computed as (a+c)/(b+d) without a common denominator.,procedural,major,,4–5,NUMBER — Fractions
+FRA-02,Bigger denominator = bigger fraction,1/8 judged greater than 1/4 because 8 > 4 (whole-number logic).,conceptual,major,,4,NUMBER — Fractions
+FRA-03,Division without inverting,÷ not converted to × by the reciprocal of the divisor.,procedural,major,,5–6,NUMBER — Fractions
+FRA-04,Cancelling non-factors,"""Simplifying"" by striking out equal digits across terms that are not common factors.",procedural,major,,7,NUMBER — Fractions
+FRA-05,Mixed-to-improper fraction conversion error,"Converts a mixed number to an improper fraction using the wrong formula (e.g. multiplies whole part by both numerator and denominator, or otherwise miscombines the parts) instead of (whole x denominator) + numerator, over the same denominator.",procedural,major,,4-6,NUMBER — Fractions
+FRA-06,Fraction addition procedure applied to a multiplication problem,"In a fraction MULTIPLICATION task, the student applies addition-style mechanics instead (finding a common denominator / cross-multiplying, or multiplying numerators only while leaving denominators unconverted), or drops/mis-sequences a term in a chain of 3+ fraction multiplications.",conceptual,major,,6,NUMBER — Fractions
+Dec-01,"""Longer is larger""",0.45 > 0.8 because it has more digits (whole-number thinking).,conceptual,major,,5,NUMBER — Decimals
+Dec-02,Decimal place-value error,Misplaced decimal comma / digits misaligned by place value during operations.,procedural,major,,5–6,NUMBER — Decimals
+EXP-01,Power = base × exponent,3⁴ computed as 3×4 = 12 instead of 3×3×3×3 = 81.,conceptual,major,,7,"NUMBER — Operation Properties, Powers, Ratios"
+EXP-02,Product-of-powers rule misused,aᵐ × aⁿ treated as a^(m×n) instead of a^(m+n).,procedural,major,,9,"NUMBER — Operation Properties, Powers, Ratios"
+EXP-03,Square of a sum,(a+b)² treated as a² + b² (middle term 2ab dropped).,conceptual,major,,8,"NUMBER — Operation Properties, Powers, Ratios"
+EXP-07,Surd multiplication/simplification error,"sqrt(a) x sqrt(b) not correctly combined into sqrt(a*b), or the resulting radical not reduced to simplest form.",procedural,major,,8,"NUMBER — Operation Properties, Powers, Ratios"
+RAT-01,Additive ratio thinking,Ratios treated as differences instead of multiplicative relationships.,conceptual,major,,5–7,"NUMBER — Operation Properties, Powers, Ratios"
+RAT-02,Percent used as a plain number,% not converted (÷100); 25% of X computed wrongly.,procedural,major,,6–7,"NUMBER — Operation Properties, Powers, Ratios"
+ALG-01,Letter as object,"2a read as ""2 apples"" rather than 2 × the value of a.",conceptual,major,,7,ALGEBRA
+ALG-02,Conjoining unlike terms,"2 + 3x ""simplified"" to 5x.",conceptual,major,,7,ALGEBRA
+ALG-03,Operating on unlike terms,Adding/subtracting coefficients of non-like terms.,procedural,major,,7,ALGEBRA
+ALG-04,Incomplete distribution,2(x+3) = 2x + 3 (multiplier not applied to every term); also invalid factoring such as 2x−1 treated as 2(x−1).,procedural,major,,7–8,ALGEBRA
+ALG-05,Unbalanced equation,An operation applied to only one side of an equation.,procedural,major,,7,ALGEBRA
+ALG-06,Moving terms without changing sign/operation,"Terms moved across the equals sign without flipping sign, or a factor moved across as subtraction instead of division.",procedural,major,,7,ALGEBRA
+MEA-01,Perimeter vs area confused,"Computing perimeter when area is asked (or vice versa), e.g. summing side lengths as ""area"".",conceptual,major,,4–7,MEASUREMENT
+MEA-02,Unit conversion error,Wrong factor (10/100/1000); area (×100) / volume (×1000) conversions treated like length.,procedural,major,,5–7,MEASUREMENT
+MEA-03,Wrong/missing units,Units omitted or wrong (cm vs cm²).,procedural,minor,,4–11,MEASUREMENT
+MEA-04,Wrong shape formula,Using another shape's area/volume formula (e.g. square formula for a parallelogram; side-sum for a trapezoid).,conceptual,major,,4–9,MEASUREMENT
+MEA-05,Surface area vs volume/face-count confused (3D),"For 3D solids, surface area is confused with volume, or with the count of faces/edges — the 3D analogue of MEA-01's perimeter/area confusion for 2D shapes.",conceptual,minor,,9,MEASUREMENT
+GEO-01,Shape properties confused,Properties of one shape applied to another (e.g. all parallelograms treated as rectangles).,conceptual,major,,4–8,GEOMETRY
+ANG-01,Parallel-line angle relations,"Corresponding/alternate angles (which are EQUAL) treated as supplementary (summing to 180°), or vice versa.",conceptual,major,,7–9,GEOMETRY
+ANG-02,Angle-sum misapplied,Triangle (180°) / quadrilateral (360°) angle sums applied wrongly.,procedural,major,,7–8,GEOMETRY
+COR-01,Coordinates swapped,"(x, y) written or read as (y, x).",procedural,major,,6–8,GEOMETRY
+STA-01,Mean formula misapplied,"Sum divided by the wrong count, or the mean equation never properly formed (sum equated to n, average of averages, etc.).",procedural,major,,5–10,DATA & PROBABILITY
+STA-03,Mean/median/mode confused,The three measures of centre conceptually swapped.,conceptual,major,,6–10,DATA & PROBABILITY
+STA-04,Grouped-data statistics,Grouped-data mean/median/variance computed as if raw data (frequencies/classes ignored or squared in).,procedural,major,,10,DATA & PROBABILITY
+STA-05,Quartile position vs value,Confusing the position of a quartile with its value / wrong position formula.,procedural,major,,10,DATA & PROBABILITY
+PRO-01,"""And"" probabilities added",Joint (independent) events added instead of multiplied. P(A∩B) = P(A)+P(B),conceptual,major,,8–10,DATA & PROBABILITY
+PRO-02,Replacement ignored,With/without replacement mixed up → denominator not updated (or updated wrongly).,conceptual,major,,8–10,DATA & PROBABILITY
+PRO-03,Probability outside [0;1],A probability < 0 or > 1 not recognized as impossible.,conceptual,major,,8–10,DATA & PROBABILITY
+PRO-04,Wrong sample space,Counting the number of possible outcomes (sample space) incorrectly.,procedural,major,,8–10,DATA & PROBABILITY
+FUN-01,f(x) notation misread,"f(x) interpreted as f × x rather than ""the value of f at x"".",conceptual,major,,8,ADVANCED TOPICS
+INV-01,Inverse function property/computation error,"Does not apply the inverse-function shortcut f^-1(a) = b <=> f(b) = a where it would directly solve the problem, and/or derives the inverse function f^-1(x) itself incorrectly.",conceptual,major,,11,ADVANCED TOPICS
+LIN-01,Gradient inverted/mangled,Slope computed as Δx/Δy; inconsistent point order across numerator/denominator; slope confused with the constant c.,procedural,major,,8,ADVANCED TOPICS
+SIM-01,Elimination/substitution error,Simultaneous equations: sign error while eliminating (subtracting equations) or inconsistent substitution.,procedural,major,,8,ADVANCED TOPICS
+QUA-02,Quadratic factoring error,ax²+bx+c factored wrongly / quadratic formula misapplied.,procedural,major,,9,ADVANCED TOPICS
+LOG-02,Log rules misapplied,log(ab)=log a+log b or log(a/b)=log a−log b applied incorrectly.,procedural,major,,10,ADVANCED TOPICS
+EXP-04,Roots/fractional exponents,√(a+b) treated as √a+√b; a^(m/n) = ⁿ√(aᵐ) ignored.,conceptual,major,,9–10,ADVANCED TOPICS
+EXP-05,Zero exponent rule misapplied,a^0 evaluated as a (or as 0) instead of 1.,conceptual,major,,9-10,ADVANCED TOPICS
+EXP-06,Exponential equation not resolved by equating exponents,"After reducing both sides of an exponential equation to the same base (a^x = a^y), the student does not take the final step of setting the exponents equal (x = y) to solve for the unknown, and instead stalls, repeats the expression, or manipulates it incorrectly.",procedural,major,,10,ADVANCED TOPICS
+SEQ-01,Arithmetic vs geometric confused,Arithmetic (common difference) and geometric (common ratio) sequences mixed up — incl. treating exponential growth as linear.,conceptual,major,,9–10,ADVANCED TOPICS
+SEQ-02,Wrong n-th term formula,Uₙ = a+(n−1)b vs a·rⁿ⁻¹ swapped / off-by-one index / doubling chain miscounted.,procedural,major,,9–10,ADVANCED TOPICS
+SET-01,Intersection vs union,∩ and ∪ swapped / Venn diagram misread.,conceptual,major,,7–8,ADVANCED TOPICS
+ANS-01,Stopped at an intermediate quantity / wrong answer form,"The intermediate value is right but never converted to what was asked (kg vs %, day vs total, value vs pictogram symbols), or the work stops before the final quantity.",procedural,major,,4–11,CROSS-STRAND
+ANS-02,"Misidentifies the role of a computed value (over-answers, or confuses a 'change' with a 'total')","The mirror image of ANS-01: a value that already answers the question (or already carries the specific meaning asked for, e.g. 'the difference') is treated as an intermediate result and combined with further unneeded operations, OR a computed value's real-world meaning is confused with a different quantity in the same problem.",procedural,major,,5-7,CROSS-STRAND
+CAL-01,Simple arithmetic/copy slip,"A one-step add/subtract/multiply slip, a number copied wrongly between lines, or a written-digit slip (NOT column-algorithm mechanics = OPS-01, NOT sign handling = INT-04).",careless,minor,major when it causes a wrong result,4–11,CROSS-STRAND
+VIS-01,Misreading a figure/table/chart,"Unlabeled dimension derived wrongly, histogram class edges/width misread, value copied from the wrong row/column, irrelevant data taken from the display.",conceptual,major,,4–11,CROSS-STRAND
+WOP-01,Wrong operation inferred from word-problem misreading,"The arithmetic that IS performed is executed correctly, but the wrong operation (or wrong order/combination of operations) is used because the real-world relationship between the problem's quantities was misunderstood.",conceptual,major,,4-7,CROSS-STRAND
+WOP-02,Uses an irrelevant/extraneous given number,"A distractor value present in the word problem, or a given quantity that plays a different role than the one used, is incorporated into the calculation as if it were an operand needed to answer the question.",conceptual,major,,4-6,CROSS-STRAND
+FRM-01,Wrong formula chosen / recalled incompletely,"Right topic but wrong variant: two-point slope instead of regression slope, correlation without the square root, IQR vs quartile deviation, statistic computed on an aggregate instead of per data point. Use the topic-specific code (STA-01, MEA-04, …) when one exists; FRM-01 only otherwise.",procedural,major,,7–11,CROSS-STRAND
+NOT-01,Imprecise/incomplete notation without affecting correctness,"Work shown is imprecise, incomplete, or uses loose/undefined notation (a skipped step, an unfinished or illegible intermediate line, a stray scratch note) but the looseness does NOT change whether the final answer is correct. Distinct from CAL-01 (an actual numeric slip) and ANS-01 (the final answer genuinely not reached).",careless,minor,,4-11,CROSS-STRAND
+NOT-02,Chained equalities written with a reused '=' sign,"Multiple, unrelated calculation steps are strung together on one line reusing the '=' sign (e.g. 144x2=288-240=48), a notation error even when every individual step's arithmetic is correct.",procedural,minor,,4-11,CROSS-STRAND
+CHK-01,Impossible result not recognized,"An out-of-range result left standing: probability > 1 (generalizes PRO-03), correlation > 1, negative length.",conceptual,minor,major when it causes a wrong result,6–11,CROSS-STRAND
+UNT-01,Mixing incompatible quantities/units,Operating across different kinds of quantities: 15% + 6 students; percentages subtracted as kilograms; degrees added to people-counts.,conceptual,major,,5–8,CROSS-STRAND
+REL-01,Upload not relevant to the question,(meta) Photo shows work for a different problem — not a misconception; will become a separate is_relevant flag.,meta,major,,—,CROSS-STRAND
+OTH-00,Other / uncategorized,A real misconception that fits no category above — always explain in free text; OTH-00 clusters seed the next taxonomy version.,,,,,CATCH-ALL

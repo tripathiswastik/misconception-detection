@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-10-21T17:20:00+05:30",
+  "study_status": "OFFLINE_DEBUGGING_AND_DIAGNOSTIC",
+  "gating_status": "STRICTLY_DISABLED",
+  "statistical_caveat": "The 10-sample diagnostic study (5 per class) is used strictly for debugging error taxonomy and inspecting failure modes, NOT for estimating population generalization. Each single misclassification shifts class-specific recall by 20 percentage points, and zero observed false acceptances in five negative examples does not establish a negligible population false-acceptance rate.",
+  "error_taxonomy": {
+    "categories": [
+      "MISSING_BOX: Missing explicit terminal answer demarcations or boxes.",
+      "INFORMAL_INDONESIAN_MARKER: Student conclusions embedded in conversational Indonesian phrasing ('jadi', 'maka', 'toko rugi').",
+      "MATH_EQUIVALENCE: LaTeX formatting (\\dfrac, \\text), fractions vs decimals, and unit notation.",
+      "OCR_TRANSCRIPTION_ERROR: OCR line prefix numbering ('L1 |', 'L6 |') or character misrecognition.",
+      "AMBIGUOUS_UNREADABLE: Illegible handwriting or conflicting steps -> triggers ABSTAIN."
+    ]
+  },
+  "comparative_diagnostic_results": {
+    "sample_size": 10,
+    "baseline_regex_normalizer": {
+      "accuracy": 0.70,
+      "recall_positive": 0.40,
+      "recall_negative": 1.00,
+      "false_rejection_rate": 0.60,
+      "false_acceptance_rate": 0.00,
+      "passed_gate": false,
+      "failure_mode": "Failed to strip OCR line headers ('L6 | 80 buku') and unhandled LaTeX fractions (\\dfrac{4}{3})"
+    },
+    "enhanced_safe_normalizer": {
+      "accuracy": 0.90,
+      "recall_positive": 0.80,
+      "recall_negative": 1.00,
+      "false_rejection_rate": 0.20,
+      "false_acceptance_rate": 0.00,
+      "passed_gate": true,
+      "single_error_audit": {
+        "trace_id": "d64835143a02",
+        "gold": true,
+        "pred": false,
+        "extracted": "-4",
+        "expected": "Toko rugi total Rp 4.000",
+        "category": "INFORMAL_INDONESIAN_MARKER / VERBAL_PROBLEM"
+      }
+    }
+  },
+  "operational_approval_gates": [
+    "Gate 1 (Accuracy): At least 85% on a preregistered, stratified validation set (N >= 50 or full validation fold).",
+    "Gate 2 (Class-Specific Recall): Greater than 50% for both correct and incorrect answers, reported separately.",
+    "Gate 3 (Downstream Utility): Statistically significant positive paired out-of-fold MAP@3 delta (10,000 bootstrap resamples, 95% CI > 0, p < 0.05).",
+    "Gate 4 (Safety Fallback): Explicit ABSTAIN on unreadable/ambiguous answers; abstentions MUST fallback to unchanged baseline predictions.",
+    "Gate 5 (Traceability & Reproducibility): Saved predictions, per-example errors, configurations, and SHA-256 artifact hashes."
+  ],
+  "governance_decision": "Gating remains strictly disabled. Next stage requires evaluating the enhanced normalizer and frontier multilingual VLM on a preregistered, stratified validation set before any downstream test execution."
+}

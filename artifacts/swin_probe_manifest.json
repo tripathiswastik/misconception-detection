@@ -1,0 +1,9 @@
+{
+  "best_c": 1.0,
+  "swin_raw_map3": 0.37711111111111106,
+  "swin_masked_map3": 0.38888888888888884,
+  "dual_vision_map3": 0.37877777777777777,
+  "champion_trivision_desc": "Transformer+ConvNeXt Heavy (40% CN + 40% Swin + 20% MN)",
+  "champion_trivision_map3": 0.3863333333333333,
+  "trivision_gain_over_dualvision": 0.007555555555555538
+}

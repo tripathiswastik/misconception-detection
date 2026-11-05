@@ -1,0 +1,40 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Environments & IDE
+.env
+.venv/
+env/
+venv/
+ENV/
+.vscode/
+.idea/
+
+# Large Datasets & Raw Images (Kaggle dataset)
+data/images/
+data/unlabelled.csv
+*.pt
+*.pth
+*.bin
+*.onnx
+
+# Large Binary Arrays & Zip Archives (Feature Matrices)
+artifacts/*.npy
+artifacts/*.npz
+artifacts/*.pt
+artifacts/*.pth
+artifacts/*.zip
+*.zip
+artifacts/checkpoints/
+artifacts/dataset_*/
+artifacts/kaggle_output/
+
+# OS specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store

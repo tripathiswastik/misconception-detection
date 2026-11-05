@@ -1,0 +1,94 @@
+{
+  "n_samples": 1500,
+  "seen_count": 1335,
+  "unseen_count": 165,
+  "prior_only": {
+    "overall": 0.49399999999999994,
+    "seen_questions": 0.49200998751560543,
+    "unseen_questions": 0.51010101010101,
+    "by_level": {
+      "question": 0.49200998751560543,
+      "topic+grade": 0.5133744855967078,
+      "global": 0.3333333333333333,
+      "counts": {
+        "question": 1335,
+        "topic+grade": 162,
+        "global": 3
+      }
+    }
+  },
+  "text_no_key": {
+    "overall": 0.4856666666666667,
+    "seen_questions": 0.482896379525593,
+    "unseen_questions": 0.5080808080808081
+  },
+  "text_with_key": {
+    "overall": 0.48522222222222217,
+    "seen_questions": 0.4827715355805243,
+    "unseen_questions": 0.5050505050505051
+  },
+  "best_fusion_weight": 0.0,
+  "best_fusion_map3": 0.48522222222222217,
+  "grid_results": [
+    {
+      "w_vis": 0.0,
+      "overall": 0.4852,
+      "seen": 0.4828,
+      "unseen": 0.5051
+    },
+    {
+      "w_vis": 0.05,
+      "overall": 0.4833,
+      "seen": 0.4804,
+      "unseen": 0.5071
+    },
+    {
+      "w_vis": 0.1,
+      "overall": 0.4812,
+      "seen": 0.4778,
+      "unseen": 0.5091
+    },
+    {
+      "w_vis": 0.15,
+      "overall": 0.4793,
+      "seen": 0.4758,
+      "unseen": 0.5081
+    },
+    {
+      "w_vis": 0.2,
+      "overall": 0.4783,
+      "seen": 0.4745,
+      "unseen": 0.5091
+    },
+    {
+      "w_vis": 0.25,
+      "overall": 0.4763,
+      "seen": 0.4728,
+      "unseen": 0.5051
+    },
+    {
+      "w_vis": 0.3,
+      "overall": 0.4749,
+      "seen": 0.4714,
+      "unseen": 0.503
+    },
+    {
+      "w_vis": 0.35,
+      "overall": 0.4728,
+      "seen": 0.4695,
+      "unseen": 0.499
+    },
+    {
+      "w_vis": 0.4,
+      "overall": 0.4714,
+      "seen": 0.4683,
+      "unseen": 0.497
+    },
+    {
+      "w_vis": 0.5,
+      "overall": 0.4756,
+      "seen": 0.473,
+      "unseen": 0.496
+    }
+  ]
+}

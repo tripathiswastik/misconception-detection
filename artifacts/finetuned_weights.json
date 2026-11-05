@@ -1,0 +1,9 @@
+{
+  "backbone_lr": 1e-05,
+  "head_lr": 0.001,
+  "max_epochs": 5,
+  "vision_oof_map3": 0.3774444444444444,
+  "fusion_w25_oof_map3": 0.5396666666666666,
+  "best_fusion_weight": 0.25,
+  "best_fused_oof_map3": 0.5396666666666666
+}

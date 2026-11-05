@@ -1,0 +1,47 @@
+{
+  "champion_oof_map3": 0.5204444444444445,
+  "strategies": {
+    "S2_none_suppress": {
+      "score": 0.5203333333333333,
+      "delta": -0.00011111111111117289,
+      "p_value": 0.5217,
+      "significant": false
+    },
+    "S3_power_sharp": {
+      "score": 0.5251111111111112,
+      "delta": 0.004666666666666708,
+      "p_value": 0.0481,
+      "significant": false
+    },
+    "S4_nelder_mead": {
+      "score": 0.5316666666666666,
+      "delta": 0.011222222222222134,
+      "p_value": 0.0006,
+      "significant": true
+    },
+    "S5_per_q_adaptive": {
+      "score": 0.5231111111111112,
+      "delta": 0.002666666666666706,
+      "p_value": 0.1284,
+      "significant": false
+    },
+    "S6_rrf": {
+      "score": 0.5055555555555555,
+      "delta": -0.014888888888888951,
+      "p_value": 0.9997,
+      "significant": false
+    },
+    "S7_geometric": {
+      "score": 0.526888888888889,
+      "delta": 0.006444444444444475,
+      "p_value": 0.0388,
+      "significant": false
+    },
+    "S8_combined": {
+      "score": 0.5316666666666666,
+      "delta": 0.011222222222222134,
+      "p_value": 0.0006,
+      "significant": true
+    }
+  }
+}

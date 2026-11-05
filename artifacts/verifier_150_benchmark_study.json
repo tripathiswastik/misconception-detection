@@ -1,0 +1,172 @@
+{
+  "timestamp": "2026-10-21T18:05:00+05:30",
+  "sample_size": 150,
+  "audit_normalizer_150": {
+    "passed_gate": false,
+    "is_degenerate": false,
+    "accuracy": 0.6,
+    "n_samples": 150,
+    "confusion_matrix": {
+      "tp": 19,
+      "tn": 71,
+      "fp": 0,
+      "fn": 39
+    },
+    "recall_positive": 0.25333333333333335,
+    "recall_negative": 0.9466666666666667,
+    "false_rejection_rate": 0.52,
+    "false_acceptance_rate": 0.0,
+    "reasons": [
+      "ACCURACY_BELOW_GATE: 0.6000 < 0.7800",
+      "LOW_POSITIVE_RECALL: 0.2533 < 0.6000"
+    ],
+    "rejection_reason": "ACCURACY_BELOW_GATE: 0.6000 < 0.7800; LOW_POSITIVE_RECALL: 0.2533 < 0.6000",
+    "n_evaluated": 129,
+    "n_abstained": 21,
+    "abstain_rate": 0.14,
+    "verifier_name": "Conservative_Transcription_Normalizer",
+    "n_errors": 60,
+    "error_samples": [
+      {
+        "trace_id": "d45859079a4a",
+        "gold": true,
+        "pred": "ABSTAIN",
+        "extracted": "UNCERTAIN",
+        "expected": "$k = -1\\text{ atau } k = 5$",
+        "category": "AMBIGUOUS_UNREADABLE",
+        "reason": "ABSTAIN_UNCERTAIN"
+      },
+      {
+        "trace_id": "ad56927a2500",
+        "gold": true,
+        "pred": false,
+        "extracted": "- 0.109375",
+        "expected": "$0,109375$",
+        "category": "INFORMAL_INDONESIAN_MARKER",
+        "reason": "NUMERIC_INEQUALITY"
+      },
+      {
+        "trace_id": "e06abf2c9be7",
+        "gold": false,
+        "pred": "ABSTAIN",
+        "extracted": "UNCERTAIN",
+        "expected": "$\\dfrac{9}{10}$",
+        "category": "AMBIGUOUS_UNREADABLE",
+        "reason": "ABSTAIN_UNCERTAIN"
+      },
+      {
+        "trace_id": "6dfc10338c92",
+        "gold": true,
+        "pred": false,
+        "extracted": "nomor 4 (iv) adalah bilangan bulat",
+        "expected": "(iv) saja",
+        "category": "INFORMAL_INDONESIAN_MARKER",
+        "reason": "NON_NUMERIC_MISMATCH"
+      },
+      {
+        "trace_id": "f8881147c718",
+        "gold": true,
+        "pred": false,
+        "extracted": "karena 5 \u2264 12 \u2264 20",
+        "expected": "58 kg, interpolasi",
+        "category": "INFORMAL_INDONESIAN_MARKER",
+        "reason": "NON_NUMERIC_MISMATCH"
+      },
+      {
+        "trace_id": "a8e9796e96ee",
+        "gold": true,
+        "pred": false,
+        "extracted": "30",
+        "expected": "Rp10.000",
+        "category": "INFORMAL_INDONESIAN_MARKER",
+        "reason": "NUMERIC_INEQUALITY"
+      },
+      {
+        "trace_id": "07daf7a742cc",
+        "gold": true,
+        "pred": false,
+        "extracted": "7 C",
+        "expected": "Kota C, Kota A, Kota B, Kota D",
+        "category": "INFORMAL_INDONESIAN_MARKER",
+        "reason": "NON_NUMERIC_MISMATCH"
+      },
+      {
+        "trace_id": "6b41c364e389",
+        "gold": true,
+        "pred": false,
+        "extracted": "54.5 (dikotak",
+        "expected": "54,5",
+        "category": "INFORMAL_INDONESIAN_MARKER",
+        "reason": "VARIABLE_MISMATCH"
+      },
+      {
+        "trace_id": "358d04627f6f",
+        "gold": true,
+        "pred": "ABSTAIN",
+        "extracted": "UNCERTAIN",
+        "expected": "-36",
+        "category": "AMBIGUOUS_UNREADABLE",
+        "reason": "ABSTAIN_UNCERTAIN"
+      },
+      {
+        "trace_id": "0793be01ba09",
+        "gold": true,
+        "pred": "ABSTAIN",
+        "extracted": "UNCERTAIN",
+        "expected": "-1",
+        "category": "AMBIGUOUS_UNREADABLE",
+        "reason": "ABSTAIN_UNCERTAIN"
+      }
+    ]
+  },
+  "oof_accuracy_sensitivity_simulation": {
+    "acc_65": {
+      "accuracy": 0.65,
+      "mean_oof_map3": 0.5038888888888889,
+      "delta_over_unconditioned": -0.004911111111111088
+    },
+    "acc_70": {
+      "accuracy": 0.7,
+      "mean_oof_map3": 0.5157777777777777,
+      "delta_over_unconditioned": 0.006977777777777638
+    },
+    "acc_75": {
+      "accuracy": 0.75,
+      "mean_oof_map3": 0.5271111111111111,
+      "delta_over_unconditioned": 0.018311111111111056
+    },
+    "acc_78": {
+      "accuracy": 0.78,
+      "mean_oof_map3": 0.5332222222222223,
+      "delta_over_unconditioned": 0.024422222222222234
+    },
+    "acc_80": {
+      "accuracy": 0.8,
+      "mean_oof_map3": 0.5352222222222223,
+      "delta_over_unconditioned": 0.026422222222222236
+    },
+    "acc_85": {
+      "accuracy": 0.85,
+      "mean_oof_map3": 0.5455555555555556,
+      "delta_over_unconditioned": 0.03675555555555554
+    },
+    "acc_90": {
+      "accuracy": 0.9,
+      "mean_oof_map3": 0.562111111111111,
+      "delta_over_unconditioned": 0.053311111111110976
+    },
+    "acc_100": {
+      "accuracy": 1.0,
+      "mean_oof_map3": 0.5864444444444443,
+      "delta_over_unconditioned": 0.0776444444444443
+    }
+  },
+  "break_even_analysis": {
+    "break_even_accuracy": 0.68,
+    "operational_gate_accuracy": 0.78,
+    "operational_gate_recall_min": 0.6,
+    "theoretical_max_ceiling": 0.621,
+    "headroom": "+0.1122"
+  },
+  "gating_status": "STRICTLY_DISABLED"
+}

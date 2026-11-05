@@ -1,0 +1,124 @@
+{
+  "m6_oof_map3": 0.5408888888888889,
+  "m7_oof_map3": 0.5396666666666666,
+  "best_prob_lambda_m6": 0.4,
+  "best_prob_lambda_m7": 0.6,
+  "best_prob_oof_map3": 0.5431111111111111,
+  "best_rank_alpha_m6": 0.5,
+  "best_rank_alpha_m7": 0.5,
+  "best_rank_oof_map3": 0.543,
+  "probability_sweep": [
+    {
+      "lambda_m6": 0.0,
+      "lambda_m7": 1.0,
+      "oof_map3": 0.53967
+    },
+    {
+      "lambda_m6": 0.1,
+      "lambda_m7": 0.9,
+      "oof_map3": 0.53989
+    },
+    {
+      "lambda_m6": 0.2,
+      "lambda_m7": 0.8,
+      "oof_map3": 0.54133
+    },
+    {
+      "lambda_m6": 0.3,
+      "lambda_m7": 0.7,
+      "oof_map3": 0.54278
+    },
+    {
+      "lambda_m6": 0.4,
+      "lambda_m7": 0.6,
+      "oof_map3": 0.54311
+    },
+    {
+      "lambda_m6": 0.5,
+      "lambda_m7": 0.5,
+      "oof_map3": 0.54211
+    },
+    {
+      "lambda_m6": 0.6,
+      "lambda_m7": 0.4,
+      "oof_map3": 0.54211
+    },
+    {
+      "lambda_m6": 0.7,
+      "lambda_m7": 0.3,
+      "oof_map3": 0.54278
+    },
+    {
+      "lambda_m6": 0.8,
+      "lambda_m7": 0.2,
+      "oof_map3": 0.54256
+    },
+    {
+      "lambda_m6": 0.9,
+      "lambda_m7": 0.1,
+      "oof_map3": 0.54233
+    },
+    {
+      "lambda_m6": 1.0,
+      "lambda_m7": 0.0,
+      "oof_map3": 0.54089
+    }
+  ],
+  "rank_sweep": [
+    {
+      "alpha_m6": 0.0,
+      "alpha_m7": 1.0,
+      "oof_map3": 0.53967
+    },
+    {
+      "alpha_m6": 0.1,
+      "alpha_m7": 0.9,
+      "oof_map3": 0.53967
+    },
+    {
+      "alpha_m6": 0.2,
+      "alpha_m7": 0.8,
+      "oof_map3": 0.53967
+    },
+    {
+      "alpha_m6": 0.3,
+      "alpha_m7": 0.7,
+      "oof_map3": 0.53967
+    },
+    {
+      "alpha_m6": 0.4,
+      "alpha_m7": 0.6,
+      "oof_map3": 0.539
+    },
+    {
+      "alpha_m6": 0.5,
+      "alpha_m7": 0.5,
+      "oof_map3": 0.543
+    },
+    {
+      "alpha_m6": 0.6,
+      "alpha_m7": 0.4,
+      "oof_map3": 0.54189
+    },
+    {
+      "alpha_m6": 0.7,
+      "alpha_m7": 0.3,
+      "oof_map3": 0.54156
+    },
+    {
+      "alpha_m6": 0.8,
+      "alpha_m7": 0.2,
+      "oof_map3": 0.54089
+    },
+    {
+      "alpha_m6": 0.9,
+      "alpha_m7": 0.1,
+      "oof_map3": 0.54089
+    },
+    {
+      "alpha_m6": 1.0,
+      "alpha_m7": 0.0,
+      "oof_map3": 0.54089
+    }
+  ]
+}

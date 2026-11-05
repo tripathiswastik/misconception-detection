@@ -1,0 +1,27 @@
+{
+  "baseline_map3": 0.5204444444444445,
+  "candidate_map3": 0.5206666666666667,
+  "delta": 0.00019621111111111107,
+  "ci_95": [
+    -0.004555555555555556,
+    0.005
+  ],
+  "p_value": 0.4731,
+  "is_significant": false,
+  "swin_calibration": {
+    "C": 0.02,
+    "T": 2.0,
+    "entropy": 3.185154914855957,
+    "tri_topology": "34CN/33SW/33MN",
+    "tri_weights": [
+      0.34,
+      0.33,
+      0.33
+    ]
+  },
+  "multimodal_weights": {
+    "prior": 0.68,
+    "vision": 0.13,
+    "text": 0.19
+  }
+}

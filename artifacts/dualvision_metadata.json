@@ -1,0 +1,12 @@
+{
+  "model_name": "TunedPrior_DualVision_Text_Ensemble",
+  "w_prior": 0.7,
+  "w_vis": 0.2,
+  "w_text": 0.1,
+  "m_q": 10.0,
+  "honest_oof_map3": 0.5183,
+  "convnext_masked_visual_oof": 0.388,
+  "mobilenet_masked_visual_oof": 0.3819,
+  "rows": 3498,
+  "output_file": "D:\\ag-ai\\misconception-detection\\submissions\\multimodal_dualvision_submission.csv"
+}

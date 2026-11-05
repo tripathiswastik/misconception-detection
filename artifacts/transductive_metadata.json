@@ -1,0 +1,10 @@
+{
+  "model_name": "Transductive_Bayesian_Prior_Refinement",
+  "alpha_seen": 0.15,
+  "m_unseen": 5.0,
+  "seen_traces_updated": 3348,
+  "unseen_traces_updated": 150,
+  "total_test_questions": 492,
+  "unseen_questions_in_test": 37,
+  "output_file": "D:\\ag-ai\\misconception-detection\\submissions\\multimodal_transductive_submission.csv"
+}

@@ -1,0 +1,90 @@
+{
+  "engine": "microsoft/trocr-small-handwritten (with 3-strip line crop)",
+  "n_samples": 50,
+  "total_time_seconds": 229.91,
+  "seconds_per_image": 4.6,
+  "cer": 0.9139,
+  "wer": 0.9844,
+  "comparisons_sample": [
+    {
+      "trace_id": "4d82c12ba2e7",
+      "image": "4d82c12ba2e7.jpeg",
+      "gold": "L1 | 3^x = 1/27, 27 :3 = -9 L2 | x = -9 L3 | 5^(x+3) = 5^(-9+3) = 5^(-6) = 1/30 M.",
+      "pred": "L1 | a girl,, L2 | is, L3 | will",
+      "sample_cer": 0.7683,
+      "inference_seconds": 43.66
+    },
+    {
+      "trace_id": "46406491d4ce",
+      "image": "46406491d4ce.jpeg",
+      "gold": "L1 | Diketahui sebuah persamaan 3^x = 1/27. Nilai dari 5x + 3 ... adalah L2 | \u21d2 3^x = 1/27 L3 | 27 itu hasil dari 3 * 3 ",
+      "pred": "L1 | 0 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 0",
+      "sample_cer": 0.8065,
+      "inference_seconds": 5.32
+    },
+    {
+      "trace_id": "be46d3efbbac",
+      "image": "be46d3efbbac.jpeg",
+      "gold": "L1 | 8a+4=3a-11 = 8a+3a=11-4 = 11a=7 = a=11-7=4 L2 | a=4 L3 | 2a+5=2(4)+5=13 L4 | Jawaban: a = 4 dan 2a + 5 = 13",
+      "pred": "L1 | 8 st4538-11-BA4361_45115-97-a-all-py, L2 | 247s-authorism,, L3 | a man",
+      "sample_cer": 0.6964,
+      "inference_seconds": 4.01
+    },
+    {
+      "trace_id": "abe2b4a7d8f0",
+      "image": "abe2b4a7d8f0.jpeg",
+      "gold": "L1 | 8a - 3a = 11 + 4 L2 | 5a = 15 L3 | a = 15/5 = 3 L4 | = 2a + 5 L5 | = 2(3) + 5 = 11",
+      "pred": "L1 | a bargain to improve, L2 | \" \" ', L3 | 0 0",
+      "sample_cer": 0.7241,
+      "inference_seconds": 2.98
+    },
+    {
+      "trace_id": "79db2072874b",
+      "image": "79db2072874b.jpeg",
+      "gold": "L1 | Persamaan: 2(3x - 2) - 4 = 4(x - 1) L2 | Jabarkan: 6x - 4 - 4 = 4x - 4 L3 | Sederhanakan: 6x - 8 = 4x - 4 L4 | Pind",
+      "pred": "L1 | It is known as a young adult in the U S, L2 | a b c d e f g h ( 0 0, L3 | I feel I",
+      "sample_cer": 0.7861,
+      "inference_seconds": 3.61
+    },
+    {
+      "trace_id": "354a5c067c5a",
+      "image": "354a5c067c5a.jpeg",
+      "gold": "L1 | F(2a-1) = (2a-1)\u00b2 + 2(2a-1) - 3 L2 | = (4a\u00b2 - 4a + 1) + (4a - 1) - 2 L3 | = 4a\u00b2 - 4a + 1 + 4a - 1 - 3 L4 | = 4a\u00b2 - ",
+      "pred": "L1 | Addition, L2 | HelpLearn to editCommunity portalRecent changesUpload file, L3 | a b c d e f g h ( 0 0 0",
+      "sample_cer": 0.8368,
+      "inference_seconds": 3.88
+    },
+    {
+      "trace_id": "183436cfe38c",
+      "image": "183436cfe38c.jpeg",
+      "gold": "L1 | f(x) = (2a-1)\u00b2 + 2(2a-1) - 3 L2 | f(x) = 4a\u00b2 + 1 + 4a - 2 - 3 L3 | f(2a-1) = 4a\u00b2 + 4a - 4 L4 | 4a\u00b2 + 4a - 4 = 0",
+      "pred": "L1 | 0 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 0",
+      "sample_cer": 1.1897,
+      "inference_seconds": 5.47
+    },
+    {
+      "trace_id": "f7303fba89a6",
+      "image": "f7303fba89a6.jpeg",
+      "gold": "L1 | f(2a-1) = (2a-1)\u00b2 + 2(2a-1) - 3 L2 | = 4a\u00b2 + 1 + 4a - 2 - 3 L3 | f(2a-1) = 4a\u00b2 + 4a - 4",
+      "pred": "L1 | From a song is also a small, L2 | From the start of the time, L3 | 0 0",
+      "sample_cer": 0.7283,
+      "inference_seconds": 3.7
+    },
+    {
+      "trace_id": "3f68a42f573a",
+      "image": "3f68a42f573a.jpeg",
+      "gold": "\" L1 | Latihan mingguan L2 | 1. f(x) = x^2 + 2x - 3 L3 | Tentukan f(2a-1) dinyatakan dalam a L4 | Jawab L5 | f(x) = x^2 ",
+      "pred": "L1 | a b c d e f g h, L2 | a b c d e f, L3 | a b",
+      "sample_cer": 0.8767,
+      "inference_seconds": 3.8
+    },
+    {
+      "trace_id": "12e4d52ee91c",
+      "image": "12e4d52ee91c.jpeg",
+      "gold": "L1 | Dit = nilai dari f(-3) + f(4) = ? L2 | F(a) = 3a + 1 L3 | f(-3) = 3(-3) + 1 L4 | f(-3) = -9 + 1 L5 | f(-3) = -10 L6",
+      "pred": "L1 | 1 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 0",
+      "sample_cer": 0.7872,
+      "inference_seconds": 5.74
+    }
+  ]
+}

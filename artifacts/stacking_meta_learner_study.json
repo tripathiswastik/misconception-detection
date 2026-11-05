@@ -1,0 +1,74 @@
+{
+  "m10_oof_map3": 0.5183333333333333,
+  "prior_alone_oof_map3": 0.5088888888888888,
+  "ridge_oof_map3": 0.457,
+  "lr_oof_map3": 0.40922222222222215,
+  "segmented_oof_map3": 0.5193333333333333,
+  "best_unseen_weights": {
+    "prior": 0.6,
+    "vision": 0.4,
+    "text": 0.0
+  },
+  "bootstrap_comparisons": {
+    "Candidate A (Ridge Stacker)": {
+      "mean_a": 0.457,
+      "mean_b": 0.5183333333333333,
+      "mean_delta": -0.06133333333333333,
+      "se_delta": 0.006845781207830947,
+      "ci_95": [
+        -0.07466666666666667,
+        -0.04777777777777777
+      ],
+      "p_value": 1.0,
+      "is_significant": false,
+      "wins": 169,
+      "losses": 345,
+      "ties": 986
+    },
+    "Candidate B (Logistic Stacker)": {
+      "mean_a": 0.40922222222222215,
+      "mean_b": 0.5183333333333333,
+      "mean_delta": -0.1091111111111111,
+      "se_delta": 0.00860863309388546,
+      "ci_95": [
+        -0.1262222222222222,
+        -0.09221944444444446
+      ],
+      "p_value": 1.0,
+      "is_significant": false,
+      "wins": 186,
+      "losses": 422,
+      "ties": 892
+    },
+    "Candidate C (Segmented Fusion)": {
+      "mean_a": 0.5193333333333333,
+      "mean_b": 0.5183333333333333,
+      "mean_delta": 0.001,
+      "se_delta": 0.001162938864284328,
+      "ci_95": [
+        -0.0012222222222222224,
+        0.0033333333333333335
+      ],
+      "p_value": 0.1887,
+      "is_significant": false,
+      "wins": 11,
+      "losses": 8,
+      "ties": 1481
+    },
+    "Reference (Prior Alone mq=10)": {
+      "mean_a": 0.5088888888888888,
+      "mean_b": 0.5183333333333333,
+      "mean_delta": -0.009444444444444445,
+      "se_delta": 0.004118872190919925,
+      "ci_95": [
+        -0.017555555555555557,
+        -0.001555555555555556
+      ],
+      "p_value": 0.9917,
+      "is_significant": false,
+      "wins": 87,
+      "losses": 120,
+      "ties": 1293
+    }
+  }
+}

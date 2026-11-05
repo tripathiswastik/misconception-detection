@@ -1,0 +1,29 @@
+{
+  "baseline_oof_map3": 0.5204444444444445,
+  "calibrated_oof_map3": 0.5214444444444444,
+  "delta": 0.0009844444444444443,
+  "ci_95": [
+    -0.003888888888888889,
+    0.005777777777777778
+  ],
+  "p_value": 0.3482,
+  "is_significant": false,
+  "champion_params": {
+    "gamma": 0.2,
+    "m_q": 2.0,
+    "beta": 0.0
+  },
+  "diagnostics_before": {
+    "actual_none": 506,
+    "pred_none_top1": 1086,
+    "correct_none_top1": 426,
+    "false_none_top1": 660,
+    "none_precision": 0.39226519337016574,
+    "none_recall": 0.841897233201581
+  },
+  "diagnostics_after": {
+    "false_none": 614,
+    "correct_none": 404,
+    "pred_none_top1": 1018
+  }
+}

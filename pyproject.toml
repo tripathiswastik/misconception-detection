@@ -1,0 +1,25 @@
+[project]
+name = "misconception-detection"
+version = "1.0.0"
+description = "Misconception Detection in K-12 Student Math Workings"
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "numpy",
+    "pandas",
+    "pytest"
+]
+
+[tool.pyright]
+venvPath = ".."
+venv = ".venv"
+extraPaths = [
+    ".",
+    "../.venv/Lib/site-packages"
+]
+reportMissingModuleSource = "none"
+reportMissingTypeStubs = "none"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

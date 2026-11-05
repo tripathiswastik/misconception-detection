@@ -1,0 +1,11 @@
+{
+  "model_name": "SOTA_Transductive_Bayesian_Blend",
+  "w_sota": 0.6,
+  "w_transductive": 0.4,
+  "alpha_seen": 0.15,
+  "m_unseen": 5.0,
+  "total_test_rows": 3498,
+  "rows_diversified_from_sota": 75,
+  "diversification_pct": 2.144082332761578,
+  "output_file": "D:\\ag-ai\\misconception-detection\\submissions\\multimodal_sota_transductive_blend_submission.csv"
+}

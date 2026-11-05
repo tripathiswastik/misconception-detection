@@ -1,0 +1,11 @@
+{
+  "accuracy": 0.5,
+  "passed_gate": false,
+  "n_samples": 50,
+  "average_latency": 2.194079055786133,
+  "model": "Qwen/Qwen2-VL-2B-Instruct",
+  "hardware": "Kaggle GPU (FP16)",
+  "verdict": "REJECTED - Hard Quality Gate (<85%) Failed with Degenerate All-Negative Predictor",
+  "summary": "Qwen2-VL-2B-Instruct output 'NO' across all 50 student handwriting samples regardless of gold truth (25 correct, 25 incorrect), producing exactly 50% accuracy. Zero discriminative capacity was demonstrated on messy handwritten Indonesian math working without OCR / domain fine-tuning.",
+  "results_count": 50
+}
