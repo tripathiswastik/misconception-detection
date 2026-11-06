@@ -8,7 +8,7 @@ Provides programmatic interaction with Kaggle:
 import os
 from pathlib import Path
 from typing import Any, Dict, List, Optional
-import requests
+import requests  # type: ignore[import-untyped]
 
 DEFAULT_COMPETITION = "misconception-detection-in-k-12-student-math-workings"
 TOKEN_PATH = Path.home() / ".kaggle" / "bearer_token"
