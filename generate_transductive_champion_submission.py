@@ -78,7 +78,12 @@ print(f"Verified Champion Top-1 NONE count: {champ_none_count} / {len(test_df)} 
 assert champ_none_count == 2452, f"Target 2452 missed! Got {champ_none_count}"
 
 # 3. Transductive Question-Conditioned Re-ranking for Rank 2 & 3 ONLY
-q_map = {q: set(grp["root_code"].dropna()) for q, grp in train_df.groupby("question_id")}
+class_to_idx = {c: i for i, c in enumerate(tax_classes)}
+q_indices_map = {
+    q: [class_to_idx[c] for c in set(grp["root_code"].dropna()) if c in class_to_idx]
+    for q, grp in train_df.groupby("question_id")
+}
+test_qids = test_df["question_id"].values
 qb = 0.20 # +20% boost to question-relevant misconceptions
 
 preds_refined = []
@@ -88,24 +93,32 @@ r3_changes = 0
 champ_sub = cast(pd.DataFrame, pd.read_csv(SUB_DIR / "blend_m15_recalibrated_composite_triblend_448_submission.csv"))
 champ_triplets = [row.split() for row in champ_sub["root_code"]]
 
+cand_matrix = p_test_champ.copy()
+row_idx = np.arange(len(test_df))
+cand_matrix[row_idx, top1_champ_indices] = -1.0
+
+# Boost question-relevant candidate misconceptions
+for i, qid in enumerate(test_qids):
+    allowed_indices = q_indices_map.get(qid, None)
+    if allowed_indices:
+        r1_idx = top1_champ_indices[i]
+        for ci in allowed_indices:
+            if ci != r1_idx:
+                cand_matrix[i, ci] *= (1.0 + qb)
+
+# Top-2 candidate selection via argpartition and sort
+part2 = np.argpartition(-cand_matrix.astype(np.float64), kth=1, axis=1)[:, :2]
+part2_probs = np.take_along_axis(cand_matrix, part2, axis=1)
+order2 = np.argsort(-part2_probs, axis=1, kind="mergesort")
+top2 = np.take_along_axis(part2, order2, axis=1)
+
+r2_classes = [tax_classes[idx] for idx in top2[:, 0]]
+r3_classes = [tax_classes[idx] for idx in top2[:, 1]]
+
 for i in range(len(test_df)):
-    r1_idx = top1_champ_indices[i]
-    r1_class = tax_classes[r1_idx]
-    
-    # Candidate probabilities for rank 2 & 3: exclude rank 1 class
-    cand_probs = np.copy(p_test_champ[i])
-    cand_probs[r1_idx] = -1.0
-    
-    qid = test_df.iloc[i]["question_id"]
-    if qid in q_map:
-        allowed = q_map[qid]
-        for ci, code in enumerate(tax_classes):
-            if ci != r1_idx and code in allowed:
-                cand_probs[ci] *= (1.0 + qb)
-                
-    r2_r3_idx = np.argsort(-cand_probs.astype(np.float64))[:2]
-    r2_class = tax_classes[r2_r3_idx[0]]
-    r3_class = tax_classes[r2_r3_idx[1]]
+    r1_class = tax_classes[top1_champ_indices[i]]
+    r2_class = r2_classes[i]
+    r3_class = r3_classes[i]
     
     # Comparison vs champion
     orig_r1, orig_r2, orig_r3 = champ_triplets[i]

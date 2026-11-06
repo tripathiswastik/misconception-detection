@@ -90,30 +90,42 @@ def generate_snr_submission(none_penalty: float, out_filename: str, desc: str):
     print(f"Description: {desc}")
     print("=" * 80)
 
+    class_to_idx = {c: idx for idx, c in enumerate(tax_classes)}
+    champ_triplets = [row.split() for row in champ_df["root_code"]]
+
+    # Vectorized Rank 2 & 3 Selection
+    cand_matrix = p_ensemble.copy()
+    r1_indices = np.array([class_to_idx[t[0]] for t in champ_triplets], dtype=np.int64)
+    row_idx = np.arange(len(test_df))
+
+    # Mask Rank 1 class
+    cand_matrix[row_idx, r1_indices] = -1.0
+
+    # Discount secondary NONE if Rank 1 is a misconception
+    is_non_none = r1_indices != none_idx
+    cand_matrix[is_non_none, none_idx] *= none_penalty
+
+    # Select top 2 via argpartition and sort top 2
+    part2 = np.argpartition(-cand_matrix, kth=1, axis=1)[:, :2]
+    part2_probs = cand_matrix[row_idx[:, None], part2]
+    order2 = np.argsort(-part2_probs, axis=1, kind="mergesort")
+    top2 = part2[row_idx[:, None], order2]
+
+    r2_classes = [tax_classes[idx] for idx in top2[:, 0]]
+    r3_classes = [tax_classes[idx] for idx in top2[:, 1]]
+
     preds = []
     r2_changes = 0
     r3_changes = 0
 
     for i in range(len(test_df)):
-        # STRICT RANK 1 LOCK to 0.54716 Champion
-        champ_triplet = champ_df.iloc[i]["root_code"].split()
-        r1_class = champ_triplet[0]
-        r1_idx = tax_classes.index(r1_class)
+        r1_class = champ_triplets[i][0]
+        r2_class = r2_classes[i]
+        r3_class = r3_classes[i]
 
-        cand_probs = np.copy(p_ensemble[i])
-        cand_probs[r1_idx] = -1.0
-
-        # If Rank 1 is a misconception, discount secondary NONE
-        if r1_class != "NONE":
-            cand_probs[none_idx] *= none_penalty
-
-        top2_cands = np.argsort(-cand_probs)[:2]
-        r2_class = tax_classes[top2_cands[0]]
-        r3_class = tax_classes[top2_cands[1]]
-
-        if r2_class != champ_triplet[1]:
+        if r2_class != champ_triplets[i][1]:
             r2_changes += 1
-        if r3_class != champ_triplet[2]:
+        if r3_class != champ_triplets[i][2]:
             r3_changes += 1
 
         preds.append(f"{r1_class} {r2_class} {r3_class}")

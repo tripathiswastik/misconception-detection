@@ -33,19 +33,31 @@ def paired_bootstrap_test(
     assert len(y_true) == len(probs_a) == len(probs_b)
     n_samples = len(y_true)
 
-    # Extract top 3 predictions
-    top_a = np.argsort(-probs_a, axis=1, kind="mergesort")[:, :3]
-    top_b = np.argsort(-probs_b, axis=1, kind="mergesort")[:, :3]
+    # Extract top 3 predictions via argpartition followed by sort on top-3 only
+    k = min(3, probs_a.shape[1])
+    row_idx = np.arange(n_samples)[:, None]
 
-    scores_a = np.zeros(n_samples, dtype=np.float64)
-    scores_b = np.zeros(n_samples, dtype=np.float64)
+    part_a = np.argpartition(-probs_a, kth=k - 1, axis=1)[:, :k]
+    order_a = np.argsort(-probs_a[row_idx, part_a], axis=1, kind="mergesort")
+    top_a = part_a[row_idx, order_a]
 
-    for i in range(n_samples):
-        y_i = str(y_true[i])
-        preds_a_i = [classes[idx] for idx in top_a[i]]
-        preds_b_i = [classes[idx] for idx in top_b[i]]
-        scores_a[i] = compute_row_map3(y_i, preds_a_i)
-        scores_b[i] = compute_row_map3(y_i, preds_b_i)
+    part_b = np.argpartition(-probs_b, kth=k - 1, axis=1)[:, :k]
+    order_b = np.argsort(-probs_b[row_idx, part_b], axis=1, kind="mergesort")
+    top_b = part_b[row_idx, order_b]
+
+    # Vectorized MAP@3 calculation
+    class_to_idx = {c: i for i, c in enumerate(classes)}
+    y_indices = np.array([class_to_idx.get(str(y), -1) for y in y_true], dtype=np.int64)
+
+    m0_a = top_a[:, 0] == y_indices
+    m1_a = top_a[:, 1] == y_indices
+    m2_a = top_a[:, 2] == y_indices
+    scores_a = np.where(m0_a, 1.0, np.where(m1_a, 0.5, np.where(m2_a, 1.0 / 3.0, 0.0)))
+
+    m0_b = top_b[:, 0] == y_indices
+    m1_b = top_b[:, 1] == y_indices
+    m2_b = top_b[:, 2] == y_indices
+    scores_b = np.where(m0_b, 1.0, np.where(m1_b, 0.5, np.where(m2_b, 1.0 / 3.0, 0.0)))
 
     # Paired row differences
     deltas = scores_a - scores_b
@@ -55,13 +67,15 @@ def paired_bootstrap_test(
     losses = int(np.sum(deltas < 0))
     ties = int(np.sum(deltas == 0))
 
-    # Bootstrap resampling
+    # Vectorized chunked bootstrap resampling (avoids 10,000 array allocations)
     rng = np.random.RandomState(random_state)
-    boot_means = np.zeros(n_resamples, dtype=np.float64)
+    boot_means = np.empty(n_resamples, dtype=np.float64)
+    batch_size = 1000
 
-    for b in range(n_resamples):
-        sample_indices = rng.randint(0, n_samples, size=n_samples)
-        boot_means[b] = np.mean(deltas[sample_indices])
+    for start in range(0, n_resamples, batch_size):
+        end = min(start + batch_size, n_resamples)
+        batch_indices = rng.randint(0, n_samples, size=(end - start, n_samples))
+        boot_means[start:end] = np.mean(deltas[batch_indices], axis=1)
 
     se_delta = float(np.std(boot_means, ddof=1))
     ci_lower = float(np.percentile(boot_means, 100.0 * (alpha / 2.0)))

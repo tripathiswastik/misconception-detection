@@ -27,9 +27,6 @@ if str(PROJECT_ROOT) not in sys.path:
 # Ensure protocol buffers use pure python to prevent protobuf version conflict
 os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
 
-import torch
-from transformers import TrOCRProcessor, VisionEncoderDecoderModel
-
 from src.config import PATHS
 from src.reader.transcription_normalizer import TranscriptionNormalizer
 
@@ -42,20 +39,21 @@ def levenshtein_distance(ref: Sequence[Any], hyp: Sequence[Any]) -> int:
     if n == 0:
         return m
 
-    # Use two-row space-efficient DP
+    # Use two-row space-efficient DP with buffer swapping (zero row copy allocations)
     prev_row = list(range(n + 1))
     curr_row = [0] * (n + 1)
 
     for i in range(1, m + 1):
         curr_row[0] = i
+        ref_char = ref[i - 1]
         for j in range(1, n + 1):
-            cost = 0 if ref[i - 1] == hyp[j - 1] else 1
+            cost = 0 if ref_char == hyp[j - 1] else 1
             curr_row[j] = min(
                 curr_row[j - 1] + 1,      # Insertion
                 prev_row[j] + 1,          # Deletion
                 prev_row[j - 1] + cost    # Substitution
             )
-        prev_row = list(curr_row)
+        prev_row, curr_row = curr_row, prev_row
 
     return prev_row[n]
 
@@ -92,6 +90,9 @@ def run_sample_benchmark(n_samples: int = 50) -> Dict[str, Any]:
 
     train_df = cast(pd.DataFrame, pd.read_csv(PATHS.data_dir / "train.csv"))
     sample_df = train_df.head(n_samples).copy()
+
+    import torch
+    from transformers import TrOCRProcessor, VisionEncoderDecoderModel
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     print(f"[Phase 1] Loading TrOCR small model on {device}...")
@@ -130,19 +131,22 @@ def run_sample_benchmark(n_samples: int = 50) -> Dict[str, Any]:
                     rgb_img.crop((0, int(h * 0.6), w, h))
                 ]
 
+                # Batched crop inference: single model forward/generate pass for all 3 crops
+                pixel_vals = processor(slices, return_tensors="pt").pixel_values.to(device)
+                with torch.no_grad():
+                    gen_ids = model.generate(pixel_vals, max_new_tokens=40)
+                decoded_slices = processor.batch_decode(gen_ids, skip_special_tokens=True)
+
                 line_preds = []
-                for s_idx, s_img in enumerate(slices):
-                    pixel_vals = processor(s_img, return_tensors="pt").pixel_values.to(device)
-                    with torch.no_grad():
-                        gen_ids = model.generate(pixel_vals, max_new_tokens=40)
-                    dec = processor.batch_decode(gen_ids, skip_special_tokens=True)[0].strip()
+                for dec in decoded_slices:
+                    dec = dec.strip()
                     if dec and dec not in ["#", "##", "###"]:
                         line_preds.append(f"L{len(line_preds)+1} | {dec}")
 
                 if line_preds:
                     raw_pred = ", ".join(line_preds)
                 else:
-                    # Fallback to full image
+                    # Fallback to full image only when all 3 crops yielded nothing
                     pixel_vals = processor(rgb_img, return_tensors="pt").pixel_values.to(device)
                     with torch.no_grad():
                         gen_ids = model.generate(pixel_vals, max_new_tokens=60)
