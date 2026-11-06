@@ -4,6 +4,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
 [![Public LB SOTA](https://img.shields.io/badge/Public%20LB-0.54716%20%F0%9F%8F%86-brightgreen.svg)](#-leaderboard-progression--milestones)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Author](https://img.shields.io/badge/Author-Swastik%20Tripathi-blueviolet.svg)](https://github.com/tripathiswastik)
 
 An automated diagnostic AI system designed to analyze phone photographs of handwritten mathematical workings by K-12 students (grades 4–12, Indonesian language + LaTeX math), identifying the foundational root misconception from a 75-code pedagogical taxonomy or determining that the work is clean/correct (`NONE`).
 
@@ -117,5 +118,18 @@ $$\text{MAP@3} = \frac{1}{N} \sum_{i=1}^N \sum_{k=1}^{\min(3, P)} P(k) \cdot \te
 
 ---
 
+## 👤 Author
+
+- **Swastik Tripathi** — [GitHub (@tripathiswastik)](https://github.com/tripathiswastik) • [LinkedIn](https://www.linkedin.com/in/swastik-tripathi-52333511a/)
+
+---
+
 ## 📜 License
-MIT License. Created for the Kaggle *Misconception Detection in K-12 Student Math Workings* competition.
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🏷️ Repository Metadata & Topic Tags
+- **About Description**: Automated multimodal diagnostic system detecting root misconceptions in K-12 math workings (Kaggle SOTA 0.54716 MAP@3).
+- **Core Topics**: `deep-learning` `pytorch` `computer-vision` `multimodal` `arcface` `convnext` `swin-transformer` `ocr` `kaggle-competition` `pedagogical-ai`

@@ -82,7 +82,7 @@
      | **Enhanced Normalizer** | 90% ($N=10$) | 20% | 0% | **Investigative Debugging Only** |
      | **Automated Gating** | — | — | — | **STRICTLY DISABLED** |
    - **Statistical Caveats on Diagnostic Subsets:**
-     The 10-sample study ($N=10$, 5 per class) is an offline debugging instrument for inspecting error failure modes, **not** an estimator of population generalization. With 5 examples per class, each single classification shift alters class-specific recall by 20 percentage points. Furthermore, zero observed false acceptances in 5 negative examples does not establish a negligible population false-acceptance rate.
+     The 10-sample study ($N=10$, 5 per class) is an offline debugging instrument for inspecting error failure modes, **not** an estimator of population generalization. With 5 examples per class, each single classification shift alters class-specific recall by 20 percentage points. On top of that, zero observed false acceptances in 5 negative examples does not establish a negligible population false-acceptance rate.
    - **Error Taxonomy Breakdown (from Diagnostic Inspection):**
      1. *OCR Line Artifacts:* Transcription step prefixes (`L6 | 80 buku`) caused false rejection against `80 buku`. Fixed safely by stripping line markers.
      2. *Mathematical Equivalence:* LaTeX formatting differences (`\dfrac{4}{3}` vs `4/3`) caused false rejection. Fixed by safe fractional parsing.

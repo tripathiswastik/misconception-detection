@@ -3,7 +3,6 @@
 
 **Version:** 2.0.0  
 **Status:** Validated on 5-Fold Stratified CV & Kaggle Public Leaderboard (0.42916 MAP@3)  
-**Governance Standard:** [multi-agent-prompts.md](file:///d:/ag-ai/.agents/rules/multi-agent-prompts.md)  
 **Hardware Profile:** NVIDIA GeForce GTX 1050 (4.0 GB VRAM, `cuda:0`, FP16 Mixed Precision)
 
 ---

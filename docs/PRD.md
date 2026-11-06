@@ -3,7 +3,6 @@
 
 **Version:** 1.0.0  
 **Phase:** Phase 1 (Requirements)  
-**Governance Standard:** [AGENTS.md](file:///d:/ag-ai/AGENTS.md) / [multi-agent-prompts.md](file:///d:/ag-ai/.agents/rules/multi-agent-prompts.md)  
 **Dataset Source:** CoLearn & Kaggle Benchmark (`misconception-detection-in-k-12-student-math-workings`)  
 
 ---

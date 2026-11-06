@@ -3,7 +3,6 @@
 
 **Version:** 1.0.0  
 **Phase:** Phase 3 (Task Graph Decomposition)  
-**Governance Standard:** [multi-agent-prompts.md](file:///d:/ag-ai/.agents/rules/multi-agent-prompts.md)  
 
 ---
 

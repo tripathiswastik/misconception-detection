@@ -32,7 +32,7 @@ class KaggleClient:
         self.session = requests.Session()
         self.session.headers.update({
             "Authorization": f"Bearer {self.token}",
-            "User-Agent": "Antigravity-Kaggle-Client/1.0"
+            "User-Agent": "Misconception-Kaggle-Client/1.0"
         })
 
     def list_submissions(self, competition: str = DEFAULT_COMPETITION) -> List[Dict[str, Any]]:
