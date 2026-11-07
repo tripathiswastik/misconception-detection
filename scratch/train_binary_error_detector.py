@@ -113,8 +113,9 @@ def assemble_features() -> Tuple[np.ndarray, np.ndarray, pd.DataFrame, pd.DataFr
 
     y_train = (train_df["root_code"] != "NONE").astype(int).values
 
+    dist = [int((y_train == 0).sum()), int((y_train == 1).sum())]
     print(f"Features assembled: Train={X_train.shape}, Test={X_test.shape}")
-    print(f"Target distribution: {np.bincount(y_train)} (Positive/Error rate: {y_train.mean():.2%})")
+    print(f"Target distribution: {dist} (Positive/Error rate: {float(y_train.mean()):.2%})")
 
     return X_train, X_test, train_df, test_df, y_train
 

@@ -6,6 +6,7 @@ can reliably have NONE demoted from Rank 1 without leakage.
 import json
 import sys
 from pathlib import Path
+from typing import cast
 import numpy as np
 import pandas as pd
 
@@ -20,7 +21,7 @@ ART_DIR = PROJECT_ROOT / "artifacts"
 
 
 def main():
-    train_df = pd.read_csv(DATA_DIR / "train.csv")
+    train_df = cast(pd.DataFrame, pd.read_csv(DATA_DIR / "train.csv"))
     splits = json.load(open(DATA_DIR / "splits.json"))["folds"]
 
     tax = TaxonomyManager(DATA_DIR / "taxonomy_v1.csv")
