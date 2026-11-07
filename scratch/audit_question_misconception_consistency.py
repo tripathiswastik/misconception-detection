@@ -9,7 +9,7 @@ For rows in the validation set whose question_id appeared in the training fold:
 import json
 import sys
 from pathlib import Path
-from typing import Dict, List, Set, Tuple
+from typing import Dict, List, Set, Tuple, cast
 import numpy as np
 import pandas as pd
 
@@ -22,7 +22,7 @@ ART_DIR = PROJECT_ROOT / "artifacts"
 
 
 def main():
-    train_df = pd.read_csv(DATA_DIR / "train.csv")
+    train_df = cast(pd.DataFrame, pd.read_csv(DATA_DIR / "train.csv"))
     splits = json.load(open(DATA_DIR / "splits.json"))["folds"]
 
     total_val_rows = 0
@@ -68,3 +68,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

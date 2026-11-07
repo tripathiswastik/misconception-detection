@@ -169,7 +169,7 @@ def build_breakthrough_submission(
     # 6. Comparative Audit vs 0.54899 Active Peak
     peak_file = SUB_DIR / "blend_optimal_multimodal_theoretical_submission.csv"
     if peak_file.exists():
-        peak_df = pd.read_csv(peak_file)
+        peak_df = cast(pd.DataFrame, pd.read_csv(peak_file))
         peak_preds = peak_df["root_code"].tolist()
         t_diff = sum(1 for a, b in zip(preds, peak_preds) if a != b)
         r1_diff = sum(1 for a, b in zip(preds, peak_preds) if a.split()[0] != b.split()[0])
@@ -215,3 +215,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

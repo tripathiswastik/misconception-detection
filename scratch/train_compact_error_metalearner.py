@@ -74,8 +74,8 @@ def main():
     none_idx = classes.index("NONE")
     n_classes = len(classes)
 
-    train_df = pd.read_csv(DATA_DIR / "train.csv")
-    test_df = pd.read_csv(DATA_DIR / "test.csv")
+    train_df = cast(pd.DataFrame, pd.read_csv(DATA_DIR / "train.csv"))
+    test_df = cast(pd.DataFrame, pd.read_csv(DATA_DIR / "test.csv"))
     splits = json.load(open(DATA_DIR / "splits.json"))["folds"]
     n_train = len(train_df)
     n_test = len(test_df)
@@ -177,12 +177,12 @@ def main():
             val_prob = clf.predict_proba(fd["X_va"])[:, 1]
             current_oof[fd["va_idx"]] = val_prob
 
-            fold_aucs.append(roc_auc_score(fd["y_va"], val_prob))
-            fold_losses.append(log_loss(fd["y_va"], val_prob))
+            fold_aucs.append(float(roc_auc_score(fd["y_va"], val_prob)))
+            fold_losses.append(float(log_loss(fd["y_va"], val_prob)))
 
         mean_auc = float(np.mean(fold_aucs))
         mean_loss = float(np.mean(fold_losses))
-        print(f"C = {c_val:7.3f} | 5-Fold AUC: {mean_auc:.4f} | LogLoss: {mean_loss:.4f} | Per-fold AUCs: {[round(a, 4) for a in fold_aucs]}", flush=True)
+        print(f"C = {c_val:7.3f} | 5-Fold AUC: {mean_auc:.4f} | LogLoss: {mean_loss:.4f} | Per-fold AUCs: {[round(float(a), 4) for a in fold_aucs]}", flush=True)
 
         if mean_auc > best_auc:
             best_auc = mean_auc

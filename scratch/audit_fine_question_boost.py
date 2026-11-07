@@ -5,7 +5,7 @@ Compare against baseline 0.54011.
 import json
 import sys
 from pathlib import Path
-from typing import Dict, List, Set, Tuple
+from typing import Dict, List, Set, Tuple, cast
 import numpy as np
 import pandas as pd
 
@@ -37,7 +37,7 @@ def main():
     none_idx = classes.index("NONE")
     n_classes = len(classes)
 
-    train_df = pd.read_csv(DATA_DIR / "train.csv")
+    train_df = cast(pd.DataFrame, pd.read_csv(DATA_DIR / "train.csv"))
     splits = json.load(open(DATA_DIR / "splits.json"))["folds"]
     y_true = train_df["root_code"].fillna("NONE").astype(str).tolist()
     n_samples = len(train_df)
@@ -118,3 +118,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
