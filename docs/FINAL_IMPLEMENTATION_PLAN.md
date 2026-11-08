@@ -73,9 +73,24 @@ graph TD
 - Validate submission file with `validate_submission_file()`.
 - Update `state.json` and `docs/BENCHMARK_RESULTS.md`.
 
+### Phase 5: Precision Rank-1 Flip Gating & Decision-Theoretic Calibration
+- **Context & Research Note:** Grounded in [`docs/RESEARCH_NOTE_PRECISION_FLIPS.md`](file:///d:/ag-ai/misconception-detection/docs/RESEARCH_NOTE_PRECISION_FLIPS.md).
+- **Core Dilemma:** 56.1% of true errors (558/994 in train) predict `NONE` at Rank 1 due to 70% prior concentration. An uncalibrated flip destroys $-0.50$ points per clean trace; a surgical true error flip yields $+0.50$ points.
+- **Quad-Gate Implementation (`src/diagnoser/submission_engine.py`):**
+  1. *Gate 1 (Binary Error Confidence):* $P_{\text{binary}}(\text{is\_error}) \ge \tau$ ($\tau \in [0.76, 0.78]$) using `artifacts/test_compact_binary_prob.npy`.
+  2. *Gate 2 (Pedagogical Support):* Candidate misconception $c^* \in \mathcal{C}_q$ observed in training question context.
+  3. *Gate 3 (Close-Race Margin):* $0 < P_{\text{ensemble}}(\text{NONE}) - P_{\text{ensemble}}(c^*) \le \epsilon$ ($\epsilon \in [0.03, 0.05]$).
+  4. *Gate 4 (Misconception Decisiveness):* $P_{\text{ensemble}}(c^*) - P_{\text{ensemble}}(c_2) \ge \delta$ ($\delta \ge 0.04$).
+  5. *Invariant Output Anchor:* Flipped predictions strictly anchor `NONE` at Rank 2: `[c*, "NONE", c2]`, mathematically bounding maximum downside to $-0.50$.
+- **Target Deliverables:**
+  - Automated Quad-Gate filter module in `src/diagnoser/`.
+  - Candidate submission `submissions/blend_breakthrough_quad_gated_tau78_eps04.csv` (11 surgical flips).
+  - Validation test suite `tests/test_precision_flip_gates.py`.
+
 ---
 
 ## 4. Verification Mechanism
 - **Unit & Property Tests:** Validating input dimensions, softmax convergence, label mappings, and top-3 distinct prediction contracts.
 - **Leakage Verifier:** Checking that no sample in fold $k$'s validation appears in training data.
 - **Submission Schema Validator:** Verifying zero nulls, exactly 3,498 rows, valid taxonomy membership, and deterministic rankings.
+- **Quad-Gate Invariant Auditor:** Confirming that all flipped test rows satisfy the 4 gates, exactly preserve Rank 2 as `NONE`, and execute exactly 11 surgical updates over the champion baseline.
