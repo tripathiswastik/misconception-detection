@@ -6,6 +6,7 @@ Compares:
 """
 from pathlib import Path
 import sys
+from typing import cast
 import numpy as np
 import pandas as pd
 
@@ -27,7 +28,7 @@ def main():
     tax = TaxonomyManager(DATA_DIR / "taxonomy_v1.csv")
     classes = tax.all_codes(include_none=True)
     none_idx = classes.index("NONE")
-    train_df = pd.read_csv(DATA_DIR / "train.csv")
+    train_df = cast(pd.DataFrame, pd.read_csv(DATA_DIR / "train.csv"))
     y_true = train_df["root_code"].fillna("NONE").astype(str).tolist()
 
     # Load Honest OOF Components
@@ -85,3 +86,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
