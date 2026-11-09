@@ -177,7 +177,7 @@ def main():
 
             clf = model_fn()
             clf.fit(X_tr, y_bin[tr_idx])
-            oof_preds[va_idx] = clf.predict_proba(X_va)[:, 1]
+            oof_preds[va_idx] = np.asarray(clf.predict_proba(X_va))[:, 1]
 
         auc = roc_auc_score(y_bin, oof_preds)
         acc = accuracy_score(y_bin, oof_preds >= 0.5)

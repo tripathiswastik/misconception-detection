@@ -158,24 +158,24 @@ def main():
         # 1. LR
         lr = LogisticRegression(C=0.1, max_iter=1000, random_state=42)
         lr.fit(X_tr, y_bin[tr_idx])
-        oof_lr[va_idx] = lr.predict_proba(X_va)[:, 1]
-        test_lr += lr.predict_proba(X_te)[:, 1] / len(splits)
+        oof_lr[va_idx] = np.asarray(lr.predict_proba(X_va))[:, 1]
+        test_lr += np.asarray(lr.predict_proba(X_te))[:, 1] / len(splits)
 
         # 2. HGB
         hgb = HistGradientBoostingClassifier(
             max_iter=150, max_leaf_nodes=15, min_samples_leaf=10, l2_regularization=2.0, learning_rate=0.05, random_state=42
         )
         hgb.fit(X_tr, y_bin[tr_idx])
-        oof_hgb[va_idx] = hgb.predict_proba(X_va)[:, 1]
-        test_hgb += hgb.predict_proba(X_te)[:, 1] / len(splits)
+        oof_hgb[va_idx] = np.asarray(hgb.predict_proba(X_va))[:, 1]
+        test_hgb += np.asarray(hgb.predict_proba(X_te))[:, 1] / len(splits)
 
         # 3. RF
         rf = RandomForestClassifier(
             n_estimators=150, max_depth=6, min_samples_leaf=5, random_state=42, n_jobs=-1
         )
         rf.fit(X_tr, y_bin[tr_idx])
-        oof_rf[va_idx] = rf.predict_proba(X_va)[:, 1]
-        test_rf += rf.predict_proba(X_te)[:, 1] / len(splits)
+        oof_rf[va_idx] = np.asarray(rf.predict_proba(X_va))[:, 1]
+        test_rf += np.asarray(rf.predict_proba(X_te))[:, 1] / len(splits)
 
     # Blend: 0.30 LR + 0.35 HGB + 0.35 RF
     oof_blend = 0.30 * oof_lr + 0.35 * oof_hgb + 0.35 * oof_rf
