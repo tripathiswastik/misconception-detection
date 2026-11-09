@@ -119,9 +119,9 @@ def main():
     p_bin_v2_oof = np.load(ART_DIR / "oof_compact_binary_prob_v2.npy")
 
     # Load Proven SOTA 550 Sub to compare flips
-    sota550_sub = pd.read_csv(PROJECT_ROOT / "submissions/blend_sota550_precision_gated_submission.csv")
+    sota550_sub = cast(pd.DataFrame, pd.read_csv(PROJECT_ROOT / "submissions/blend_sota550_precision_gated_submission.csv"))
     sota550_preds = sota550_sub["root_code"].tolist()
-    sota551_opt_sub = pd.read_csv(PROJECT_ROOT / "submissions/blend_breakthrough_sota551_optimal_submission.csv")
+    sota551_opt_sub = cast(pd.DataFrame, pd.read_csv(PROJECT_ROOT / "submissions/blend_breakthrough_sota551_optimal_submission.csv"))
     sota551_opt_preds = sota551_opt_sub["root_code"].tolist()
 
     # The 11 golden flips from SOTA 550

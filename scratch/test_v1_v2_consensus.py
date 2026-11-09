@@ -175,7 +175,7 @@ def main():
                     flips.append(i)
 
     print(f"\nConsensus Flips applied : {len(flips)}")
-    s550 = pd.read_csv(SUB_DIR / "blend_sota550_precision_gated_submission.csv")
+    s550 = cast(pd.DataFrame, pd.read_csv(SUB_DIR / "blend_sota550_precision_gated_submission.csv"))
     s550_preds = s550["root_code"].tolist()
     r1_diffs = sum(1 for a, b in zip(r1_cons, [p.split()[0] for p in s550_preds]) if a != b)
     print(f"Rank-1 diffs vs SOTA 550: {r1_diffs}")

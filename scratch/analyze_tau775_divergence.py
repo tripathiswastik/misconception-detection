@@ -1,15 +1,16 @@
 import numpy as np
 import pandas as pd
 from pathlib import Path
+from typing import cast
 
 sub_dir = Path("d:/ag-ai/misconception-detection/submissions")
 data_dir = Path("d:/ag-ai/misconception-detection/data")
 art_dir = Path("d:/ag-ai/misconception-detection/artifacts")
 
-s550 = pd.read_csv(sub_dir / "blend_sota550_precision_gated_submission.csv")
-s775 = pd.read_csv(sub_dir / "blend_sota551_precision_gated_tau775_submission.csv")
-s_base = pd.read_csv(sub_dir / "blend_breakthrough_sota551_optimal_submission.csv")
-test_df = pd.read_csv(data_dir / "test.csv")
+s550 = cast(pd.DataFrame, pd.read_csv(sub_dir / "blend_sota550_precision_gated_submission.csv"))
+s775 = cast(pd.DataFrame, pd.read_csv(sub_dir / "blend_sota551_precision_gated_tau775_submission.csv"))
+s_base = cast(pd.DataFrame, pd.read_csv(sub_dir / "blend_breakthrough_sota551_optimal_submission.csv"))
+test_df = cast(pd.DataFrame, pd.read_csv(data_dir / "test.csv"))
 p_bin = np.load(art_dir / "test_compact_binary_prob.npy")
 
 diff_mask = (s550["root_code"] != s775["root_code"])

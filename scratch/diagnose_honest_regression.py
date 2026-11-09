@@ -1,9 +1,10 @@
 import pandas as pd
 from pathlib import Path
+from typing import cast
 
 sub_dir = Path("d:/ag-ai/misconception-detection/submissions")
-s_opt = pd.read_csv(sub_dir / "blend_breakthrough_sota551_optimal_submission.csv")
-s_honest = pd.read_csv(sub_dir / "blend_honest_peak_sota553_base_submission.csv")
+s_opt = cast(pd.DataFrame, pd.read_csv(sub_dir / "blend_breakthrough_sota551_optimal_submission.csv"))
+s_honest = cast(pd.DataFrame, pd.read_csv(sub_dir / "blend_honest_peak_sota553_base_submission.csv"))
 
 r1_opt = [p.split()[0] for p in s_opt["root_code"]]
 r1_honest = [p.split()[0] for p in s_honest["root_code"]]
