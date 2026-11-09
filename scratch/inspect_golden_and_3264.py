@@ -1,14 +1,15 @@
-import pandas as pd
 from pathlib import Path
+from typing import cast
+import pandas as pd
 
 DATA_DIR = Path("d:/ag-ai/misconception-detection/data")
 SUB_DIR = Path("d:/ag-ai/misconception-detection/submissions")
 
-test_df = pd.read_csv(DATA_DIR / "test.csv")
-train_df = pd.read_csv(DATA_DIR / "train.csv")
+test_df = cast(pd.DataFrame, pd.read_csv(DATA_DIR / "test.csv"))
+train_df = cast(pd.DataFrame, pd.read_csv(DATA_DIR / "train.csv"))
 
-s550 = pd.read_csv(SUB_DIR / "blend_sota550_precision_gated_submission.csv")
-s551 = pd.read_csv(SUB_DIR / "blend_breakthrough_sota551_optimal_submission.csv")
+s550 = cast(pd.DataFrame, pd.read_csv(SUB_DIR / "blend_sota550_precision_gated_submission.csv"))
+s551 = cast(pd.DataFrame, pd.read_csv(SUB_DIR / "blend_breakthrough_sota551_optimal_submission.csv"))
 
 flips = [i for i in range(len(s550)) if s550.iloc[i]["root_code"] != s551.iloc[i]["root_code"]]
 print(f"Golden Flips count: {len(flips)}")
