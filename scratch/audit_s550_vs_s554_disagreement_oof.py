@@ -306,12 +306,12 @@ def main():
             winner = "Tie"
             margin = 0.0
 
-        trace_info = {
+        trace_info: TraceDisagreementInfo = {
             "sub_index": i,
             "global_index": int(global_idx),
-            "trace_id": row_data["trace_id"],
-            "question_id": qid,
-            "gold": gold,
+            "trace_id": str(row_data["trace_id"]),
+            "question_id": str(qid),
+            "gold": str(gold),
             "p550": p550,
             "p554": p554,
             "score_550": round(score_550, 4),
@@ -326,9 +326,9 @@ def main():
             "in_neither": in_neither,
             "in_both": in_both,
             "support_cat": support_cat,
-            "gold_q_train": gold_q_train,
-            "total_q_train": total_q_train,
-            "is_r1_diff": is_r1_diff
+            "gold_q_train": int(gold_q_train),
+            "total_q_train": int(total_q_train),
+            "is_r1_diff": bool(is_r1_diff)
         }
 
         if is_triplet_diff:
