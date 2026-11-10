@@ -1,0 +1,61 @@
+{
+  "pilot_name": "champion_cross_attention_reranker_pilot",
+  "timestamp": "2026-11-10 20:24:09",
+  "architecture": {
+    "encoder": "paraphrase-multilingual-MiniLM-L12-v2 (frozen 12-layer cross-attention)",
+    "head": "Cross-Attended [CLS] + Champion Meta Signals + Calibrated Logistic Head",
+    "candidate_pool": "Leading 3 candidates from SOTA 550 Champion",
+    "rank1_invariant": "Strictly locked (0 Rank-1 mutations)"
+  },
+  "results": {
+    "baseline_map3": 0.53633,
+    "reranked_map3": 0.53611,
+    "net_delta": -0.00022,
+    "per_fold_deltas": [
+      0.0,
+      0.0,
+      -0.00111,
+      0.0,
+      0.0
+    ],
+    "total_swaps": 45,
+    "helped": 0,
+    "hurt": 2,
+    "neutral": 43,
+    "active_precision": 0.0,
+    "gate_passed": false
+  },
+  "fold_details": [
+    {
+      "swaps": 2,
+      "helped": 0,
+      "hurt": 0,
+      "neutral": 2
+    },
+    {
+      "swaps": 7,
+      "helped": 0,
+      "hurt": 0,
+      "neutral": 7
+    },
+    {
+      "swaps": 14,
+      "helped": 0,
+      "hurt": 2,
+      "neutral": 12
+    },
+    {
+      "swaps": 12,
+      "helped": 0,
+      "hurt": 0,
+      "neutral": 12
+    },
+    {
+      "swaps": 10,
+      "helped": 0,
+      "hurt": 0,
+      "neutral": 10
+    }
+  ],
+  "total_runtime_seconds": 234.2
+}
