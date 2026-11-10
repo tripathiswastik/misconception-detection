@@ -197,7 +197,10 @@ def generate_s550_test_probs(
     p_test_cal = p_base * mult
     p_test_cal[:, none_idx] *= 0.9995
 
-    q_allowed = {q: set(grp["root_code"].dropna().unique()) for q, grp in train_df.groupby("question_id")}
+    q_allowed: Dict[str, Set[str]] = {
+        str(q): {str(x) for x in grp["root_code"].dropna().unique()}
+        for q, grp in train_df.groupby("question_id")
+    }
     p_test_boosted = np.copy(p_test_cal)
     for i in range(n_test):
         qid = test_df.iloc[i]["question_id"]
@@ -346,7 +349,7 @@ def main():
     print(f"Precision Gating: Flipped {gated_count} rows with P(error) >= {tau:.2f} and gap < {eps:.2f}")
 
     # 8. Divergence Audit vs Active Champion S550
-    s550_sub = pd.read_csv(SUB_DIR / "blend_sota550_precision_gated_submission.csv")
+    s550_sub = cast(pd.DataFrame, pd.read_csv(SUB_DIR / "blend_sota550_precision_gated_submission.csv"))
     s550_preds = s550_sub["root_code"].tolist()
 
     r1_s550 = [p.split()[0] for p in s550_preds]
