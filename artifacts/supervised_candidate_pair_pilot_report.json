@@ -1,0 +1,62 @@
+{
+  "pilot_name": "supervised_candidate_pair_model_pilot",
+  "timestamp": "2026-11-10 22:01:54",
+  "methodology": {
+    "check_1_ocr_compliance": "Zero gold text leakage. Evaluated strictly with test-like sequences + normalized TrOCR vision features.",
+    "check_2_leakage_compliance": "Zero trace leakage. 100% fold-safe in-fold base predictions and candidate sets regenerated across GroupKFold on question_id.",
+    "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 (Layer 11 trainable)",
+    "multimodal_projection": "Handwriting Vision MLP (TrOCR DeiT 384 -> 128)",
+    "rank1_invariant": "Strictly locked (0 Rank-1 mutations)"
+  },
+  "results": {
+    "baseline_map3": 0.447,
+    "reranked_map3": 0.44522,
+    "net_delta": -0.00178,
+    "per_fold_deltas": [
+      -0.00278,
+      -0.00167,
+      -0.00444,
+      0.00056,
+      -0.00056
+    ],
+    "total_swaps": 138,
+    "helped": 9,
+    "hurt": 25,
+    "neutral": 104,
+    "active_precision": 0.2647,
+    "gate_passed": false
+  },
+  "fold_details": [
+    {
+      "swaps": 18,
+      "helped": 1,
+      "hurt": 6,
+      "neutral": 11
+    },
+    {
+      "swaps": 30,
+      "helped": 1,
+      "hurt": 4,
+      "neutral": 25
+    },
+    {
+      "swaps": 39,
+      "helped": 5,
+      "hurt": 13,
+      "neutral": 21
+    },
+    {
+      "swaps": 21,
+      "helped": 2,
+      "hurt": 1,
+      "neutral": 18
+    },
+    {
+      "swaps": 30,
+      "helped": 0,
+      "hurt": 1,
+      "neutral": 29
+    }
+  ],
+  "runtime_seconds": 1387.8
+}
