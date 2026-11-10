@@ -2,7 +2,7 @@
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
-[![Public LB SOTA](https://img.shields.io/badge/Public%20LB-0.54716%20%F0%9F%8F%86-brightgreen.svg)](#-leaderboard-progression--milestones)
+[![Public LB SOTA](https://img.shields.io/badge/Public%20LB-0.55049%20%F0%9F%8F%86-brightgreen.svg)](#-leaderboard-progression--milestones)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Author](https://img.shields.io/badge/Author-Swastik%20Tripathi-blueviolet.svg)](https://github.com/tripathiswastik)
 
@@ -14,15 +14,16 @@ An automated diagnostic AI system designed to analyze phone photographs of handw
 
 | Rank | Model / Submission | Public LB (MAP@3) | Status | Key Innovations |
 | :---: | :--- | :---: | :---: | :--- |
-| 🥇 | **`blend_rank1_locked_consensus_peak`** | **`0.54716` 🏆** | **All-Time Peak** | Rank-1 Invariant Lock + Consensus Topic Filtering |
-| 🥇 | **`blend_rank1_locked_quad_champion`** | **`0.54716` 🏆** | **All-Time Peak** | Rank-1 Invariant Lock + 80/15/5 Quad-Blend R2 & R3 |
-| 🥇 | **`blend_rank1_locked_conservative`** | **`0.54716` 🏆** | **All-Time Peak** | Rank-1 Invariant Lock + 85/10/5 Quad-Blend R2 & R3 |
-| 4 | `blend_m15_recalibrated_composite_448` | `0.54616` | Previous Peak | ConvNeXt-448 Aspect Ratio Letterbox + Composite Loss |
-| 5 | `blend_smooth_dual_champion_448` | `0.54616` | Previous Peak | Smooth 85/15 Champion Blend |
-| 6 | `blend_transductive_champion_448` | `0.54599` | Baseline Peak | Question-Conditioned Transductive Prior (+20% R2/R3) |
-| 7 | `blend_m15_recalibrated_pseudo` | `0.54566` | Semi-Supervised | 620-trace Knowledge Injection |
-| 8 | `blend_smooth_quad_3500_champion` | `0.54566` | Pre-Locking Prototype | 3,500-trace Distillation Prototype |
-| 9 | `baseline_text_diagnoser` | `0.40949` | Phase 1 Benchmark | Word + Char N-gram TF-IDF with SGD Log Loss |
+| 🥇 | **`blend_sota550_precision_gated_submission`** | **`0.55049` 🏆** | **All-Time Peak & Active Champion** | Precision Gating (tau=0.78, eps=0.04) + M15/DualHead/Composite + Transductive Boost |
+| 🥈 | **`blend_sota549_candidate_submission`** | **`0.54999`** | Milestone | Calibrated Gating Thresholds on Binary Error Detector |
+| 🥉 | **`blend_sota549_balanced_fusion_submission`** | **`0.54949`** | Milestone | Balanced Foundation Fusion + Honest Text OOF Integration |
+| 4 | `blend_rank1_locked_consensus_peak` | `0.54716` | Previous Peak | Rank-1 Invariant Lock + Consensus Topic Filtering |
+| 5 | `blend_rank1_locked_quad_champion` | `0.54716` | Previous Peak | Rank-1 Invariant Lock + 80/15/5 Quad-Blend R2 & R3 |
+| 6 | `blend_m15_recalibrated_composite_448` | `0.54616` | Previous Peak | ConvNeXt-448 Aspect Ratio Letterbox + Composite Loss |
+| 7 | `blend_smooth_dual_champion_448` | `0.54616` | Previous Peak | Smooth 85/15 Champion Blend |
+| 8 | `blend_transductive_champion_448` | `0.54599` | Baseline Peak | Question-Conditioned Transductive Prior (+20% R2/R3) |
+| 9 | `blend_m15_recalibrated_pseudo` | `0.54566` | Semi-Supervised | 620-trace Knowledge Injection |
+| 10 | `baseline_text_diagnoser` | `0.40949` | Phase 1 Benchmark | Word + Char N-gram TF-IDF with SGD Log Loss |
 
 ---
 
@@ -68,9 +69,9 @@ misconception-detection/
 │   │   └── map3.py                      # Verified MAP@3 competition metric
 │   └── api/                             # FastAPI diagnostic REST service
 ├── submissions/
-│   ├── blend_rank1_locked_consensus_peak_submission.csv    # SOTA 0.54716 🏆
-│   ├── blend_rank1_locked_quad_champion_submission.csv     # SOTA 0.54716 🏆
-│   ├── blend_rank1_locked_conservative_champion_submission.csv # SOTA 0.54716 🏆
+│   ├── blend_sota550_precision_gated_submission.csv        # SOTA 0.55049 (All-Time Peak Champion 🏆)
+│   ├── blend_rank1_locked_consensus_peak_submission.csv    # 0.54716
+│   ├── blend_rank1_locked_quad_champion_submission.csv     # 0.54716
 │   └── blend_m15_recalibrated_composite_triblend_448_submission.csv # 0.54616
 ├── generate_rank1_locked_quad_champion.py   # Quad-Blend locked submission generator
 ├── build_optimal_consensus_submission.py    # Consensus peak submission generator
