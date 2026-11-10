@@ -1,0 +1,188 @@
+{
+  "benchmark_name": "nested_crossfitted_arbitration_test",
+  "timestamp": "2026-11-11 00:30:47",
+  "methodology": {
+    "prediction_time_features": [
+      "q_none_rate",
+      "tot_q",
+      "supp_550",
+      "supp_554",
+      "freq_550",
+      "freq_554",
+      "is_550_none",
+      "is_554_none",
+      "bin_error_v1",
+      "bin_error_v2",
+      "margin_550",
+      "margin_554",
+      "margin_diff",
+      "p_none_550",
+      "p_none_554"
+    ],
+    "cross_fitting": "4-fold inner CV within outer training partition T_k",
+    "eval_scheme": "0.957 * Seen + 0.043 * Unseen",
+    "leak_free": true
+  },
+  "results": {
+    "0. Baseline: S550 Champion": {
+      "seen_folds": [
+        0.51702,
+        0.56397,
+        0.56631,
+        0.55692,
+        0.52356
+      ],
+      "seen_map3": 0.54557,
+      "seen_recalls": {
+        "Recall@1": 0.4116,
+        "Recall@2": 0.6082,
+        "Recall@3": 0.7153,
+        "Recall@5": 0.7153
+      },
+      "unseen_folds": [
+        0.53889,
+        0.50667,
+        0.56778,
+        0.53556,
+        0.54
+      ],
+      "unseen_map3": 0.53778,
+      "unseen_recalls": {
+        "Recall@1": 0.406,
+        "Recall@2": 0.5993,
+        "Recall@3": 0.7047,
+        "Recall@5": 0.7047
+      },
+      "composite_map3": 0.54524
+    },
+    "1. Baseline: S554 Champion": {
+      "seen_folds": [
+        0.53404,
+        0.56221,
+        0.55986,
+        0.54871,
+        0.5212
+      ],
+      "seen_map3": 0.54522,
+      "seen_recalls": {
+        "Recall@1": 0.4073,
+        "Recall@2": 0.6075,
+        "Recall@3": 0.7209,
+        "Recall@5": 0.7209
+      },
+      "unseen_folds": [
+        0.53778,
+        0.51722,
+        0.56889,
+        0.54222,
+        0.54278
+      ],
+      "unseen_map3": 0.54178,
+      "unseen_recalls": {
+        "Recall@1": 0.4067,
+        "Recall@2": 0.6027,
+        "Recall@3": 0.714,
+        "Recall@5": 0.714
+      },
+      "composite_map3": 0.54507
+    },
+    "2. Candidate A: Supervised Cross-Fitted Arbitrator": {
+      "seen_folds": [
+        0.52054,
+        0.56573,
+        0.56631,
+        0.55927,
+        0.51826
+      ],
+      "seen_map3": 0.54604,
+      "seen_recalls": {
+        "Recall@1": 0.413,
+        "Recall@2": 0.6082,
+        "Recall@3": 0.7146,
+        "Recall@5": 0.7146
+      },
+      "unseen_folds": [
+        0.53778,
+        0.50778,
+        0.57111,
+        0.54222,
+        0.54056
+      ],
+      "unseen_map3": 0.53989,
+      "unseen_recalls": {
+        "Recall@1": 0.4067,
+        "Recall@2": 0.602,
+        "Recall@3": 0.7087,
+        "Recall@5": 0.7087
+      },
+      "composite_map3": 0.54578
+    },
+    "3. Candidate B: Domain-Informed Gating Policy": {
+      "seen_folds": [
+        0.52054,
+        0.56808,
+        0.56749,
+        0.55692,
+        0.52179
+      ],
+      "seen_map3": 0.54698,
+      "seen_recalls": {
+        "Recall@1": 0.4137,
+        "Recall@2": 0.6089,
+        "Recall@3": 0.716,
+        "Recall@5": 0.716
+      },
+      "unseen_folds": [
+        0.53889,
+        0.50667,
+        0.56778,
+        0.53556,
+        0.54
+      ],
+      "unseen_map3": 0.53778,
+      "unseen_recalls": {
+        "Recall@1": 0.406,
+        "Recall@2": 0.5993,
+        "Recall@3": 0.7047,
+        "Recall@5": 0.7047
+      },
+      "composite_map3": 0.54658
+    }
+  },
+  "deltas_vs_s550_champion": {
+    "s554_baseline": {
+      "seen_delta": -0.00035,
+      "unseen_delta": 0.004,
+      "composite_delta": -0.00017
+    },
+    "supervised_arbitrator": {
+      "seen_delta": 0.00047,
+      "unseen_delta": 0.00211,
+      "composite_delta": 0.00054
+    },
+    "domain_gating_policy": {
+      "seen_delta": 0.00141,
+      "unseen_delta": 0.0,
+      "composite_delta": 0.00134
+    }
+  },
+  "switch_audit": {
+    "supervised": {
+      "helped": 6,
+      "hurt": 5,
+      "neutral": 20,
+      "total": 31
+    },
+    "rule": {
+      "helped": 8,
+      "hurt": 4,
+      "neutral": 11,
+      "total": 23
+    }
+  },
+  "decision": {
+    "promoted_to_submission": true,
+    "recommendation": "Stage candidate submission"
+  },
+  "runtime_seconds": 108.86
+}

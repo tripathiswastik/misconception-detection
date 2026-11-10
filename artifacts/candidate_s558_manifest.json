@@ -1,0 +1,72 @@
+{
+  "candidate_name": "blend_sota558_domain_gated_arbitration",
+  "file_name": "blend_sota558_domain_gated_arbitration_submission.csv",
+  "base_champion": "blend_sota550_precision_gated_submission.csv (0.55049 LB)",
+  "tied_champion": "blend_sota554_arcface_v2_precision_gated_submission.csv (0.55049 LB)",
+  "methodology": "Domain-Informed Gating Policy arbitrated via prediction-time features",
+  "gating_criteria": {
+    "is_550_none": true,
+    "is_554_none": false,
+    "tau_b2": 0.78,
+    "supp_min": 1,
+    "none_rate_max": 0.7
+  },
+  "switched_rows_count": 5,
+  "switched_rows": [
+    {
+      "row_index": 588,
+      "question_id": "10612ce4-02d1-428f-aa86-3718191a1012",
+      "s550": "NONE WOP-01 INT-04",
+      "s554": "WOP-01 NONE INT-04",
+      "b2": 0.8352,
+      "supp_554": 2,
+      "q_none_rate": 0.0
+    },
+    {
+      "row_index": 1320,
+      "question_id": "7dbe8490-24bc-40eb-a9b4-e8cf4386cae4",
+      "s550": "NONE WOP-01 WOP-02",
+      "s554": "WOP-01 NONE WOP-02",
+      "b2": 0.7804,
+      "supp_554": 2,
+      "q_none_rate": 0.0
+    },
+    {
+      "row_index": 2296,
+      "question_id": "bd96647d-8e34-467c-a5eb-09f1d5ad2565",
+      "s550": "NONE SEQ-01 OTH-00",
+      "s554": "SEQ-01 NONE OTH-00",
+      "b2": 0.8215,
+      "supp_554": 3,
+      "q_none_rate": 0.1667
+    },
+    {
+      "row_index": 2337,
+      "question_id": "6ba43cef-15f8-4bb5-8c01-4a5e5811fd19",
+      "s550": "NONE PRO-04 OTH-00",
+      "s554": "PRO-04 OTH-00 NONE",
+      "b2": 0.8306,
+      "supp_554": 2,
+      "q_none_rate": 0.2
+    },
+    {
+      "row_index": 2554,
+      "question_id": "98e0f3be-0644-4cba-81e4-65c595af0598",
+      "s550": "NONE CAL-01 KPF-01",
+      "s554": "CAL-01 NONE KPF-01",
+      "b2": 0.8112,
+      "supp_554": 3,
+      "q_none_rate": 0.2
+    }
+  ],
+  "oof_validation": {
+    "seen_map3": 0.54698,
+    "seen_delta": 0.00141,
+    "unseen_map3": 0.53778,
+    "unseen_delta": 0.0,
+    "composite_map3": 0.54658,
+    "composite_delta": 0.00134,
+    "switch_precision": "66.7% (8 helped, 4 hurt, 11 neutral)",
+    "approx_net_points": "+2.00 pts"
+  }
+}
