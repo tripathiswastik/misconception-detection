@@ -254,12 +254,15 @@ def train_and_eval_fold(
     p_s550, q_dist = data.generate_s550_probs(trn_idx, val_idx)
 
     # 2. Build datasets
-    X_img_trn = data.images_tensor[trn_idx]
-    X_txt_trn = data.text_emb_tensor[trn_idx]
-    y_trn = torch.tensor(data.targets[trn_idx], dtype=torch.int64)
+    trn_idx_t = torch.as_tensor(trn_idx, dtype=torch.long)
+    val_idx_t = torch.as_tensor(val_idx, dtype=torch.long)
 
-    X_img_val = data.images_tensor[val_idx]
-    X_txt_val = data.text_emb_tensor[val_idx]
+    X_img_trn = data.images_tensor[trn_idx_t]
+    X_txt_trn = data.text_emb_tensor[trn_idx_t]
+    y_trn = torch.as_tensor(data.targets[trn_idx], dtype=torch.int64)
+
+    X_img_val = data.images_tensor[val_idx_t]
+    X_txt_val = data.text_emb_tensor[val_idx_t]
 
     train_loader = DataLoader(
         TensorDataset(X_img_trn, X_txt_trn, y_trn),
@@ -362,7 +365,7 @@ def main():
 
     # Evaluate standalone and fusion variants across all 1500 traces
     weights_to_test = [0.0, 0.05, 0.10, 0.15, 0.20, 0.30, 0.50, 1.0]
-    results_summary = []
+    results_summary: List[Dict[str, Any]] = []
 
     print("\n" + "=" * 115)
     print("OUT-OF-FOLD PERFORMANCE: S550 BASELINE vs END-TO-END VISION-TEXT VARIANTS")
@@ -423,9 +426,9 @@ def main():
         print(f"{desc:50s} | {map_seen:.5f}      | {map_unseen:.5f}        | {comp:.5f}     | {delta:+.5f}")
 
     # Decision Gate Check
-    best_entry = max(results_summary[1:], key=lambda x: x["composite_map3"])
-    best_delta = best_entry["delta_vs_s550"]
-    promotable = best_delta > 0.00030
+    best_entry = max(results_summary[1:], key=lambda x: float(x["composite_map3"]))
+    best_delta: float = float(best_entry["delta_vs_s550"])
+    promotable: bool = best_delta > 0.00030
 
     print("\n" + "=" * 95)
     print("DECISION GATE EVALUATION:")
@@ -459,7 +462,7 @@ def main():
         "decision": {
             "promoted": promotable,
             "best_delta": round(best_delta, 5),
-            "best_configuration": best_entry["desc"],
+            "best_configuration": str(best_entry["desc"]),
             "runtime_seconds": round(time.time() - start_time, 2)
         }
     }
