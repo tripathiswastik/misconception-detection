@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-11-11 02:18:05",
+  "architecture": {
+    "vision_backbone": "MobileNetV3 Small (layers 0-10 frozen, 11-12 fine-tuned)",
+    "text_representation": "Dense Context Embeddings (384-d)",
+    "fusion": "FiLM (Feature-wise Linear Modulation) + Residual Projection",
+    "epochs": 5,
+    "backbone_lr": 1e-05,
+    "head_lr": 0.001,
+    "batch_size": 16
+  },
+  "evaluation_protocol": {
+    "splits": "data/splits.json (canonical 5 folds, 1200 train, 300 val)",
+    "seen_traces": 1335,
+    "unseen_traces": 165,
+    "composite_metric": "0.957 * Seen + 0.043 * Unseen"
+  },
+  "results": [
+    {
+      "desc": "0. S550 Baseline Reference (w_e2e = 0.0)",
+      "weight_e2e": 0.0,
+      "seen_map3": 0.54295,
+      "unseen_map3": 0.52424,
+      "composite_map3": 0.54214,
+      "delta_vs_s550": 0.0
+    },
+    {
+      "desc": "Ensemble: (1-0.05)*S550 + 0.05*E2E FiLM",
+      "weight_e2e": 0.05,
+      "seen_map3": 0.54182,
+      "unseen_map3": 0.5202,
+      "composite_map3": 0.54089,
+      "delta_vs_s550": -0.00125
+    },
+    {
+      "desc": "Ensemble: (1-0.1)*S550 + 0.1*E2E FiLM",
+      "weight_e2e": 0.1,
+      "seen_map3": 0.5392,
+      "unseen_map3": 0.5202,
+      "composite_map3": 0.53838,
+      "delta_vs_s550": -0.00376
+    },
+    {
+      "desc": "Ensemble: (1-0.15)*S550 + 0.15*E2E FiLM",
+      "weight_e2e": 0.15,
+      "seen_map3": 0.53845,
+      "unseen_map3": 0.5202,
+      "composite_map3": 0.53767,
+      "delta_vs_s550": -0.00447
+    },
+    {
+      "desc": "Ensemble: (1-0.2)*S550 + 0.2*E2E FiLM",
+      "weight_e2e": 0.2,
+      "seen_map3": 0.53658,
+      "unseen_map3": 0.5202,
+      "composite_map3": 0.53588,
+      "delta_vs_s550": -0.00627
+    },
+    {
+      "desc": "Ensemble: (1-0.3)*S550 + 0.3*E2E FiLM",
+      "weight_e2e": 0.3,
+      "seen_map3": 0.52834,
+      "unseen_map3": 0.52525,
+      "composite_map3": 0.52821,
+      "delta_vs_s550": -0.01394
+    },
+    {
+      "desc": "Ensemble: (1-0.5)*S550 + 0.5*E2E FiLM",
+      "weight_e2e": 0.5,
+      "seen_map3": 0.50924,
+      "unseen_map3": 0.53434,
+      "composite_map3": 0.51032,
+      "delta_vs_s550": -0.03182
+    },
+    {
+      "desc": "Standalone E2E Vision-Text FiLM (w_e2e = 1.0)",
+      "weight_e2e": 1.0,
+      "seen_map3": 0.3839,
+      "unseen_map3": 0.43232,
+      "composite_map3": 0.38598,
+      "delta_vs_s550": -0.15616
+    }
+  ],
+  "decision": {
+    "promoted": false,
+    "best_delta": -0.00125,
+    "best_configuration": "Ensemble: (1-0.05)*S550 + 0.05*E2E FiLM",
+    "runtime_seconds": 806.73
+  }
+}
