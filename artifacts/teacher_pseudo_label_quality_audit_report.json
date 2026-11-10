@@ -1,0 +1,372 @@
+{
+  "timestamp": "2026-11-11 03:40:39",
+  "evaluation_dataset": {
+    "total_traces": 1500,
+    "seen_traces": 1335,
+    "unseen_traces": 165,
+    "rare_classes_count": 52,
+    "ultrarare_classes_count": 23
+  },
+  "all_trace_threshold_sweep": [
+    {
+      "tau": 0.2,
+      "qualified_count": 1477,
+      "qualified_pct": 98.47,
+      "overall_precision": 0.413,
+      "none_count": 945,
+      "none_precision": 0.4243,
+      "misc_count": 532,
+      "misc_precision": 0.3929,
+      "misc_top3_recall": 0.7082,
+      "classes_covered": 47,
+      "rare_covered": 26,
+      "ultrarare_covered": 3
+    },
+    {
+      "tau": 0.3,
+      "qualified_count": 1155,
+      "qualified_pct": 77.0,
+      "overall_precision": 0.4494,
+      "none_count": 792,
+      "none_precision": 0.4646,
+      "misc_count": 363,
+      "misc_precision": 0.416,
+      "misc_top3_recall": 0.7385,
+      "classes_covered": 42,
+      "rare_covered": 23,
+      "ultrarare_covered": 2
+    },
+    {
+      "tau": 0.4,
+      "qualified_count": 642,
+      "qualified_pct": 42.8,
+      "overall_precision": 0.5187,
+      "none_count": 474,
+      "none_precision": 0.5253,
+      "misc_count": 168,
+      "misc_precision": 0.5,
+      "misc_top3_recall": 0.7539,
+      "classes_covered": 30,
+      "rare_covered": 14,
+      "ultrarare_covered": 1
+    },
+    {
+      "tau": 0.5,
+      "qualified_count": 231,
+      "qualified_pct": 15.4,
+      "overall_precision": 0.6061,
+      "none_count": 177,
+      "none_precision": 0.6158,
+      "misc_count": 54,
+      "misc_precision": 0.5741,
+      "misc_top3_recall": 0.8009,
+      "classes_covered": 12,
+      "rare_covered": 3,
+      "ultrarare_covered": 0
+    },
+    {
+      "tau": 0.6,
+      "qualified_count": 33,
+      "qualified_pct": 2.2,
+      "overall_precision": 0.697,
+      "none_count": 31,
+      "none_precision": 0.7097,
+      "misc_count": 2,
+      "misc_precision": 0.5,
+      "misc_top3_recall": 0.7273,
+      "classes_covered": 2,
+      "rare_covered": 0,
+      "ultrarare_covered": 0
+    },
+    {
+      "tau": 0.7,
+      "qualified_count": 3,
+      "qualified_pct": 0.2,
+      "overall_precision": 1.0,
+      "none_count": 3,
+      "none_precision": 1.0,
+      "misc_count": 0,
+      "misc_precision": 0.0,
+      "misc_top3_recall": 1.0,
+      "classes_covered": 0,
+      "rare_covered": 0,
+      "ultrarare_covered": 0
+    },
+    {
+      "tau": 0.75,
+      "qualified_count": 1,
+      "qualified_pct": 0.07,
+      "overall_precision": 1.0,
+      "none_count": 1,
+      "none_precision": 1.0,
+      "misc_count": 0,
+      "misc_precision": 0.0,
+      "misc_top3_recall": 1.0,
+      "classes_covered": 0,
+      "rare_covered": 0,
+      "ultrarare_covered": 0
+    },
+    {
+      "tau": 0.8,
+      "qualified_count": 0,
+      "qualified_pct": 0.0,
+      "overall_precision": 0.0,
+      "none_count": 0,
+      "none_precision": 0.0,
+      "misc_count": 0,
+      "misc_precision": 0.0,
+      "misc_top3_recall": 0.0,
+      "classes_covered": 0,
+      "rare_covered": 0,
+      "ultrarare_covered": 0
+    },
+    {
+      "tau": 0.85,
+      "qualified_count": 0,
+      "qualified_pct": 0.0,
+      "overall_precision": 0.0,
+      "none_count": 0,
+      "none_precision": 0.0,
+      "misc_count": 0,
+      "misc_precision": 0.0,
+      "misc_top3_recall": 0.0,
+      "classes_covered": 0,
+      "rare_covered": 0,
+      "ultrarare_covered": 0
+    },
+    {
+      "tau": 0.9,
+      "qualified_count": 0,
+      "qualified_pct": 0.0,
+      "overall_precision": 0.0,
+      "none_count": 0,
+      "none_precision": 0.0,
+      "misc_count": 0,
+      "misc_precision": 0.0,
+      "misc_top3_recall": 0.0,
+      "classes_covered": 0,
+      "rare_covered": 0,
+      "ultrarare_covered": 0
+    }
+  ],
+  "seen_vs_unseen_sweep": [
+    {
+      "tau": 0.3,
+      "seen_misc_count": 352,
+      "seen_misc_precision": 0.4176,
+      "unseen_misc_count": 11,
+      "unseen_misc_precision": 0.3636
+    },
+    {
+      "tau": 0.4,
+      "seen_misc_count": 162,
+      "seen_misc_precision": 0.4938,
+      "unseen_misc_count": 6,
+      "unseen_misc_precision": 0.6667
+    },
+    {
+      "tau": 0.5,
+      "seen_misc_count": 54,
+      "seen_misc_precision": 0.5741,
+      "unseen_misc_count": 0,
+      "unseen_misc_precision": 0.0
+    },
+    {
+      "tau": 0.6,
+      "seen_misc_count": 2,
+      "seen_misc_precision": 0.5,
+      "unseen_misc_count": 0,
+      "unseen_misc_precision": 0.0
+    },
+    {
+      "tau": 0.7,
+      "seen_misc_count": 0,
+      "seen_misc_precision": 0.0,
+      "unseen_misc_count": 0,
+      "unseen_misc_precision": 0.0
+    },
+    {
+      "tau": 0.8,
+      "seen_misc_count": 0,
+      "seen_misc_precision": 0.0,
+      "unseen_misc_count": 0,
+      "unseen_misc_precision": 0.0
+    }
+  ],
+  "fold_stability": [
+    {
+      "fold": 1,
+      "tau_040": {
+        "precision": 0.5556,
+        "count": 27
+      },
+      "tau_050": {
+        "precision": 0.625,
+        "count": 8
+      },
+      "tau_060": {
+        "precision": 0.0,
+        "count": 0
+      }
+    },
+    {
+      "fold": 2,
+      "tau_040": {
+        "precision": 0.5278,
+        "count": 36
+      },
+      "tau_050": {
+        "precision": 0.5833,
+        "count": 12
+      },
+      "tau_060": {
+        "precision": 0.0,
+        "count": 0
+      }
+    },
+    {
+      "fold": 3,
+      "tau_040": {
+        "precision": 0.3784,
+        "count": 37
+      },
+      "tau_050": {
+        "precision": 0.4667,
+        "count": 15
+      },
+      "tau_060": {
+        "precision": 0.0,
+        "count": 1
+      }
+    },
+    {
+      "fold": 4,
+      "tau_040": {
+        "precision": 0.4706,
+        "count": 34
+      },
+      "tau_050": {
+        "precision": 0.6364,
+        "count": 11
+      },
+      "tau_060": {
+        "precision": 1.0,
+        "count": 1
+      }
+    },
+    {
+      "fold": 5,
+      "tau_040": {
+        "precision": 0.5882,
+        "count": 34
+      },
+      "tau_050": {
+        "precision": 0.625,
+        "count": 8
+      },
+      "tau_060": {
+        "precision": 0.0,
+        "count": 0
+      }
+    }
+  ],
+  "existing_pseudo_pools": {
+    "pseudo_1465": {
+      "n_traces": 1465,
+      "none_share_pct": 14.81,
+      "misc_share_pct": 85.19,
+      "mean_peak_confidence": 0.383,
+      "pct_conf_gte_50": 10.03,
+      "pct_conf_gte_70": 0.0,
+      "unique_misconception_classes": 33,
+      "rare_classes_present": 27,
+      "top_5_classes": [
+        [
+          "EXP-03",
+          70
+        ],
+        [
+          "FRA-04",
+          70
+        ],
+        [
+          "KPF-02",
+          70
+        ],
+        [
+          "SEQ-01",
+          70
+        ],
+        [
+          "ALG-05",
+          35
+        ]
+      ]
+    },
+    "pseudo_3500": {
+      "n_traces": 3500,
+      "none_share_pct": 33.77,
+      "misc_share_pct": 66.23,
+      "mean_peak_confidence": 0.358,
+      "pct_conf_gte_50": 9.6,
+      "pct_conf_gte_70": 0.34,
+      "unique_misconception_classes": 47,
+      "rare_classes_present": 27,
+      "top_5_classes": [
+        [
+          "EXP-04",
+          162
+        ],
+        [
+          "WOP-01",
+          154
+        ],
+        [
+          "OTH-00",
+          151
+        ],
+        [
+          "ANS-01",
+          147
+        ],
+        [
+          "FUN-01",
+          128
+        ]
+      ]
+    },
+    "pseudo_3500_champ": {
+      "n_traces": 3500,
+      "none_share_pct": 36.43,
+      "misc_share_pct": 63.57,
+      "mean_peak_confidence": 0.364,
+      "pct_conf_gte_50": 10.06,
+      "pct_conf_gte_70": 0.34,
+      "unique_misconception_classes": 47,
+      "rare_classes_present": 27,
+      "top_5_classes": [
+        [
+          "EXP-04",
+          175
+        ],
+        [
+          "ANS-01",
+          147
+        ],
+        [
+          "OTH-00",
+          138
+        ],
+        [
+          "WOP-01",
+          130
+        ],
+        [
+          "FRM-01",
+          121
+        ]
+      ]
+    }
+  },
+  "audit_duration_seconds": 18.29
+}

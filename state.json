@@ -41,7 +41,26 @@
         "public_leaderboard_map3": 0.40949
       },
       "sota_leaderboard_benchmark": {
-        "model": "Active SOTA Champion: Secondary NONE Recalibration SNR-85 (100% Locked R1 + 15% NONE Penalty on Misconception Rows) (blend_rank1_locked_snr85_champion_submission.csv)",
+        "model": "Active SOTA Champion: Precision-Gated Multimodal Fusion (blend_sota550_precision_gated_submission.csv)",
+        "honest_oof_map3": 0.54214,
+        "seen_oof_map3": 0.54295,
+        "unseen_oof_map3": 0.52424,
+        "public_leaderboard_map3": 0.55049,
+        "cv_delta_vs_baseline": "+0.00170",
+        "top1_none_rate": "70.10% (2,452 / 3,498)",
+        "precision_gated_flips": "11 rows (0.31%)",
+        "status": "ACTIVE_SOTA_CHAMPION_ALL_TIME_PEAK_RECORD"
+      },
+      "sota_tied_champion_arcface_v2": {
+        "model": "Tied SOTA Champion: ArcFace v2 Precision-Gated (blend_sota554_arcface_v2_precision_gated_submission.csv)",
+        "honest_oof_map3": 0.54313,
+        "seen_oof_map3": 0.54357,
+        "unseen_oof_map3": 0.53333,
+        "public_leaderboard_map3": 0.55049,
+        "status": "TIED_ACTIVE_SOTA_CHAMPION"
+      },
+      "previous_sota_054799_snr85_champion": {
+        "model": "Previous SOTA Champion: Secondary NONE Recalibration SNR-85 (blend_rank1_locked_snr85_champion_submission.csv)",
         "honest_oof_map3": 0.54044,
         "cv_delta": "+0.00233",
         "public_leaderboard_map3": 0.54799,
@@ -49,7 +68,7 @@
         "top1_none_rate": "70.10% (2,452 / 3,498)",
         "differences_vs_54716_champion": "109 / 3,498 (3.12%)",
         "rank1_differences_vs_54716_champion": "0 / 3,498 (0.00%) [STRICTLY_LOCKED]",
-        "status": "ACTIVE_SOTA_CHAMPION_ALL_TIME_PEAK_RECORD"
+        "status": "SUPERSEDED_BY_0.55049"
       },
       "previous_sota_054716_quad_champion": {
         "model": "Previous SOTA Champion: Rank-1 Locked Quad Champion (100% Locked R1 + 80/15/5 Quad-Blend R2 & R3) (blend_rank1_locked_quad_champion_submission.csv)",
@@ -487,13 +506,31 @@
         "status": "READY_FOR_LEADERBOARD_SUBMISSION"
       },
       {
+        "file": "submissions/blend_sota550_precision_gated_submission.csv",
+        "rows": 3498,
+        "validation_status": "PASSED",
+        "honest_oof_map3": 0.54214,
+        "leaderboard_map3": 0.55049,
+        "features": "Active SOTA Champion: Precision Gating (tau=0.78, eps=0.04) on 2,392 NONE rows + M15/DualHead/Composite ArcFace + Transductive Prior Boost. Flips exactly 11 surgical test rows (0.31%). Canonical Fold Composite CV: 0.54214 (Seen: 0.54295, Unseen: 0.52424).",
+        "status": "ACTIVE_SOTA_CHAMPION_ALL_TIME_PEAK_RECORD"
+      },
+      {
+        "file": "submissions/blend_sota554_arcface_v2_precision_gated_submission.csv",
+        "rows": 3498,
+        "validation_status": "PASSED",
+        "honest_oof_map3": 0.54313,
+        "leaderboard_map3": 0.55049,
+        "features": "Tied SOTA Champion: ArcFace v2 rebalanced fusion + precision gating (tau=0.78, eps=0.04). Canonical Fold Composite CV: 0.54313 (Seen: 0.54357, Unseen: 0.53333).",
+        "status": "TIED_ACTIVE_SOTA_CHAMPION"
+      },
+      {
         "file": "submissions/blend_rank1_locked_snr85_champion_submission.csv",
         "rows": 3498,
         "validation_status": "PASSED",
         "honest_oof_map3": 0.54044,
         "leaderboard_map3": 0.54799,
-        "features": "Active Champion: 100% Rank-1 Locked + Secondary NONE Recalibration (SNR-85). 15% NONE penalty applied strictly on non-NONE Rank-1 rows to prevent wasted secondary slots. Exactly 2,452 Top-1 NONE (70.10%). 109 rows modified vs 0.54716 Peak.",
-        "status": "ACTIVE_SOTA_CHAMPION_ALL_TIME_PEAK_RECORD"
+        "features": "Previous Champion: 100% Rank-1 Locked + Secondary NONE Recalibration (SNR-85). 15% NONE penalty applied strictly on non-NONE Rank-1 rows to prevent wasted secondary slots. Exactly 2,452 Top-1 NONE (70.10%). 109 rows modified vs 0.54716 Peak.",
+        "status": "SUPERSEDED_BY_0.55049"
       },
       {
         "file": "submissions/blend_m15_dualhead_soft_distillation_submission.csv",
