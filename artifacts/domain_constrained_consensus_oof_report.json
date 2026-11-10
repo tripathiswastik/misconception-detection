@@ -1,0 +1,202 @@
+{
+  "benchmark_name": "domain_constrained_consensus_oof",
+  "timestamp": "2026-11-11 00:05:07",
+  "safeguards": {
+    "row_3264_lock_excluded_from_oof": true,
+    "promotion_gate_nested_tuning": "4-fold inner CV within outer training partition",
+    "leak_free": true
+  },
+  "results": {
+    "0. Baseline: S550 Champion": {
+      "seen_folds": [
+        0.51702,
+        0.56397,
+        0.56631,
+        0.55692,
+        0.52356
+      ],
+      "seen_map3": 0.54557,
+      "seen_recalls": {
+        "Recall@1": 0.4116,
+        "Recall@2": 0.6082,
+        "Recall@3": 0.7153,
+        "Recall@5": 0.7153
+      },
+      "unseen_folds": [
+        0.53889,
+        0.50667,
+        0.56778,
+        0.53556,
+        0.54
+      ],
+      "unseen_map3": 0.53778,
+      "unseen_recalls": {
+        "Recall@1": 0.406,
+        "Recall@2": 0.5993,
+        "Recall@3": 0.7047,
+        "Recall@5": 0.7047
+      },
+      "composite_map3": 0.54524
+    },
+    "1. Baseline: S554 Champion": {
+      "seen_folds": [
+        0.53404,
+        0.56221,
+        0.55986,
+        0.54871,
+        0.5212
+      ],
+      "seen_map3": 0.54522,
+      "seen_recalls": {
+        "Recall@1": 0.4073,
+        "Recall@2": 0.6075,
+        "Recall@3": 0.7209,
+        "Recall@5": 0.7209
+      },
+      "unseen_folds": [
+        0.53778,
+        0.51722,
+        0.56889,
+        0.54222,
+        0.54278
+      ],
+      "unseen_map3": 0.54178,
+      "unseen_recalls": {
+        "Recall@1": 0.4067,
+        "Recall@2": 0.6027,
+        "Recall@3": 0.714,
+        "Recall@5": 0.714
+      },
+      "composite_map3": 0.54507
+    },
+    "2. Variant 1: 50/50 S550-S554 Consensus (Unfiltered)": {
+      "seen_folds": [
+        0.52171,
+        0.57101,
+        0.56162,
+        0.55106,
+        0.51413
+      ],
+      "seen_map3": 0.54393,
+      "seen_recalls": {
+        "Recall@1": 0.4073,
+        "Recall@2": 0.6068,
+        "Recall@3": 0.7174,
+        "Recall@5": 0.7174
+      },
+      "unseen_folds": [
+        0.53778,
+        0.51,
+        0.57111,
+        0.53944,
+        0.54056
+      ],
+      "unseen_map3": 0.53978,
+      "unseen_recalls": {
+        "Recall@1": 0.406,
+        "Recall@2": 0.602,
+        "Recall@3": 0.7093,
+        "Recall@5": 0.7093
+      },
+      "composite_map3": 0.54375
+    },
+    "3. Variant 2: 50/50 Consensus + Question-Allowed Filter": {
+      "seen_folds": [
+        0.50587,
+        0.52641,
+        0.52465,
+        0.51819,
+        0.48174
+      ],
+      "seen_map3": 0.51139,
+      "seen_recalls": {
+        "Recall@1": 0.4073,
+        "Recall@2": 0.5772,
+        "Recall@3": 0.6335,
+        "Recall@5": 0.6335
+      },
+      "unseen_folds": [
+        0.53778,
+        0.51,
+        0.57111,
+        0.53944,
+        0.54056
+      ],
+      "unseen_map3": 0.53978,
+      "unseen_recalls": {
+        "Recall@1": 0.406,
+        "Recall@2": 0.602,
+        "Recall@3": 0.7093,
+        "Recall@5": 0.7093
+      },
+      "composite_map3": 0.51261
+    },
+    "4. Variant 3: Variant 2 + Inner-Tuned Promotion Gate": {
+      "seen_folds": [
+        0.51115,
+        0.52641,
+        0.52993,
+        0.51819,
+        0.48174
+      ],
+      "seen_map3": 0.51351,
+      "seen_recalls": {
+        "Recall@1": 0.4116,
+        "Recall@2": 0.5772,
+        "Recall@3": 0.6335,
+        "Recall@5": 0.6335
+      },
+      "unseen_folds": [
+        0.53778,
+        0.51,
+        0.57111,
+        0.53944,
+        0.54056
+      ],
+      "unseen_map3": 0.53978,
+      "unseen_recalls": {
+        "Recall@1": 0.406,
+        "Recall@2": 0.602,
+        "Recall@3": 0.7093,
+        "Recall@5": 0.7093
+      },
+      "composite_map3": 0.51464
+    }
+  },
+  "deltas_vs_s550_champion": {
+    "s554_baseline": {
+      "seen_delta": -0.00035,
+      "unseen_delta": 0.004,
+      "composite_delta": -0.00017
+    },
+    "variant1_consensus_unfiltered": {
+      "seen_delta": -0.00164,
+      "unseen_delta": 0.002,
+      "composite_delta": -0.00149
+    },
+    "variant2_consensus_filtered": {
+      "seen_delta": -0.03263,
+      "unseen_delta": 0.002,
+      "composite_delta": -0.03263
+    },
+    "variant3_consensus_promoted": {
+      "seen_delta": -0.0306,
+      "unseen_delta": 0.002,
+      "composite_delta": -0.0306
+    }
+  },
+  "filter_audit": {
+    "total_candidates_removed": 99532,
+    "traces_filtered": 1356,
+    "avg_candidates_removed_per_trace": 73.4,
+    "true_label_truncated": 476
+  },
+  "promotion_audit": {
+    "total_promotions_applied": 52
+  },
+  "decision": {
+    "promoted_to_submission": false,
+    "recommendation": "Hold S550 active champion; consensus does not beat S550 on composite CV"
+  },
+  "runtime_seconds": 111.87
+}
