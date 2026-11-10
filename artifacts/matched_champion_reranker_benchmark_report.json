@@ -1,0 +1,62 @@
+{
+  "benchmark_name": "matched_champion_reranker_benchmark",
+  "timestamp": "2026-11-10 22:23:13",
+  "methodology": {
+    "pipeline_alignment": "100% matched to SOTA 550 Champion (M15 + DualHead + Composite + ArcFace3500 + Honest Text + Precision Gating)",
+    "cross_fits": "Strictly nested inner 4-fold GroupKFold within each outer training partition",
+    "candidate_features": "p_champ, rank_pos, gap, ratio, in-fold prior, visual centroid cosine similarity",
+    "test_reality": "Zero gold text used; normalized handwriting visual embeddings only",
+    "rank1_invariant": "Strictly locked (0 Rank-1 mutations)"
+  },
+  "results": {
+    "champion_base_map3": 0.53633,
+    "reranked_map3": 0.53633,
+    "net_delta": 0.0,
+    "per_fold_deltas": [
+      -0.00056,
+      -0.00056,
+      0.00111,
+      0.0,
+      0.0
+    ],
+    "total_swaps": 100,
+    "helped": 10,
+    "hurt": 10,
+    "neutral": 80,
+    "active_precision": 0.5,
+    "gate_passed": false
+  },
+  "fold_details": [
+    {
+      "swaps": 17,
+      "helped": 2,
+      "hurt": 3,
+      "neutral": 12
+    },
+    {
+      "swaps": 10,
+      "helped": 1,
+      "hurt": 2,
+      "neutral": 7
+    },
+    {
+      "swaps": 24,
+      "helped": 4,
+      "hurt": 2,
+      "neutral": 18
+    },
+    {
+      "swaps": 32,
+      "helped": 1,
+      "hurt": 1,
+      "neutral": 30
+    },
+    {
+      "swaps": 17,
+      "helped": 2,
+      "hurt": 2,
+      "neutral": 13
+    }
+  ],
+  "runtime_seconds": 31.89
+}
