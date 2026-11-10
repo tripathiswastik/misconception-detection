@@ -1,0 +1,277 @@
+{
+  "benchmark_name": "testmix_prior_confidence_optimization",
+  "timestamp": "2026-11-10 18:53:16",
+  "test_proportions": {
+    "seen_questions": 0.957,
+    "unseen_questions": 0.043
+  },
+  "experiments": [
+    {
+      "experiment": "M0: Baseline SOTA 550 (m_q=10.0 fixed)",
+      "config": {
+        "m_q_base": 10.0,
+        "adaptive_nq": false
+      },
+      "metrics": {
+        "seen_map3": 0.54311,
+        "unseen_map3": 0.53633,
+        "composite_map3": 0.54281,
+        "seen_folds": [
+          0.58258,
+          0.52188,
+          0.55758,
+          0.47175,
+          0.54403
+        ],
+        "unseen_folds": [
+          0.53722,
+          0.50778,
+          0.56778,
+          0.535,
+          0.53389
+        ]
+      },
+      "delta_composite": 0.0
+    },
+    {
+      "experiment": "M1: Adaptive Shrinkage (m_q=10, pow=0.5)",
+      "config": {
+        "m_q_base": 10.0,
+        "adaptive_nq": true,
+        "adaptive_power": 0.5
+      },
+      "metrics": {
+        "seen_map3": 0.54322,
+        "unseen_map3": 0.53633,
+        "composite_map3": 0.54293,
+        "seen_folds": [
+          0.58145,
+          0.52188,
+          0.55636,
+          0.4774,
+          0.54403
+        ],
+        "unseen_folds": [
+          0.53722,
+          0.50778,
+          0.56778,
+          0.535,
+          0.53389
+        ]
+      },
+      "delta_composite": 0.00012
+    },
+    {
+      "experiment": "M2: Adaptive Shrinkage (m_q=10, pow=0.7)",
+      "config": {
+        "m_q_base": 10.0,
+        "adaptive_nq": true,
+        "adaptive_power": 0.7
+      },
+      "metrics": {
+        "seen_map3": 0.54322,
+        "unseen_map3": 0.53633,
+        "composite_map3": 0.54293,
+        "seen_folds": [
+          0.58145,
+          0.52188,
+          0.55636,
+          0.4774,
+          0.54403
+        ],
+        "unseen_folds": [
+          0.53722,
+          0.50778,
+          0.56778,
+          0.535,
+          0.53389
+        ]
+      },
+      "delta_composite": 0.00012
+    },
+    {
+      "experiment": "M3: Adaptive Shrinkage (m_q=8, pow=0.7)",
+      "config": {
+        "m_q_base": 8.0,
+        "adaptive_nq": true,
+        "adaptive_power": 0.7
+      },
+      "metrics": {
+        "seen_map3": 0.54346,
+        "unseen_map3": 0.53633,
+        "composite_map3": 0.54315,
+        "seen_folds": [
+          0.58145,
+          0.52148,
+          0.55818,
+          0.4774,
+          0.54403
+        ],
+        "unseen_folds": [
+          0.53722,
+          0.50778,
+          0.56778,
+          0.535,
+          0.53389
+        ]
+      },
+      "delta_composite": 0.00034
+    },
+    {
+      "experiment": "M4: Support Count Modulation (pow=0.5)",
+      "config": {
+        "m_q_base": 10.0,
+        "adaptive_nq": true,
+        "adaptive_power": 0.7,
+        "use_confidence_modulation": true,
+        "conf_mode": "support",
+        "conf_power": 0.5
+      },
+      "metrics": {
+        "seen_map3": 0.54322,
+        "unseen_map3": 0.53633,
+        "composite_map3": 0.54293,
+        "seen_folds": [
+          0.58145,
+          0.52188,
+          0.55636,
+          0.4774,
+          0.54403
+        ],
+        "unseen_folds": [
+          0.53722,
+          0.50778,
+          0.56778,
+          0.535,
+          0.53389
+        ]
+      },
+      "delta_composite": 0.00012
+    },
+    {
+      "experiment": "M5: Entropy Diversity Modulation (pow=0.5)",
+      "config": {
+        "m_q_base": 10.0,
+        "adaptive_nq": true,
+        "adaptive_power": 0.7,
+        "use_confidence_modulation": true,
+        "conf_mode": "entropy",
+        "conf_power": 0.5
+      },
+      "metrics": {
+        "seen_map3": 0.54322,
+        "unseen_map3": 0.53633,
+        "composite_map3": 0.54293,
+        "seen_folds": [
+          0.58145,
+          0.52188,
+          0.55636,
+          0.4774,
+          0.54403
+        ],
+        "unseen_folds": [
+          0.53722,
+          0.50778,
+          0.56778,
+          0.535,
+          0.53389
+        ]
+      },
+      "delta_composite": 0.00012
+    },
+    {
+      "experiment": "M6: Margin Modulation (pow=0.5)",
+      "config": {
+        "m_q_base": 10.0,
+        "adaptive_nq": true,
+        "adaptive_power": 0.7,
+        "use_confidence_modulation": true,
+        "conf_mode": "margin",
+        "conf_power": 0.5
+      },
+      "metrics": {
+        "seen_map3": 0.54322,
+        "unseen_map3": 0.53633,
+        "composite_map3": 0.54293,
+        "seen_folds": [
+          0.58145,
+          0.52188,
+          0.55636,
+          0.4774,
+          0.54403
+        ],
+        "unseen_folds": [
+          0.53722,
+          0.50778,
+          0.56778,
+          0.535,
+          0.53389
+        ]
+      },
+      "delta_composite": 0.00012
+    },
+    {
+      "experiment": "M7: Model Agreement Modulation",
+      "config": {
+        "m_q_base": 10.0,
+        "adaptive_nq": true,
+        "adaptive_power": 0.7,
+        "use_confidence_modulation": true,
+        "conf_mode": "agreement",
+        "conf_power": 0.5
+      },
+      "metrics": {
+        "seen_map3": 0.54322,
+        "unseen_map3": 0.53633,
+        "composite_map3": 0.54293,
+        "seen_folds": [
+          0.58145,
+          0.52188,
+          0.55636,
+          0.4774,
+          0.54403
+        ],
+        "unseen_folds": [
+          0.53722,
+          0.50778,
+          0.56778,
+          0.535,
+          0.53389
+        ]
+      },
+      "delta_composite": 0.00012
+    },
+    {
+      "experiment": "M8: Composite Confidence Engine (Support + Entropy + Agreement)",
+      "config": {
+        "m_q_base": 10.0,
+        "adaptive_nq": true,
+        "adaptive_power": 0.7,
+        "use_confidence_modulation": true,
+        "conf_mode": "composite",
+        "conf_power": 0.5
+      },
+      "metrics": {
+        "seen_map3": 0.54322,
+        "unseen_map3": 0.53633,
+        "composite_map3": 0.54293,
+        "seen_folds": [
+          0.58145,
+          0.52188,
+          0.55636,
+          0.4774,
+          0.54403
+        ],
+        "unseen_folds": [
+          0.53722,
+          0.50778,
+          0.56778,
+          0.535,
+          0.53389
+        ]
+      },
+      "delta_composite": 0.00012
+    }
+  ],
+  "total_runtime_seconds": 155.79
+}

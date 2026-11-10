@@ -1,0 +1,92 @@
+[
+  {
+    "name": "B0: Baseline SOTA 550 (Blunt 1.20x boost, m_q=10 fixed)",
+    "res": {
+      "seen": 0.54311,
+      "unseen": 0.53633,
+      "composite": 0.54281
+    },
+    "delta": 0.0
+  },
+  {
+    "name": "B1: Adaptive Shrinkage Prior (m_q=8.0, pow=0.7, uniform 1.20x)",
+    "res": {
+      "seen": 0.54369,
+      "unseen": 0.53633,
+      "composite": 0.54338
+    },
+    "delta": 0.00057
+  },
+  {
+    "name": "B2: Frequency-Weighted Boost (scale=0.25)",
+    "res": {
+      "seen": 0.54287,
+      "unseen": 0.53633,
+      "composite": 0.54259
+    },
+    "delta": -0.00022
+  },
+  {
+    "name": "B3: Frequency-Weighted Boost (scale=0.30)",
+    "res": {
+      "seen": 0.54264,
+      "unseen": 0.53633,
+      "composite": 0.54236
+    },
+    "delta": -0.00045
+  },
+  {
+    "name": "B4: Frequency-Weighted Boost (scale=0.35)",
+    "res": {
+      "seen": 0.54205,
+      "unseen": 0.53633,
+      "composite": 0.5418
+    },
+    "delta": -0.00101
+  },
+  {
+    "name": "B5: Support-Gated Frequency Boost (scale=0.30)",
+    "res": {
+      "seen": 0.54252,
+      "unseen": 0.53633,
+      "composite": 0.54225
+    },
+    "delta": -0.00056
+  },
+  {
+    "name": "B6: Support-Gated Frequency Boost (scale=0.35)",
+    "res": {
+      "seen": 0.54287,
+      "unseen": 0.53633,
+      "composite": 0.54259
+    },
+    "delta": -0.00022
+  },
+  {
+    "name": "B7: Entropy-Gated Frequency Boost (scale=0.30)",
+    "res": {
+      "seen": 0.5424,
+      "unseen": 0.53633,
+      "composite": 0.54214
+    },
+    "delta": -0.00067
+  },
+  {
+    "name": "B8: Composite Confidence Engine (scale=0.30)",
+    "res": {
+      "seen": 0.54217,
+      "unseen": 0.53633,
+      "composite": 0.54192
+    },
+    "delta": -0.00089
+  },
+  {
+    "name": "B9: Composite Confidence Engine (scale=0.35)",
+    "res": {
+      "seen": 0.54181,
+      "unseen": 0.53633,
+      "composite": 0.54158
+    },
+    "delta": -0.00123
+  }
+]
