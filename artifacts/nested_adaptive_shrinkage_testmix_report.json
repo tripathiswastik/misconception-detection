@@ -1,0 +1,57 @@
+{
+  "benchmark_name": "strictly_nested_adaptive_shrinkage_testmix",
+  "timestamp": "2026-11-10 20:04:25",
+  "leakage_hygiene": {
+    "on_the_fly_training": true,
+    "precomputed_oofs_used": false,
+    "inner_cv_selection": true,
+    "rank1_invariant": "Strictly protected"
+  },
+  "results": {
+    "seen_base": 0.51456,
+    "seen_nested": 0.51456,
+    "seen_delta": 0.0,
+    "unseen_base": 0.45722,
+    "unseen_nested": 0.45722,
+    "composite_base": 0.5121,
+    "composite_nested": 0.5121,
+    "composite_delta": 0.0,
+    "outer_seen_deltas": [
+      0.0049,
+      0.00159,
+      -0.00545,
+      -0.00282,
+      -0.00786
+    ],
+    "selected_configs": [
+      [
+        12.0,
+        0.7
+      ],
+      [
+        8.0,
+        0.7
+      ],
+      [
+        10.0,
+        0.5
+      ],
+      [
+        8.0,
+        0.7
+      ],
+      [
+        8.0,
+        0.7
+      ]
+    ],
+    "mutations": {
+      "total": 360,
+      "helped": 62,
+      "hurt": 60,
+      "neutral": 238
+    },
+    "gate_passed": false
+  },
+  "total_runtime_seconds": 383.53
+}
