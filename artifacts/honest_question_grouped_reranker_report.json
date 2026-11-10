@@ -1,0 +1,118 @@
+{
+  "benchmark_name": "honest_question_grouped_candidate_reranker",
+  "timestamp": "2026-11-10 18:31:30",
+  "leakage_hygiene": {
+    "outer_splits": "5-Fold GroupKFold strictly on question_id (0.0% question overlap)",
+    "inner_cross_fitting": "4-Fold GroupKFold within T_k for prior, calibration, and base probs",
+    "precomputed_oofs_used": false,
+    "rank1_invariant": "Strictly locked (0 Rank-1 mutations)"
+  },
+  "overall_results": {
+    "baseline_map3": 0.44578,
+    "reranked_map3": 0.44578,
+    "net_delta": 0.0,
+    "per_fold_deltas": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_swaps": 4,
+    "helped_swaps": 1,
+    "hurt_swaps": 1,
+    "neutral_swaps": 2,
+    "swap_precision": 0.5,
+    "gate_passed": false
+  },
+  "candidate_retrieval_recall": {
+    "Recall@1": {
+      "hits": 221,
+      "total": 994,
+      "rate": 0.2223
+    },
+    "Recall@2": {
+      "hits": 367,
+      "total": 994,
+      "rate": 0.3692
+    },
+    "Recall@3": {
+      "hits": 448,
+      "total": 994,
+      "rate": 0.4507
+    },
+    "Recall@5": {
+      "hits": 577,
+      "total": 994,
+      "rate": 0.5805
+    },
+    "Recall@8": {
+      "hits": 693,
+      "total": 994,
+      "rate": 0.6972
+    },
+    "Recall@10": {
+      "hits": 733,
+      "total": 994,
+      "rate": 0.7374
+    }
+  },
+  "fold_details": [
+    {
+      "fold": 1,
+      "val_samples": 300,
+      "baseline_map3": 0.43833,
+      "reranked_map3": 0.43833,
+      "delta": 0.0,
+      "swaps": 0,
+      "helped": 0,
+      "hurt": 0,
+      "neutral": 0
+    },
+    {
+      "fold": 2,
+      "val_samples": 300,
+      "baseline_map3": 0.41,
+      "reranked_map3": 0.41,
+      "delta": 0.0,
+      "swaps": 1,
+      "helped": 0,
+      "hurt": 0,
+      "neutral": 1
+    },
+    {
+      "fold": 3,
+      "val_samples": 300,
+      "baseline_map3": 0.49778,
+      "reranked_map3": 0.49778,
+      "delta": 0.0,
+      "swaps": 3,
+      "helped": 1,
+      "hurt": 1,
+      "neutral": 1
+    },
+    {
+      "fold": 4,
+      "val_samples": 300,
+      "baseline_map3": 0.46944,
+      "reranked_map3": 0.46944,
+      "delta": 0.0,
+      "swaps": 0,
+      "helped": 0,
+      "hurt": 0,
+      "neutral": 0
+    },
+    {
+      "fold": 5,
+      "val_samples": 300,
+      "baseline_map3": 0.41333,
+      "reranked_map3": 0.41333,
+      "delta": 0.0,
+      "swaps": 0,
+      "helped": 0,
+      "hurt": 0,
+      "neutral": 0
+    }
+  ],
+  "total_runtime_seconds": 49.56
+}
