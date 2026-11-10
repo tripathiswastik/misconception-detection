@@ -21,7 +21,6 @@ import time
 from typing import Any, Dict, List, Optional, Set, Tuple, cast
 import numpy as np
 import pandas as pd
-from scipy.special import softmax
 from sklearn.linear_model import LogisticRegression, RidgeClassifier
 from sklearn.model_selection import GroupKFold, KFold
 from sklearn.preprocessing import normalize
@@ -36,6 +35,10 @@ ART_DIR = PROJECT_ROOT / "artifacts"
 from src.data.taxonomy import TaxonomyManager
 from src.diagnoser.adaptive_prior import AdaptiveQuestionPriorEngine
 from src.metrics.map3 import calculate_map3
+
+def stable_softmax(x: np.ndarray, axis: int = -1) -> np.ndarray:
+    e_x = np.exp(x - np.max(x, axis=axis, keepdims=True))
+    return e_x / e_x.sum(axis=axis, keepdims=True)
 
 def sharp(probs: np.ndarray, t: float) -> np.ndarray:
     s = np.power(np.maximum(probs, 1e-12), 1.0 / t)
@@ -64,11 +67,11 @@ def main():
 
     # 2. Load Normalized Raw Features (Zero-Label Embeddings from Frozen Backbones)
     print("Loading normalized feature matrices from frozen backbones...")
-    cn_norm = normalize(np.load(ART_DIR / "train_convnext_features.npy"), norm="l2")
-    sw_norm = normalize(np.load(ART_DIR / "train_swin_features.npy"), norm="l2")
-    tr_norm = normalize(np.load(ART_DIR / "train_trocr_features.npy"), norm="l2")
-    tx_norm = normalize(np.load(ART_DIR / "train_text_embeddings_384.npy"), norm="l2")
-    vi_norm = normalize(np.load(ART_DIR / "train_vision_features.npy"), norm="l2")
+    cn_norm = cast(np.ndarray, normalize(np.load(ART_DIR / "train_convnext_features.npy"), norm="l2"))
+    sw_norm = cast(np.ndarray, normalize(np.load(ART_DIR / "train_swin_features.npy"), norm="l2"))
+    tr_norm = cast(np.ndarray, normalize(np.load(ART_DIR / "train_trocr_features.npy"), norm="l2"))
+    tx_norm = cast(np.ndarray, normalize(np.load(ART_DIR / "train_text_embeddings_384.npy"), norm="l2"))
+    vi_norm = cast(np.ndarray, normalize(np.load(ART_DIR / "train_vision_features.npy"), norm="l2"))
 
     X_all = np.hstack([cn_norm, sw_norm, tr_norm, tx_norm, vi_norm]).astype(np.float32)
     X_vis = np.hstack([cn_norm, sw_norm, tr_norm]).astype(np.float32)
@@ -120,7 +123,7 @@ def main():
         clf_mm = RidgeClassifier(alpha=10.0, random_state=42)
         clf_mm.fit(X_all[tr_idx], y_indices[tr_idx])
         dec_va = clf_mm.decision_function(X_all[va_idx])
-        p_mm_raw = softmax(dec_va, axis=1)
+        p_mm_raw = stable_softmax(dec_va, axis=1)
         p_mm = np.zeros((n_va, n_classes), dtype=np.float64)
         for local_c, global_c in enumerate(clf_mm.classes_):
             p_mm[:, global_c] = p_mm_raw[:, local_c]
@@ -128,14 +131,14 @@ def main():
         # B. Vision & Text Classifiers
         clf_vis = RidgeClassifier(alpha=10.0, random_state=42)
         clf_vis.fit(X_vis[tr_idx], y_indices[tr_idx])
-        p_vis_raw = softmax(clf_vis.decision_function(X_vis[va_idx]), axis=1)
+        p_vis_raw = stable_softmax(clf_vis.decision_function(X_vis[va_idx]), axis=1)
         p_vis = np.zeros((n_va, n_classes), dtype=np.float64)
         for local_c, global_c in enumerate(clf_vis.classes_):
             p_vis[:, global_c] = p_vis_raw[:, local_c]
 
         clf_txt = RidgeClassifier(alpha=10.0, random_state=42)
         clf_txt.fit(X_txt[tr_idx], y_indices[tr_idx])
-        p_txt_raw = softmax(clf_txt.decision_function(X_txt[va_idx]), axis=1)
+        p_txt_raw = stable_softmax(clf_txt.decision_function(X_txt[va_idx]), axis=1)
         p_txt = np.zeros((n_va, n_classes), dtype=np.float64)
         for local_c, global_c in enumerate(clf_txt.classes_):
             p_txt[:, global_c] = p_txt_raw[:, local_c]
