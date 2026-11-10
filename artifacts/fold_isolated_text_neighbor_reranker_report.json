@@ -1,0 +1,50 @@
+{
+  "variants": {
+    "0. Baseline: S550 Champion (Canonical)": {
+      "seen_map3": 0.54295,
+      "unseen_map3": 0.52424,
+      "composite_map3": 0.54214,
+      "all_map3": 0.54089,
+      "delta_vs_s550": 0.0
+    },
+    "1. Baseline: S554 Champion (Canonical)": {
+      "seen_map3": 0.54357,
+      "unseen_map3": 0.53333,
+      "composite_map3": 0.54313,
+      "all_map3": 0.54244,
+      "delta_vs_s550": 0.00099
+    },
+    "2. Standalone Text NN (Context 384-d)": {
+      "seen_map3": 0.48689,
+      "unseen_map3": 0.47172,
+      "composite_map3": 0.48624,
+      "all_map3": 0.48522,
+      "delta_vs_s550": -0.0559
+    },
+    "3. Blended Softmax (S550 + Text NN)": {
+      "seen_map3": 0.53533,
+      "unseen_map3": 0.52323,
+      "composite_map3": 0.53481,
+      "all_map3": 0.534,
+      "delta_vs_s550": -0.00733
+    },
+    "4. Fold-Trained Scorer & Ranker (Candidate B)": {
+      "seen_map3": 0.54182,
+      "unseen_map3": 0.52424,
+      "composite_map3": 0.54107,
+      "all_map3": 0.53989,
+      "delta_vs_s550": -0.00108
+    }
+  },
+  "decision": {
+    "promoted": false,
+    "delta": -0.00107,
+    "runtime_seconds": 20.52,
+    "switch_audit": {
+      "helped": 1,
+      "hurt": 8,
+      "neutral": 20,
+      "total": 29
+    }
+  }
+}
