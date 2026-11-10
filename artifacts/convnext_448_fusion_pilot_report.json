@@ -1,0 +1,119 @@
+{
+  "timestamp": "2026-11-11 02:48:08",
+  "architecture": {
+    "vision_backbone": "ConvNeXt-Tiny 448px Letterbox (768-d features)",
+    "text_representation": "Dense Context Embeddings (384-d)",
+    "fusion": "FiLM Modulation + Adaptive Sigmoid Gating + Hardswish MLP",
+    "epochs": 15,
+    "lr": 0.001,
+    "batch_size": 32
+  },
+  "per_fold_scores": {
+    "fold_1": {
+      "s550": 0.55611,
+      "convnext_fusion": 0.46611
+    },
+    "fold_2": {
+      "s550": 0.55,
+      "convnext_fusion": 0.45222
+    },
+    "fold_3": {
+      "s550": 0.51,
+      "convnext_fusion": 0.39611
+    },
+    "fold_4": {
+      "s550": 0.53833,
+      "convnext_fusion": 0.45389
+    },
+    "fold_5": {
+      "s550": 0.55,
+      "convnext_fusion": 0.41333
+    }
+  },
+  "evaluation_protocol": {
+    "splits": "data/splits.json (canonical 5 folds, 1200 train, 300 val)",
+    "seen_traces": 1335,
+    "unseen_traces": 165,
+    "composite_metric": "0.957 * Seen + 0.043 * Unseen"
+  },
+  "results": [
+    {
+      "desc": "0. S550 Baseline Reference (w_conv = 0.0)",
+      "weight_conv": 0.0,
+      "seen_map3": 0.54295,
+      "unseen_map3": 0.52424,
+      "composite_map3": 0.54214,
+      "delta_vs_s550": 0.0
+    },
+    {
+      "desc": "Ensemble: (1-0.02)*S550 + 0.02*ConvNeXt-Fusion",
+      "weight_conv": 0.02,
+      "seen_map3": 0.54444,
+      "unseen_map3": 0.52525,
+      "composite_map3": 0.54362,
+      "delta_vs_s550": 0.00148
+    },
+    {
+      "desc": "Ensemble: (1-0.05)*S550 + 0.05*ConvNeXt-Fusion",
+      "weight_conv": 0.05,
+      "seen_map3": 0.54457,
+      "unseen_map3": 0.52727,
+      "composite_map3": 0.54383,
+      "delta_vs_s550": 0.00168
+    },
+    {
+      "desc": "Ensemble: (1-0.1)*S550 + 0.1*ConvNeXt-Fusion",
+      "weight_conv": 0.1,
+      "seen_map3": 0.54307,
+      "unseen_map3": 0.52121,
+      "composite_map3": 0.54213,
+      "delta_vs_s550": -1e-05
+    },
+    {
+      "desc": "Ensemble: (1-0.15)*S550 + 0.15*ConvNeXt-Fusion",
+      "weight_conv": 0.15,
+      "seen_map3": 0.54045,
+      "unseen_map3": 0.51616,
+      "composite_map3": 0.53941,
+      "delta_vs_s550": -0.00274
+    },
+    {
+      "desc": "Ensemble: (1-0.2)*S550 + 0.2*ConvNeXt-Fusion",
+      "weight_conv": 0.2,
+      "seen_map3": 0.53308,
+      "unseen_map3": 0.51111,
+      "composite_map3": 0.53214,
+      "delta_vs_s550": -0.01
+    },
+    {
+      "desc": "Ensemble: (1-0.3)*S550 + 0.3*ConvNeXt-Fusion",
+      "weight_conv": 0.3,
+      "seen_map3": 0.52572,
+      "unseen_map3": 0.51717,
+      "composite_map3": 0.52535,
+      "delta_vs_s550": -0.01679
+    },
+    {
+      "desc": "Ensemble: (1-0.5)*S550 + 0.5*ConvNeXt-Fusion",
+      "weight_conv": 0.5,
+      "seen_map3": 0.50125,
+      "unseen_map3": 0.51515,
+      "composite_map3": 0.50185,
+      "delta_vs_s550": -0.0403
+    },
+    {
+      "desc": "Standalone ConvNeXt-Tiny Fusion Model (w_conv = 1.0)",
+      "weight_conv": 1.0,
+      "seen_map3": 0.4362,
+      "unseen_map3": 0.43737,
+      "composite_map3": 0.43626,
+      "delta_vs_s550": -0.10589
+    }
+  ],
+  "decision": {
+    "promoted": true,
+    "best_delta": 0.00168,
+    "best_configuration": "Ensemble: (1-0.05)*S550 + 0.05*ConvNeXt-Fusion",
+    "runtime_seconds": 17.24
+  }
+}
