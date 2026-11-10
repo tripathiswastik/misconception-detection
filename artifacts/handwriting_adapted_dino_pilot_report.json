@@ -1,0 +1,184 @@
+{
+  "pilot_name": "handwriting_adapted_dino_pilot",
+  "timestamp": "2026-11-10 23:36:12",
+  "methodology": {
+    "encoder": "facebook/dino-vits16 pretrained on 2000 unlabeled handwriting images via InfoNCE",
+    "augmentations": "RandomResizedCrop, RandomRotation, ColorJitter, RandomGrayscale",
+    "fine_tuning": "Blocks 10-11 unfrozen, lr=1e-5; projection head lr=1e-3; 5 epochs",
+    "inductive_scheme": "5-Fold GroupKFold on question_id (100% unseen questions)",
+    "transductive_scheme": "5-Fold Stratified Split on multi-trace questions (95.7% test-mix proxy)",
+    "composite_formula": "0.957 * Seen MAP@3 + 0.043 * Unseen MAP@3"
+  },
+  "results": {
+    "1. Baseline Visual Stack (1944-d)": {
+      "unseen_map3": 0.445,
+      "unseen_folds": [
+        0.42222,
+        0.40889,
+        0.50667,
+        0.47278,
+        0.41444
+      ],
+      "unseen_recalls": {
+        "Recall@1": 0.3473,
+        "Recall@2": 0.4827,
+        "Recall@3": 0.5727,
+        "Recall@5": 0.5727
+      },
+      "seen_map3": 0.5094,
+      "seen_folds": [
+        0.47535,
+        0.52289,
+        0.50587,
+        0.54871,
+        0.49411
+      ],
+      "seen_recalls": {
+        "Recall@1": 0.3742,
+        "Recall@2": 0.568,
+        "Recall@3": 0.6829,
+        "Recall@5": 0.6829
+      },
+      "composite_map3": 0.50663
+    },
+    "2. Off-the-Shelf Frozen DINO (384-d)": {
+      "unseen_map3": 0.44578,
+      "unseen_folds": [
+        0.42222,
+        0.40944,
+        0.50611,
+        0.47611,
+        0.415
+      ],
+      "unseen_recalls": {
+        "Recall@1": 0.3473,
+        "Recall@2": 0.4833,
+        "Recall@3": 0.5747,
+        "Recall@5": 0.5747
+      },
+      "seen_map3": 0.50857,
+      "seen_folds": [
+        0.47535,
+        0.5223,
+        0.50469,
+        0.54812,
+        0.49234
+      ],
+      "seen_recalls": {
+        "Recall@1": 0.3742,
+        "Recall@2": 0.5645,
+        "Recall@3": 0.6822,
+        "Recall@5": 0.6822
+      },
+      "composite_map3": 0.50587
+    },
+    "3. Handwriting-Adapted DINO (384-d)": {
+      "unseen_map3": 0.44511,
+      "unseen_folds": [
+        0.42167,
+        0.40944,
+        0.50611,
+        0.47444,
+        0.41389
+      ],
+      "unseen_recalls": {
+        "Recall@1": 0.3467,
+        "Recall@2": 0.4827,
+        "Recall@3": 0.574,
+        "Recall@5": 0.574
+      },
+      "seen_map3": 0.50881,
+      "seen_folds": [
+        0.47535,
+        0.52289,
+        0.50469,
+        0.54812,
+        0.49293
+      ],
+      "seen_recalls": {
+        "Recall@1": 0.3742,
+        "Recall@2": 0.5659,
+        "Recall@3": 0.6822,
+        "Recall@5": 0.6822
+      },
+      "composite_map3": 0.50607
+    },
+    "4. Baseline Stack + Off-the-Shelf DINO (2328-d)": {
+      "unseen_map3": 0.44511,
+      "unseen_folds": [
+        0.42111,
+        0.41,
+        0.50722,
+        0.47389,
+        0.41333
+      ],
+      "unseen_recalls": {
+        "Recall@1": 0.3473,
+        "Recall@2": 0.4833,
+        "Recall@3": 0.5727,
+        "Recall@5": 0.5727
+      },
+      "seen_map3": 0.50904,
+      "seen_folds": [
+        0.47535,
+        0.52289,
+        0.50528,
+        0.54754,
+        0.49411
+      ],
+      "seen_recalls": {
+        "Recall@1": 0.3742,
+        "Recall@2": 0.5659,
+        "Recall@3": 0.6829,
+        "Recall@5": 0.6829
+      },
+      "composite_map3": 0.50629
+    },
+    "5. Baseline Stack + Handwriting-Adapted DINO (2328-d)": {
+      "unseen_map3": 0.44467,
+      "unseen_folds": [
+        0.42111,
+        0.40889,
+        0.50611,
+        0.47389,
+        0.41333
+      ],
+      "unseen_recalls": {
+        "Recall@1": 0.3473,
+        "Recall@2": 0.4833,
+        "Recall@3": 0.5713,
+        "Recall@5": 0.5713
+      },
+      "seen_map3": 0.50916,
+      "seen_folds": [
+        0.47535,
+        0.52289,
+        0.50528,
+        0.54812,
+        0.49411
+      ],
+      "seen_recalls": {
+        "Recall@1": 0.3742,
+        "Recall@2": 0.5666,
+        "Recall@3": 0.6829,
+        "Recall@5": 0.6829
+      },
+      "composite_map3": 0.50639
+    }
+  },
+  "deltas_vs_baseline": {
+    "handwriting_adapted_standalone": {
+      "composite_delta": -0.00056,
+      "unseen_delta": 0.00011
+    },
+    "baseline_plus_handwriting_adapted": {
+      "composite_delta": -0.00024,
+      "unseen_delta": -0.00033
+    }
+  },
+  "decision": {
+    "promoted": false,
+    "recommendation": "Conclude self-supervised visual exploration; pivot to multimodal/label rebalancing"
+  },
+  "runtime_seconds": 66.25
+}
