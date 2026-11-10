@@ -56,17 +56,17 @@ class CandidateDataset(Dataset):
     def __len__(self) -> int:
         return len(self.labels)
 
-    def __getitem__(self, idx: int) -> Tuple[str, str, torch.Tensor, torch.Tensor, torch.Tensor]:
+    def __getitem__(self, index: int) -> Tuple[str, str, torch.Tensor, torch.Tensor, torch.Tensor]:
         return (
-            self.seq_a[idx],
-            self.seq_b[idx],
-            torch.tensor(self.vis[idx], dtype=torch.float32),
-            torch.tensor(self.meta[idx], dtype=torch.float32),
-            torch.tensor(self.labels[idx], dtype=torch.float32)
+            self.seq_a[index],
+            self.seq_b[index],
+            torch.tensor(self.vis[index], dtype=torch.float32),
+            torch.tensor(self.meta[index], dtype=torch.float32),
+            torch.tensor(self.labels[index], dtype=torch.float32)
         )
 
 class CandidatePairModel(nn.Module):
-    def __init__(self, encoder: AutoModel, vis_dim: int = 384, meta_dim: int = 2):
+    def __init__(self, encoder: nn.Module, vis_dim: int = 384, meta_dim: int = 2):
         super().__init__()
         self.encoder = encoder
         self.vis_proj = nn.Sequential(
@@ -84,7 +84,7 @@ class CandidatePairModel(nn.Module):
         )
 
     def forward(self, input_ids: torch.Tensor, attention_mask: torch.Tensor, vis: torch.Tensor, meta: torch.Tensor) -> torch.Tensor:
-        out = self.encoder(input_ids=input_ids, attention_mask=attention_mask)
+        out = cast(Any, self.encoder)(input_ids=input_ids, attention_mask=attention_mask)
         cls_rep = out.last_hidden_state[:, 0, :]  # 384-d
         v_rep = self.vis_proj(vis)               # 128-d
         fused = torch.cat([cls_rep, v_rep, meta], dim=-1)
@@ -135,14 +135,20 @@ def main():
 
     # Load normalized student handwriting visual features
     tr_feat = np.load(ART_DIR / "train_trocr_features.npy")
-    tr_norm = normalize(tr_feat).astype(np.float32)
+    tr_norm = cast(np.ndarray, normalize(tr_feat)).astype(np.float32)
 
     # Load multimodal base features for fold-safe baseline candidate generator
     cn_feat = np.load(ART_DIR / "train_convnext_features.npy")
     sw_feat = np.load(ART_DIR / "train_swin_features.npy")
     tx_feat = np.load(ART_DIR / "train_text_embeddings_384.npy")
     st_feat = np.load(ART_DIR / "train_perceptual_strokes.npy")
-    X_multimodal = np.hstack([normalize(cn_feat), normalize(sw_feat), normalize(tr_feat), normalize(tx_feat), normalize(st_feat)])
+    X_multimodal = np.hstack([
+        cast(np.ndarray, normalize(cn_feat)),
+        cast(np.ndarray, normalize(sw_feat)),
+        cast(np.ndarray, normalize(tr_feat)),
+        cast(np.ndarray, normalize(tx_feat)),
+        cast(np.ndarray, normalize(st_feat))
+    ])
 
     # 3. Check 2 Compliance: Generate Fold-Safe Base Predictions across 5-Fold GroupKFold
     print("\n[Check 2 Compliance] Generating 100% fold-safe base predictions across 5-fold GroupKFold...")
@@ -206,7 +212,7 @@ def main():
             cand_seq_b[c_idx] = "NONE: Tidak ada miskonsepsi teridentifikasi"
 
     # 5. Supervised Candidate-Pair Training & Outer Evaluation
-    tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2", local_files_only=True)
+    tokenizer = cast(Any, AutoTokenizer).from_pretrained("sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2", local_files_only=True)
     reranked_top3: List[List[str]] = [[] for _ in range(n_samples)]
     outer_deltas: List[float] = []
     outer_swap_reports: List[Dict[str, int]] = []
@@ -252,7 +258,7 @@ def main():
         print(f"  Training pairs: {n_pairs} ({int(pos_count)} positives, {n_pairs - int(pos_count)} hard negatives)")
 
         # Create Model
-        encoder = AutoModel.from_pretrained("sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2", local_files_only=True)
+        encoder = cast(Any, AutoModel).from_pretrained("sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2", local_files_only=True)
         # Freeze layers 0-10, unfreeze Layer 11
         for param in encoder.parameters():
             param.requires_grad = False
