@@ -1,0 +1,306 @@
+{
+  "timestamp": "2026-11-11 01:42:31",
+  "seen_metrics": {
+    "Champion S550 Baseline": {
+      "Recall@1": 0.4116,
+      "Recall@2": 0.6082,
+      "Recall@3": 0.7153,
+      "Recall@5": 0.8048,
+      "Recall@10": 0.9006,
+      "MAP@3": 0.54557
+    },
+    "Champion S554 Baseline": {
+      "Recall@1": 0.4073,
+      "Recall@2": 0.6075,
+      "Recall@3": 0.7209,
+      "Recall@5": 0.8125,
+      "Recall@10": 0.907,
+      "MAP@3": 0.54522
+    },
+    "Champion S550+S554 Union": {
+      "Recall@1": 0.4116,
+      "Recall@2": 0.6082,
+      "Recall@3": 0.7153,
+      "Recall@5": 0.8076,
+      "Recall@10": 0.9006,
+      "MAP@3": 0.54557
+    },
+    "Visual NN (ConvNeXt 768-d)": {
+      "Recall@1": 0.3333,
+      "Recall@2": 0.3545,
+      "Recall@3": 0.3897,
+      "Recall@5": 0.4376,
+      "Recall@10": 0.5292,
+      "MAP@3": 0.35565
+    },
+    "Visual NN (Swin 768-d)": {
+      "Recall@1": 0.3298,
+      "Recall@2": 0.3693,
+      "Recall@3": 0.401,
+      "Recall@5": 0.4419,
+      "Recall@10": 0.5328,
+      "MAP@3": 0.36011
+    },
+    "Visual NN (Unified 1920-d)": {
+      "Recall@1": 0.3319,
+      "Recall@2": 0.3622,
+      "Recall@3": 0.3841,
+      "Recall@5": 0.4271,
+      "Recall@10": 0.5257,
+      "MAP@3": 0.35436
+    },
+    "Text NN (Context 384-d)": {
+      "Recall@1": 0.3397,
+      "Recall@2": 0.5666,
+      "Recall@3": 0.6681,
+      "Recall@5": 0.7562,
+      "Recall@10": 0.845,
+      "MAP@3": 0.48696
+    },
+    "Multimodal NN (Vis + Text)": {
+      "Recall@1": 0.3559,
+      "Recall@2": 0.5257,
+      "Recall@3": 0.6251,
+      "Recall@5": 0.7252,
+      "Recall@10": 0.828,
+      "MAP@3": 0.47393
+    },
+    "S550 Top3 + Visual NN Expansion": {
+      "Recall@1": 0.4116,
+      "Recall@2": 0.6082,
+      "Recall@3": 0.7153,
+      "Recall@5": 0.7378,
+      "Recall@10": 0.7808,
+      "MAP@3": 0.54557
+    },
+    "S550 Top3 + Text NN Expansion": {
+      "Recall@1": 0.4116,
+      "Recall@2": 0.6082,
+      "Recall@3": 0.7153,
+      "Recall@5": 0.778,
+      "Recall@10": 0.8675,
+      "MAP@3": 0.54557
+    },
+    "S550 Top3 + Multimodal NN Expansion": {
+      "Recall@1": 0.4116,
+      "Recall@2": 0.6082,
+      "Recall@3": 0.7153,
+      "Recall@5": 0.7717,
+      "Recall@10": 0.852,
+      "MAP@3": 0.54557
+    },
+    "Blended Softmax (S550 + Multimodal NN)": {
+      "Recall@1": 0.3982,
+      "Recall@2": 0.5997,
+      "Recall@3": 0.7188,
+      "Recall@5": 0.8083,
+      "Recall@10": 0.9006,
+      "MAP@3": 0.53864
+    }
+  },
+  "unseen_metrics": {
+    "Champion S550 Baseline": {
+      "Recall@1": 0.406,
+      "Recall@2": 0.5993,
+      "Recall@3": 0.7047,
+      "Recall@5": 0.798,
+      "Recall@10": 0.896,
+      "MAP@3": 0.53778
+    },
+    "Champion S554 Baseline": {
+      "Recall@1": 0.4067,
+      "Recall@2": 0.6027,
+      "Recall@3": 0.714,
+      "Recall@5": 0.8067,
+      "Recall@10": 0.9027,
+      "MAP@3": 0.54178
+    },
+    "Champion S550+S554 Union": {
+      "Recall@1": 0.406,
+      "Recall@2": 0.5993,
+      "Recall@3": 0.7047,
+      "Recall@5": 0.8,
+      "Recall@10": 0.8967,
+      "MAP@3": 0.53778
+    },
+    "Visual NN (ConvNeXt 768-d)": {
+      "Recall@1": 0.3347,
+      "Recall@2": 0.36,
+      "Recall@3": 0.3887,
+      "Recall@5": 0.4273,
+      "Recall@10": 0.532,
+      "MAP@3": 0.35689
+    },
+    "Visual NN (Swin 768-d)": {
+      "Recall@1": 0.3333,
+      "Recall@2": 0.376,
+      "Recall@3": 0.404,
+      "Recall@5": 0.4473,
+      "Recall@10": 0.534,
+      "MAP@3": 0.364
+    },
+    "Visual NN (Unified 1920-d)": {
+      "Recall@1": 0.334,
+      "Recall@2": 0.364,
+      "Recall@3": 0.39,
+      "Recall@5": 0.4313,
+      "Recall@10": 0.518,
+      "MAP@3": 0.35767
+    },
+    "Text NN (Context 384-d)": {
+      "Recall@1": 0.336,
+      "Recall@2": 0.4647,
+      "Recall@3": 0.5567,
+      "Recall@5": 0.646,
+      "Recall@10": 0.754,
+      "MAP@3": 0.431
+    },
+    "Multimodal NN (Vis + Text)": {
+      "Recall@1": 0.3373,
+      "Recall@2": 0.452,
+      "Recall@3": 0.5193,
+      "Recall@5": 0.6127,
+      "Recall@10": 0.7353,
+      "MAP@3": 0.41711
+    },
+    "S550 Top3 + Visual NN Expansion": {
+      "Recall@1": 0.406,
+      "Recall@2": 0.5993,
+      "Recall@3": 0.7047,
+      "Recall@5": 0.7307,
+      "Recall@10": 0.7727,
+      "MAP@3": 0.53778
+    },
+    "S550 Top3 + Text NN Expansion": {
+      "Recall@1": 0.406,
+      "Recall@2": 0.5993,
+      "Recall@3": 0.7047,
+      "Recall@5": 0.768,
+      "Recall@10": 0.8553,
+      "MAP@3": 0.53778
+    },
+    "S550 Top3 + Multimodal NN Expansion": {
+      "Recall@1": 0.406,
+      "Recall@2": 0.5993,
+      "Recall@3": 0.7047,
+      "Recall@5": 0.756,
+      "Recall@10": 0.8367,
+      "MAP@3": 0.53778
+    },
+    "Blended Softmax (S550 + Multimodal NN)": {
+      "Recall@1": 0.3993,
+      "Recall@2": 0.5933,
+      "Recall@3": 0.6987,
+      "Recall@5": 0.794,
+      "Recall@10": 0.8947,
+      "MAP@3": 0.53144
+    }
+  },
+  "composite_metrics": {
+    "Champion S550 Baseline": {
+      "Recall@3": 0.7148,
+      "Recall@5": 0.8045,
+      "Recall@10": 0.9004,
+      "MAP@3": 0.54524
+    },
+    "Champion S554 Baseline": {
+      "Recall@3": 0.7206,
+      "Recall@5": 0.8123,
+      "Recall@10": 0.9068,
+      "MAP@3": 0.54507
+    },
+    "Champion S550+S554 Union": {
+      "Recall@3": 0.7148,
+      "Recall@5": 0.8073,
+      "Recall@10": 0.9004,
+      "MAP@3": 0.54524
+    },
+    "Visual NN (ConvNeXt 768-d)": {
+      "Recall@3": 0.3897,
+      "Recall@5": 0.4372,
+      "Recall@10": 0.5293,
+      "MAP@3": 0.3557
+    },
+    "Visual NN (Swin 768-d)": {
+      "Recall@3": 0.4011,
+      "Recall@5": 0.4421,
+      "Recall@10": 0.5329,
+      "MAP@3": 0.36028
+    },
+    "Visual NN (Unified 1920-d)": {
+      "Recall@3": 0.3844,
+      "Recall@5": 0.4273,
+      "Recall@10": 0.5254,
+      "MAP@3": 0.3545
+    },
+    "Text NN (Context 384-d)": {
+      "Recall@3": 0.6633,
+      "Recall@5": 0.7515,
+      "Recall@10": 0.8411,
+      "MAP@3": 0.48456
+    },
+    "Multimodal NN (Vis + Text)": {
+      "Recall@3": 0.6206,
+      "Recall@5": 0.7204,
+      "Recall@10": 0.824,
+      "MAP@3": 0.47148
+    },
+    "S550 Top3 + Visual NN Expansion": {
+      "Recall@3": 0.7148,
+      "Recall@5": 0.7375,
+      "Recall@10": 0.7805,
+      "MAP@3": 0.54524
+    },
+    "S550 Top3 + Text NN Expansion": {
+      "Recall@3": 0.7148,
+      "Recall@5": 0.7776,
+      "Recall@10": 0.867,
+      "MAP@3": 0.54524
+    },
+    "S550 Top3 + Multimodal NN Expansion": {
+      "Recall@3": 0.7148,
+      "Recall@5": 0.771,
+      "Recall@10": 0.8513,
+      "MAP@3": 0.54524
+    },
+    "Blended Softmax (S550 + Multimodal NN)": {
+      "Recall@3": 0.7179,
+      "Recall@5": 0.8077,
+      "Recall@10": 0.9003,
+      "MAP@3": 0.53833
+    }
+  },
+  "champion_miss_recovery": {
+    "seen_total_misses": 386,
+    "unseen_total_misses": 415,
+    "seen_recovery_rates": {
+      "visual_nn": {
+        "r5": 0.0777,
+        "r10": 0.2228
+      },
+      "text_nn": {
+        "r5": 0.1995,
+        "r10": 0.5155
+      },
+      "multimodal_nn": {
+        "r5": 0.1813,
+        "r10": 0.4611
+      }
+    },
+    "unseen_recovery_rates": {
+      "visual_nn": {
+        "r5": 0.0867,
+        "r10": 0.2217
+      },
+      "text_nn": {
+        "r5": 0.2096,
+        "r10": 0.494
+      },
+      "multimodal_nn": {
+        "r5": 0.1687,
+        "r10": 0.4313
+      }
+    }
+  },
+  "runtime_seconds": 12.61
+}
