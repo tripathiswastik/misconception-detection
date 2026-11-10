@@ -1,6 +1,6 @@
 {
   "audit_name": "s550_vs_s554_disagreement_oof_audit",
-  "timestamp": "2026-11-11 00:16:40",
+  "timestamp": "2026-11-11 00:24:43",
   "total_seen_traces": 1419,
   "disagreement_count": 376,
   "disagreement_pct": 0.265,
@@ -877,5 +877,5 @@
       "is_r1_diff": false
     }
   ],
-  "runtime_seconds": 11.92
+  "runtime_seconds": 13.18
 }

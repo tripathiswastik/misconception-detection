@@ -13,6 +13,7 @@ from pathlib import Path
 import sys
 import time
 from typing import Any, Dict, List, Optional, Set, Tuple, cast
+from typing_extensions import TypedDict
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import GroupKFold, KFold
@@ -27,6 +28,30 @@ ART_DIR = PROJECT_ROOT / "artifacts"
 from src.data.taxonomy import TaxonomyManager
 from src.diagnoser.adaptive_prior import AdaptiveQuestionPriorEngine
 from src.metrics.map3 import calculate_map3
+
+class TraceDisagreementInfo(TypedDict):
+    sub_index: int
+    global_index: int
+    trace_id: str
+    question_id: str
+    gold: str
+    p550: List[str]
+    p554: List[str]
+    score_550: float
+    score_554: float
+    rank_550: Optional[int]
+    rank_554: Optional[int]
+    winner: str
+    margin: float
+    in_550: bool
+    in_554: bool
+    in_either: bool
+    in_neither: bool
+    in_both: bool
+    support_cat: str
+    gold_q_train: int
+    total_q_train: int
+    is_r1_diff: bool
 
 def sharp(probs: np.ndarray, t: float) -> np.ndarray:
     s = np.power(np.maximum(probs, 1e-12), 1.0 / t)
@@ -226,8 +251,8 @@ def main():
     # =========================================================================
     # AUDIT ALL DISAGREEMENT ROWS
     # =========================================================================
-    disagreement_rows = []
-    r1_disagreement_rows = []
+    disagreement_rows: List[TraceDisagreementInfo] = []
+    r1_disagreement_rows: List[TraceDisagreementInfo] = []
 
     for i in range(n_seen):
         gold = y_seen_true[i]
@@ -340,15 +365,15 @@ def main():
     wins_554 = [r for r in disagreement_rows if r["winner"] == "S554"]
     ties = [r for r in disagreement_rows if r["winner"] == "Tie"]
 
-    pts_550 = sum(r["score_550"] for r in disagreement_rows)
-    pts_554 = sum(r["score_554"] for r in disagreement_rows)
-    pts_oracle = sum(max(r["score_550"], r["score_554"]) for r in disagreement_rows)
+    pts_550 = sum(float(r["score_550"]) for r in disagreement_rows)
+    pts_554 = sum(float(r["score_554"]) for r in disagreement_rows)
+    pts_oracle = sum(max(float(r["score_550"]), float(r["score_554"])) for r in disagreement_rows)
 
     print("\n" + "=" * 80)
     print("2. RANKING & POINT OUTCOMES ON DISAGREEMENT ROWS")
     print("=" * 80)
-    print(f"  S550 Wins (Higher MAP@3 Point)     : {len(wins_550):3d} rows ({len(wins_550)/n_diff:.1%}) | Total Pts: {sum(r['score_550'] for r in wins_550):.2f}")
-    print(f"  S554 Wins (Higher MAP@3 Point)     : {len(wins_554):3d} rows ({len(wins_554)/n_diff:.1%}) | Total Pts: {sum(r['score_554'] for r in wins_554):.2f}")
+    print(f"  S550 Wins (Higher MAP@3 Point)     : {len(wins_550):3d} rows ({len(wins_550)/n_diff:.1%}) | Total Pts: {sum(float(r['score_550']) for r in wins_550):.2f}")
+    print(f"  S554 Wins (Higher MAP@3 Point)     : {len(wins_554):3d} rows ({len(wins_554)/n_diff:.1%}) | Total Pts: {sum(float(r['score_554']) for r in wins_554):.2f}")
     print(f"  Ties (Both Got Same Points or 0)   : {len(ties):3d} rows ({len(ties)/n_diff:.1%})")
     print(f"  Total MAP@3 Points Scored by S550  : {pts_550:.2f} / {n_diff} (Mean: {pts_550/n_diff:.4f})")
     print(f"  Total MAP@3 Points Scored by S554  : {pts_554:.2f} / {n_diff} (Mean: {pts_554/n_diff:.4f})")
