@@ -326,9 +326,9 @@ def main():
             "in_neither": in_neither,
             "in_both": in_both,
             "support_cat": support_cat,
-            "gold_q_train": int(gold_q_train),
-            "total_q_train": int(total_q_train),
-            "is_r1_diff": bool(is_r1_diff)
+            "gold_q_train": gold_q_train,
+            "total_q_train": total_q_train,
+            "is_r1_diff": is_r1_diff
         }
 
         if is_triplet_diff:
