@@ -15,7 +15,7 @@ import json
 from pathlib import Path
 import sys
 import time
-from typing import Any, Dict, List, Set, Tuple
+from typing import Any, Dict, List, Set, Tuple, cast
 
 import numpy as np
 import pandas as pd
@@ -42,7 +42,7 @@ def main():
     start_time = time.time()
 
     # Load metadata and splits
-    train_df = pd.read_csv(DATA_DIR / "train.csv")
+    train_df = cast(pd.DataFrame, pd.read_csv(DATA_DIR / "train.csv"))
     y_raw = train_df["root_code"].fillna("NONE").astype(str).tolist()
     n_samples = len(train_df)
 
@@ -176,7 +176,7 @@ def main():
             "new_false_none": sim_fn,
             "composite_map3": round(sim_comp, 5),
             "delta_map3": round(sim_comp - s550_comp, 5),
-            "gate_pass": bool(len(rescued) >= 5 and len(collateral) == 0 and sim_comp > s550_comp)
+            "gate_pass": len(rescued) >= 5 and len(collateral) == 0 and sim_comp > s550_comp
         }
         simulation_results.append(res_item)
 
@@ -211,7 +211,7 @@ def main():
             "new_false_none": sim_fn,
             "composite_map3": round(sim_comp, 5),
             "delta_map3": round(sim_comp - s550_comp, 5),
-            "gate_pass": bool(len(rescued) >= 5 and len(collateral) == 0 and sim_comp > s550_comp)
+            "gate_pass": len(rescued) >= 5 and len(collateral) == 0 and sim_comp > s550_comp
         }
         simulation_results.append(res_item)
 
@@ -249,7 +249,7 @@ def main():
             "collateral_rank1_damage": len(collateral),
             "composite_map3": round(sim_comp, 5),
             "delta_map3": round(sim_comp - s550_comp, 5),
-            "gate_pass": bool(len(rescued) >= 5 and len(collateral) == 0 and sim_comp > s550_comp)
+            "gate_pass": len(rescued) >= 5 and len(collateral) == 0 and sim_comp > s550_comp
         }
         simulation_results.append(res_item)
 
@@ -294,3 +294,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
