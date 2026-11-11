@@ -1,5 +1,5 @@
 {
-  "execution_time_seconds": 67.49,
+  "execution_time_seconds": 90.65,
   "protocol": "Nested 5-Fold Question-Grouped CV (Inner 4-Fold GroupKFold Selection)",
   "gate_verdict": "FAIL_MAINTAIN_S550",
   "outer_evaluations": [

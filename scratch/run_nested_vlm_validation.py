@@ -27,7 +27,7 @@ from typing import Any, Dict, List, Optional, Set, Tuple, cast
 
 import numpy as np
 import pandas as pd
-from scipy import stats
+from scipy import stats  # type: ignore
 from sklearn.model_selection import GroupKFold
 import torch
 import torch.nn as nn
@@ -401,7 +401,9 @@ def main():
             })
 
     # Save Row-Level Predictions
-    row_df = pd.DataFrame(row_records).sort_values("global_index").reset_index(drop=True)
+    row_df = pd.DataFrame(row_records)
+    row_df = cast(pd.DataFrame, row_df.sort_values("global_index"))
+    row_df = cast(pd.DataFrame, row_df.reset_index(drop=True))
     row_csv_path = ART_DIR / "nested_vlm_row_level_predictions.csv"
     row_df.to_csv(row_csv_path, index=False)
     print(f"\nSaved {len(row_df)} row-level predictions to {row_csv_path}")
@@ -457,7 +459,9 @@ def main():
             "n_unchanged": int((grp["delta_map3"] == 0).sum()),
         })
 
-    q_df = pd.DataFrame(q_records).sort_values("question_id").reset_index(drop=True)
+    q_df = pd.DataFrame(q_records)
+    q_df = cast(pd.DataFrame, q_df.sort_values("question_id"))
+    q_df = cast(pd.DataFrame, q_df.reset_index(drop=True))
     q_csv_path = ART_DIR / "nested_vlm_question_paired_analysis.csv"
     q_df.to_csv(q_csv_path, index=False)
     print(f"Saved {len(q_df)} question-group paired records to {q_csv_path}")
@@ -465,9 +469,9 @@ def main():
     # Statistical Tests across question groups
     deltas = q_df["delta_map3"].values
     n_q_total = len(deltas)
-    n_improved_q = int((deltas > 1e-6).sum())
-    n_degraded_q = int((deltas < -1e-6).sum())
-    n_neutral_q = int((np.abs(deltas) <= 1e-6).sum())
+    n_improved_q = int(np.sum(deltas > 1e-6))
+    n_degraded_q = int(np.sum(deltas < -1e-6))
+    n_neutral_q = int(np.sum(np.abs(deltas) <= 1e-6))
 
     mean_delta_q = float(np.mean(deltas))
     std_delta_q = float(np.std(deltas, ddof=1))
