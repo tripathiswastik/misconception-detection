@@ -1,0 +1,48 @@
+{
+  "execution_time_seconds": 813.15,
+  "models": {
+    "teacher_privileged_oracle": {
+      "name": "Teacher (Privileged Oracle: Question + Working Steps)",
+      "composite_map3": 0.53963,
+      "seen_map3": 0.53983,
+      "unseen_map3": 0.53535,
+      "rare_r10_hits": 220,
+      "rare_r10_rate": 0.7383,
+      "rare_r3_hits": 170,
+      "false_none_count": 165,
+      "false_none_rate": 0.3261
+    },
+    "student_baseline_gold_only": {
+      "name": "Student Baseline (Gold-only: Question Context Only)",
+      "composite_map3": 0.46771,
+      "seen_map3": 0.46517,
+      "unseen_map3": 0.52424,
+      "rare_r10_hits": 213,
+      "rare_r10_rate": 0.7148,
+      "rare_r3_hits": 157,
+      "false_none_count": 272,
+      "false_none_rate": 0.5375
+    },
+    "student_distilled_lupi": {
+      "name": "Student Distilled (LUPI: Question Context + Soft Targets)",
+      "composite_map3": 0.47266,
+      "seen_map3": 0.47066,
+      "unseen_map3": 0.51717,
+      "rare_r10_hits": 218,
+      "rare_r10_rate": 0.7315,
+      "rare_r3_hits": 160,
+      "false_none_count": 264,
+      "false_none_rate": 0.5217
+    }
+  },
+  "student_distillation_gain": {
+    "standalone_delta_comp_map3": 0.00495,
+    "standalone_delta_rare_r10": 5,
+    "standalone_delta_false_none": -8
+  },
+  "s550_reference": {
+    "composite_map3": 0.54214,
+    "rare_r10": 218,
+    "false_none": 104
+  }
+}
