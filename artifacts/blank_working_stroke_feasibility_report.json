@@ -1,6 +1,23 @@
 {
-  "execution_time_seconds": 14.97,
+  "execution_time_seconds": 13.53,
   "gate_decision": "FAIL_CLOSE_PATH_B",
+  "verdict_analysis": {
+    "summary": "GATE_FAIL: Insufficient selective precision to rescue >= 5 demotions without collateral damage",
+    "ink_density_distribution": {
+      "false_demotions_mean": 0.4025,
+      "true_misconceptions_mean": 0.3985,
+      "correct_none_mean": 0.3819
+    },
+    "strictest_threshold_evaluation": {
+      "threshold": 0.005,
+      "rescued_demotions": 2,
+      "collateral_damage": 1,
+      "raw_map3_delta": 0.00048,
+      "gate_cleared": false,
+      "reason": "Rescued 2 < target 5, with non-zero collateral damage"
+    },
+    "conclusion": "Raw blank-space and stroke-density features lack selective precision to rescue false NONE demotions without net negative trade-offs. S550 remains locked as champion."
+  },
   "feature_statistics": {
     "ink_density": {
       "correct_none": {
