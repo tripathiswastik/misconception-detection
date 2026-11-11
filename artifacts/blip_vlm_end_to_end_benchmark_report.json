@@ -1,0 +1,122 @@
+{
+  "execution_time_seconds": 4435.3,
+  "vlm_model": "Salesforce/blip-vqa-base",
+  "gate_decision": "PASS",
+  "vlm_standalone": {
+    "composite_map3": 0.50376,
+    "seen_map3": 0.50375,
+    "unseen_map3": 0.50404,
+    "rare_r10": 193,
+    "false_none": 108
+  },
+  "s550_reference": {
+    "composite_map3": 0.54214,
+    "seen_map3": 0.54295,
+    "unseen_map3": 0.52424,
+    "rare_r10": 218,
+    "false_none": 104
+  },
+  "linear_blends": [
+    {
+      "weight": 0.01,
+      "composite_map3": 0.54134,
+      "delta_map3": -0.0008,
+      "rare_r10": 218,
+      "false_none": 104,
+      "delta_fn": 0,
+      "gate_pass": false
+    },
+    {
+      "weight": 0.02,
+      "composite_map3": 0.5415,
+      "delta_map3": -0.00064,
+      "rare_r10": 219,
+      "false_none": 104,
+      "delta_fn": 0,
+      "gate_pass": false
+    },
+    {
+      "weight": 0.03,
+      "composite_map3": 0.54102,
+      "delta_map3": -0.00112,
+      "rare_r10": 219,
+      "false_none": 104,
+      "delta_fn": 0,
+      "gate_pass": false
+    },
+    {
+      "weight": 0.05,
+      "composite_map3": 0.54219,
+      "delta_map3": 4e-05,
+      "rare_r10": 220,
+      "false_none": 101,
+      "delta_fn": -3,
+      "gate_pass": true
+    },
+    {
+      "weight": 0.08,
+      "composite_map3": 0.54026,
+      "delta_map3": -0.00188,
+      "rare_r10": 221,
+      "false_none": 102,
+      "delta_fn": -2,
+      "gate_pass": false
+    },
+    {
+      "weight": 0.1,
+      "composite_map3": 0.54039,
+      "delta_map3": -0.00175,
+      "rare_r10": 221,
+      "false_none": 102,
+      "delta_fn": -2,
+      "gate_pass": false
+    }
+  ],
+  "protected_blends": [
+    {
+      "weight": 0.02,
+      "composite_map3": 0.54158,
+      "delta_map3": -0.00056,
+      "rare_r10": 219,
+      "false_none": 103,
+      "delta_fn": -1,
+      "gate_pass": false
+    },
+    {
+      "weight": 0.05,
+      "composite_map3": 0.54111,
+      "delta_map3": -0.00103,
+      "rare_r10": 220,
+      "false_none": 103,
+      "delta_fn": -1,
+      "gate_pass": false
+    },
+    {
+      "weight": 0.1,
+      "composite_map3": 0.53993,
+      "delta_map3": -0.00222,
+      "rare_r10": 221,
+      "false_none": 102,
+      "delta_fn": -2,
+      "gate_pass": false
+    },
+    {
+      "weight": 0.15,
+      "composite_map3": 0.53982,
+      "delta_map3": -0.00232,
+      "rare_r10": 222,
+      "false_none": 100,
+      "delta_fn": -4,
+      "gate_pass": false
+    },
+    {
+      "weight": 0.2,
+      "composite_map3": 0.54055,
+      "delta_map3": -0.0016,
+      "rare_r10": 222,
+      "false_none": 98,
+      "delta_fn": -6,
+      "gate_pass": false
+    }
+  ]
+}

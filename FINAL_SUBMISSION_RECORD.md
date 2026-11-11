@@ -82,5 +82,6 @@ All exploratory branches are formally **TERMINATED & CLOSED**:
 - **Visual Backbone Fine-Tuning**: Closed (ConvNeXt-448 S559 / S560 degraded held-out test score).
 - **LUPI Privileged Information Distillation**: Closed (0 / 30 blend configurations beat S550).
 - **Blank-Space & Stroke-Density Rerankers**: Closed (0 / 18 threshold rules passed gate; physical ink does not separate semantic `NONE`).
+- **Open-Weight VLM Cross-Attention (`Salesforce/blip-vqa-base`)**: Closed (Standalone Composite MAP@3: `0.50376` vs S550 `0.54214`; Rare Recall@10: 193/298 vs 218/298; 10/11 blend configurations degraded CV by $-0.0006$ to $-0.0023$, isolated $+0.00004$ at $w=0.05$ is sub-sample noise failing statistical significance).
 
 No further code modifications, weight tuning, or candidate submissions will be performed. S550 is the definitive, validated competition submission.
