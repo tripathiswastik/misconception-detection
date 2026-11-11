@@ -1,0 +1,138 @@
+{
+  "florence_status": {
+    "cache_path": "C:\\Users\\hp\\.cache\\huggingface\\hub\\models--microsoft--Florence-2-base\\snapshots\\5ca5edf5bd017b9919c05d08aebef5e4c7ac3bac",
+    "files_present": [
+      "config.json",
+      "configuration_florence2.py",
+      "preprocessor_config.json",
+      "processing_florence2.py",
+      "tokenizer.json",
+      "tokenizer_config.json",
+      "vocab.json"
+    ],
+    "total_size_mb": 2.41,
+    "has_weights": false,
+    "status": "INCOMPLETE_STUB_ONLY_TOKENIZER"
+  },
+  "pilot_summary": {
+    "total_samples": 8,
+    "avg_latency_seconds": 7.516,
+    "avg_symbol_recall": 0.066,
+    "traces_with_numbers": 3,
+    "traces_with_operators": 0
+  },
+  "sample_evaluations": [
+    {
+      "index": 1,
+      "domain": "Exponent Equation",
+      "trace_id": "4d82c12ba2e7",
+      "root_code": "EXP-01",
+      "image_file": "4d82c12ba2e7.jpeg",
+      "image_size": "517x1024",
+      "latency_seconds": 45.364,
+      "predicted_trocr": "a few",
+      "gold_transcription": "L1 | 3^x = 1/27, 27 :3 = \u22129\nL2 | x = \u22129\nL3 | 5^(x+3) = 5^(\u22129+3) = 5^(\u22126) = 1/30 M.",
+      "symbol_recall": 0.0,
+      "contains_math_numbers": false,
+      "contains_math_operators": false
+    },
+    {
+      "index": 2,
+      "domain": "Linear Algebra",
+      "trace_id": "be46d3efbbac",
+      "root_code": "ALG-06",
+      "image_file": "be46d3efbbac.jpeg",
+      "image_size": "1024x362",
+      "latency_seconds": 3.916,
+      "predicted_trocr": "a statement that they were able to make a strong",
+      "gold_transcription": "L1 | 8a+4=3a\u221211 = 8a+3a=11\u22124 = 11a=7 = a=11\u22127=4\nL2 | a=4\nL3 | 2a+5=2(4)+5=13\nL4 | Jawaban: a = 4 dan 2a + 5 = 13",
+      "symbol_recall": 0.143,
+      "contains_math_numbers": false,
+      "contains_math_operators": false
+    },
+    {
+      "index": 3,
+      "domain": "Negative Arithmetic",
+      "trace_id": "12e4d52ee91c",
+      "root_code": "INT-04",
+      "image_file": "12e4d52ee91c.jpeg",
+      "image_size": "1024x329",
+      "latency_seconds": 1.45,
+      "predicted_trocr": "' \"'He had been",
+      "gold_transcription": "L1 | Dit = nilai dari f(\u22123) + f(4) = ?\nL2 | F(a) = 3a + 1\nL3 | f(\u22123) = 3(\u22123) + 1\nL4 | f(\u22123) = \u22129 + 1\nL5 | f(\u22123) = \u221210\nL6 | F(a) = a^2 \u2212 1\nL7 | f(4) = (4)^2 \u2212 1\nL8 | f(4) = 16 \u2212 1\nL9 | f(4) = 15\nL10 | = f(\u22123) + f(4) = \u221210 + 15\nL11 | = 5",
+      "symbol_recall": 0.062,
+      "contains_math_numbers": false,
+      "contains_math_operators": false
+    },
+    {
+      "index": 4,
+      "domain": "Fraction Operations",
+      "trace_id": "80e3a8860559",
+      "root_code": "FRA-06",
+      "image_file": "80e3a8860559.jpeg",
+      "image_size": "768x1024",
+      "latency_seconds": 2.687,
+      "predicted_trocr": "a b c d e f.",
+      "gold_transcription": "L1 | 1 3/4 = 4\u00d71+3/4 = 7/4 \u00d7 4/1 = 7/4 + 16/4 = 23/4\nL2 | 4 Buah Baju = 4/1\nL3 | 3=3,6,8\nL4 | 4=4,8\nL5 | 23/4 + 2/3 = 46/8 + 3/8 = 48/8",
+      "symbol_recall": 0.143,
+      "contains_math_numbers": false,
+      "contains_math_operators": false
+    },
+    {
+      "index": 5,
+      "domain": "Coordinate Geometry",
+      "trace_id": "4cb86c32cabd",
+      "root_code": "COR-01",
+      "image_file": "4cb86c32cabd.jpeg",
+      "image_size": "2307x3072",
+      "latency_seconds": 1.657,
+      "predicted_trocr": "0 0 0",
+      "gold_transcription": "L1 | A = (-3, 4)\nL2 | B = (-3, 4) + (6, -2)\nL3 | = (3, 2)\nL4 | y = -x\nL5 | [coordinate-plane sketch with line y = -x; point B on the right and image point at the lower left, connected by a dashed line]\nL6 | C = (-3, -2)",
+      "symbol_recall": 0.0,
+      "contains_math_numbers": true,
+      "contains_math_operators": false
+    },
+    {
+      "index": 6,
+      "domain": "Order of Operations",
+      "trace_id": "53e498891934",
+      "root_code": "WOP-01",
+      "image_file": "53e498891934.jpeg",
+      "image_size": "768x1024",
+      "latency_seconds": 1.29,
+      "predicted_trocr": "is a man is",
+      "gold_transcription": "L1 | 4/15 \u2212 6/15 = 8/14\nL2 | 6",
+      "symbol_recall": 0.0,
+      "contains_math_numbers": false,
+      "contains_math_operators": false
+    },
+    {
+      "index": 7,
+      "domain": "Algebraic Formula",
+      "trace_id": "79db2072874b",
+      "root_code": "ANS-01",
+      "image_file": "79db2072874b.jpeg",
+      "image_size": "1024x185",
+      "latency_seconds": 0.992,
+      "predicted_trocr": "100 000",
+      "gold_transcription": "L1 | Persamaan: 2(3x \u2212 2) \u2212 4 = 4(x \u2212 1)\nL2 | Jabarkan: 6x \u2212 4 \u2212 4 = 4x \u2212 4\nL3 | Sederhanakan: 6x \u2212 8 = 4x \u2212 4\nL4 | Pindah ruas: 6x \u2212 4x = \u22124 + 8\nL5 | Hasil x: 2x = 4 \u2192 x = 2 (maka m = 2)",
+      "symbol_recall": 0.062,
+      "contains_math_numbers": true,
+      "contains_math_operators": false
+    },
+    {
+      "index": 8,
+      "domain": "Correct Student Work",
+      "trace_id": "b1d49ebf5e02",
+      "root_code": "NONE",
+      "image_file": "b1d49ebf5e02.jpeg",
+      "image_size": "562x1024",
+      "latency_seconds": 2.769,
+      "predicted_trocr": "1 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000",
+      "gold_transcription": "L1 | -24+72:(-6)\u00d73-(-15)=\nL2 | -12\nL3 | -24+-12\u00d73-(-15)\nL4 | -36\nL5 | -24+(-36)-(-15)\nL6 | -60-(-15)=-45 [crossed out]\nL7 | -60+(-15)=-75 [circled]",
+      "symbol_recall": 0.118,
+      "contains_math_numbers": true,
+      "contains_math_operators": false
+    }
+  ]
+}
