@@ -61,8 +61,8 @@ class StudentWorkingVLMDataset(Dataset):
     def __len__(self) -> int:
         return len(self.df)
 
-    def __getitem__(self, idx: int) -> Dict[str, Any]:
-        row = self.df.iloc[idx]
+    def __getitem__(self, index: int) -> Dict[str, Any]:
+        row = self.df.iloc[index]
         img_name = str(row["image_file"])
         img_path = self.img_dir / img_name
 
@@ -119,7 +119,7 @@ def extract_blip_multimodal_features(
 
     print(f"\n[VLM Feature Extraction] Loading Salesforce/blip-vqa-base (Already computed: {n_already_done}/{n_samples})...")
     processor = BlipProcessor.from_pretrained("Salesforce/blip-vqa-base")
-    model = BlipForQuestionAnswering.from_pretrained("Salesforce/blip-vqa-base").to(device)
+    model = cast(Any, BlipForQuestionAnswering).from_pretrained("Salesforce/blip-vqa-base").to(device)
     model.eval()
 
     dataset = StudentWorkingVLMDataset(df, img_dir)
@@ -402,7 +402,7 @@ def main():
         b_r10 = sum(1 for i in rare_indices if y_true_int[i] in np.argsort(-p_blend[i])[:10])
         b_fn = sum(1 for i in none_indices if preds_blend[i][0] != "NONE")
 
-        gate_pass = bool(b_comp > s550_comp and b_fn <= s550_fn)
+        gate_pass = b_comp > s550_comp and b_fn <= s550_fn
         item = {
             "weight": w,
             "composite_map3": round(b_comp, 5),
@@ -446,7 +446,7 @@ def main():
         b_r10 = sum(1 for i in rare_indices if y_true_int[i] in np.argsort(-p_prot_blend[i])[:10])
         b_fn = sum(1 for i in none_indices if preds_blend[i][0] != "NONE")
 
-        gate_pass = bool(b_comp > s550_comp and b_fn <= s550_fn)
+        gate_pass = b_comp > s550_comp and b_fn <= s550_fn
         item = {
             "weight": w,
             "composite_map3": round(b_comp, 5),

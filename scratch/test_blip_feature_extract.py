@@ -1,4 +1,5 @@
 import time
+from typing import Any, cast
 import torch
 from transformers import BlipProcessor, BlipForQuestionAnswering
 from PIL import Image
@@ -9,7 +10,7 @@ print(f"Device: {device}", flush=True)
 
 model_id = "Salesforce/blip-vqa-base"
 processor = BlipProcessor.from_pretrained(model_id)
-model = BlipForQuestionAnswering.from_pretrained(model_id).to(device)
+model = cast(Any, BlipForQuestionAnswering).from_pretrained(model_id).to(device)
 model.eval()
 print("Model loaded.", flush=True)
 

@@ -1,4 +1,5 @@
 import sys
+from typing import Any, cast
 import torch
 
 print("Testing Salesforce/blip-vqa-base load...", flush=True)
@@ -10,7 +11,7 @@ try:
     print("Processor loaded successfully!", flush=True)
 
     print("Loading model...", flush=True)
-    model = BlipForQuestionAnswering.from_pretrained(model_id)
+    model = cast(Any, BlipForQuestionAnswering).from_pretrained(model_id)
     print("Model loaded successfully!", flush=True)
     params = sum(p.numel() for p in model.parameters()) / 1e6
     print(f"Parameter count: {params:.1f} M")
