@@ -118,6 +118,13 @@ class TextClassifierMLP(nn.Module):
         return self.net(x)
 
 
+def to_dense(matrix: Any) -> np.ndarray:
+    """Safely convert sparse or dense matrix to dense ndarray."""
+    if hasattr(matrix, "toarray"):
+        return cast(np.ndarray, matrix.toarray())
+    return np.asarray(matrix)
+
+
 def train_student_head(
     X_train: torch.Tensor,
     y_hard: torch.Tensor,
@@ -257,11 +264,11 @@ def main():
         tr_student_texts = [student_texts[i] for i in tr_idx]
         val_student_texts = [student_texts[i] for i in val_idx]
 
-        X_tr_teach = torch.from_numpy(teacher_vec.fit_transform(tr_teacher_texts).toarray()).float()
-        X_val_teach = torch.from_numpy(teacher_vec.transform(val_teacher_texts).toarray()).float()
+        X_tr_teach = torch.from_numpy(to_dense(teacher_vec.fit_transform(tr_teacher_texts))).float()
+        X_val_teach = torch.from_numpy(to_dense(teacher_vec.transform(val_teacher_texts))).float()
 
-        X_tr_stud = torch.from_numpy(student_vec.fit_transform(tr_student_texts).toarray()).float()
-        X_val_stud = torch.from_numpy(student_vec.transform(val_student_texts).toarray()).float()
+        X_tr_stud = torch.from_numpy(to_dense(student_vec.fit_transform(tr_student_texts))).float()
+        X_val_stud = torch.from_numpy(to_dense(student_vec.transform(val_student_texts))).float()
 
         y_tr_t = torch.from_numpy(y_true_int[tr_idx]).long()
         tr_qids = train_df.iloc[tr_idx]["question_id"].values

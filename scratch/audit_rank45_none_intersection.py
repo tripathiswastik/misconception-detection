@@ -140,7 +140,7 @@ def main() -> None:
             "trace_id": str(train_df.iloc[i]["trace_id"]),
             "question_id": str(train_df.iloc[i]["question_id"]),
             "gold_code": y_gold,
-            "gold_count": int(class_counts[y_gold]),
+            "gold_count": class_counts[y_gold],
             "is_seen": bool(seen_mask[i]),
             "in_top3": in_top3,
             "prob_rank": prob_rank,
