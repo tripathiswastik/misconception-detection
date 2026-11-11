@@ -1,6 +1,6 @@
 {
   "manifest_version": "1.0",
-  "frozen_timestamp_utc": "2026-11-11 14:45:48Z",
+  "frozen_timestamp_utc": "2026-11-11 14:59:42Z",
   "champion_status": "FROZEN_FINAL_SUBMISSION",
   "artifact": {
     "relative_path": "submissions/blend_sota550_precision_gated_submission.csv",
@@ -17,8 +17,10 @@
   "performance_benchmarks": {
     "public_leaderboard": {
       "score": 0.55049,
-      "kaggle_submission_ref": 57885741,
-      "submission_date": "2026-11-07"
+      "kaggle_submission_ref": 58084010,
+      "submission_date": "2026-11-07 07:27:06 UTC",
+      "live_status": "SubmissionStatus.COMPLETE",
+      "is_frozen": true
     },
     "canonical_cross_validation": {
       "composite_map3": 0.54214,

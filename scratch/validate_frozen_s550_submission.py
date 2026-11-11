@@ -153,8 +153,10 @@ def main():
         "performance_benchmarks": {
             "public_leaderboard": {
                 "score": 0.55049,
-                "kaggle_submission_ref": 57885741,
-                "submission_date": "2026-11-07"
+                "kaggle_submission_ref": 58084010,
+                "submission_date": "2026-11-07 07:27:06 UTC",
+                "live_status": "SubmissionStatus.COMPLETE",
+                "is_frozen": True
             },
             "canonical_cross_validation": {
                 "composite_map3": 0.54214,
@@ -217,3 +219,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
