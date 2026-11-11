@@ -1,7 +1,7 @@
 {
   "trace_id": "otel-trace-misconception-k12-001",
   "session_id": "session-colearn-math-001",
-  "current_phase": "PHASE_5_VERIFICATION",
+  "current_phase": "PHASE_5_VERIFICATION_COMPLETED_CHAMPION_FROZEN",
   "hardware_environment": {
     "gpu_device": "NVIDIA GeForce GTX 1050",
     "cuda_version": "11.7",
@@ -18,7 +18,7 @@
     }
   },
   "session_vs_memory": {
-    "session_summary": "150-sample stratified benchmark evaluated with Qwen2.5-VL-7B-Instruct (4-bit NF4) on Kaggle GPU. Achieved 68.09% accuracy, 92.96% negative recall (catching incorrect students), and 7.04% false acceptance rate. Operational gate (>=78% accuracy, >=60% positive recall) correctly FAILED due to positive recall (42.86%). Automated gating remains STRICTLY_DISABLED, protecting frozen SOTA Public LB (0.52633).",
+    "session_summary": "Completed end-to-end open-weight VLM benchmark (Salesforce/blip-vqa-base) and nested cross-validation with question-paired uncertainty analysis. Standalone BLIP VLM scored 0.50376 MAP@3 (-0.03838 vs S550). Flat-blend (+0.00004 at w=0.05) was refuted under nested 5-fold CV (4-fold inner GroupKFold selection): true generalization delta is -0.00245 Composite MAP@3 (0.53969 vs 0.54214). In 3/5 outer folds inner CV rejected VLM (w=0.0 pure S550); in the remaining 2 folds, non-zero blends degraded on outer held-out test. Question-paired analysis (N=462) showed 12 degraded vs 5 improved (2.4x degradation ratio), cluster bootstrap 95% CI [-0.002914, +0.002140], and statistically significant degradation on seen curriculum questions (t=-2.07, p=0.0389). Open-weight VLM branch permanently closed alongside LUPI distillation, stroke density rerankers, and handwriting OCR. Champion S550 (Kaggle Ref 58084010, Public LB 0.55049, Composite CV 0.54214, SHA256 b2637c3b7a92010d3d04f41f2f4c2e91e0cc312a63d2532ab63f1d16bf90bc70) remains the locked, verified final competition entry.",
     "long_term_memory_profile": {
       "user_preferences": {
         "competition": "misconception-detection-in-k-12-student-math-workings",
@@ -39,6 +39,51 @@
         "oracle_text_cv_map3": 0.5113,
         "fold_scores": [0.5450, 0.4622, 0.5022, 0.5267, 0.5206],
         "public_leaderboard_map3": 0.40949
+      },
+      "vlm_nested_cv_benchmark": {
+        "model": "Salesforce/blip-vqa-base 768-d Multimodal Cross-Attention + Cosine Classification Head",
+        "standalone_composite_map3": 0.50376,
+        "standalone_seen_map3": 0.50375,
+        "standalone_unseen_map3": 0.50404,
+        "standalone_rare_recall_10": "193 / 298 (64.8%)",
+        "standalone_false_none": "108 / 506 (21.3%)",
+        "nested_outer_composite_map3": 0.53969,
+        "nested_generalization_delta": -0.00245,
+        "outer_fold_selection": {
+          "fold_1": "pure_s550 (delta +0.00000)",
+          "fold_2": "protected_w0.10 (delta -0.00111)",
+          "fold_3": "pure_s550 (delta +0.00000)",
+          "fold_4": "pure_s550 (delta +0.00000)",
+          "fold_5": "protected_w0.15 (delta -0.00889)"
+        },
+        "question_paired_uncertainty": {
+          "n_questions": 462,
+          "improved_questions": 5,
+          "degraded_questions": 12,
+          "neutral_questions": 445,
+          "mean_delta": -0.000482,
+          "paired_t_test": "t = -0.3747, p = 0.7081",
+          "wilcoxon_test": "W = 64.5, p = 0.5791",
+          "bootstrap_95_ci": "[-0.002914, +0.002140]",
+          "seen_questions_subgroup": "delta = -0.002585, t = -2.0734, p = 0.0389 (statistically significant degradation)"
+        },
+        "status": "EVALUATED_REJECTED_PERMANENTLY_CLOSED",
+        "post_mortem": "BLIP VQA standalone representation (0.50376) is ~3.84 points inferior to S550 ensemble (0.54214). Unvalidated +0.00004 flat blend was pure post-selection optimization bias; true nested generalization delta is -0.00245. S550 remains immutable champion."
+      },
+      "lupi_privileged_information_benchmark": {
+        "model": "DistilBERT privileged-information student distilled from question+transcription text teacher",
+        "standalone_student_map3": 0.47266,
+        "evaluated_blends": 30,
+        "gate_pass_count": 0,
+        "status": "EVALUATED_REJECTED_PERMANENTLY_CLOSED",
+        "post_mortem": "0/30 blend regimes beat S550 held-out gate. Text student degraded S550 calibration by increasing false NONE demotions from 104 to 115."
+      },
+      "stroke_density_heuristic_benchmark": {
+        "model": "Physical blank-space and stroke-density threshold heuristic reranker",
+        "evaluated_rules": 18,
+        "gate_pass_count": 0,
+        "status": "EVALUATED_REJECTED_PERMANENTLY_CLOSED",
+        "post_mortem": "NONE responses write full multi-line working steps (ink_density 0.4025 vs 0.3985 for misconceptions). Strictest threshold rescued 2 demotions (+0.00048) but caused collateral error, failing 5-rescue zero-collateral gate."
       },
       "sota_leaderboard_benchmark": {
         "model": "Active SOTA Champion: Precision-Gated Multimodal Fusion (blend_sota550_precision_gated_submission.csv)",
@@ -301,7 +346,12 @@
       "src/reader/evaluate_downstream_real.py",
       "src/reader/kaggle_qwen25_150_benchmark.py",
       "tests/test_answer_normalizer.py",
-      "tests/test_comparator_variants.py"
+      "tests/test_comparator_variants.py",
+      "scratch/benchmark_blip_vlm_end_to_end.py",
+      "scratch/run_nested_vlm_validation.py",
+      "scratch/audit_blank_working_features.py",
+      "scratch/test_lupi_s550_gate.py",
+      "scratch/validate_frozen_s550_submission.py"
     ],
     "test_suite": {
       "total_tests": 52,
