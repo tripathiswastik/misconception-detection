@@ -1,0 +1,77 @@
+{
+  "execution_time_seconds": 148.54,
+  "s550_reference": {
+    "seen_map3": 0.54295,
+    "unseen_map3": 0.52424,
+    "composite_map3": 0.54214,
+    "rare_r10_hits": 218,
+    "false_none_count": 104
+  },
+  "baseline_convnext_vision": {
+    "standalone_composite_map3": 0.38139,
+    "rare_r10_hits": 37,
+    "false_none_count": 0
+  },
+  "experiments": [
+    {
+      "name": "ConvNeXt_SupCon_Pure",
+      "standalone": {
+        "seen_map3": 0.18589,
+        "unseen_map3": 0.21818,
+        "composite_map3": 0.18728,
+        "rare_r10_hits": 17,
+        "rare_r10_rate": 0.057,
+        "false_none_count": 415,
+        "false_none_rate": 0.8202
+      },
+      "s550_integrated": {
+        "seen_map3": 0.54295,
+        "unseen_map3": 0.52424,
+        "composite_map3": 0.54214,
+        "delta_vs_s550": 0.0,
+        "folds": [
+          0.55611,
+          0.55,
+          0.51,
+          0.53833,
+          0.55
+        ],
+        "rare_r10_hits": 218,
+        "delta_rare_r10": 0,
+        "false_none_count": 104,
+        "delta_false_none": 0
+      }
+    },
+    {
+      "name": "ConvNeXt_SupCon_Joint",
+      "standalone": {
+        "seen_map3": 0.24519,
+        "unseen_map3": 0.29697,
+        "composite_map3": 0.24742,
+        "rare_r10_hits": 29,
+        "rare_r10_rate": 0.0973,
+        "false_none_count": 320,
+        "false_none_rate": 0.6324
+      },
+      "s550_integrated": {
+        "seen_map3": 0.54295,
+        "unseen_map3": 0.52424,
+        "composite_map3": 0.54214,
+        "delta_vs_s550": 0.0,
+        "folds": [
+          0.55611,
+          0.55,
+          0.51,
+          0.53833,
+          0.55
+        ],
+        "rare_r10_hits": 218,
+        "delta_rare_r10": 0,
+        "false_none_count": 104,
+        "delta_false_none": 0
+      }
+    }
+  ],
+  "best_candidate": "ConvNeXt_SupCon_Pure",
+  "gate_cleared": false
+}
