@@ -82,6 +82,9 @@ All exploratory branches are formally **TERMINATED & CLOSED**:
 - **Visual Backbone Fine-Tuning**: Closed (ConvNeXt-448 S559 / S560 degraded held-out test score).
 - **LUPI Privileged Information Distillation**: Closed (0 / 30 blend configurations beat S550).
 - **Blank-Space & Stroke-Density Rerankers**: Closed (0 / 18 threshold rules passed gate; physical ink does not separate semantic `NONE`).
-- **Open-Weight VLM Cross-Attention (`Salesforce/blip-vqa-base`)**: Closed (Standalone Composite MAP@3: `0.50376` vs S550 `0.54214`; Rare Recall@10: 193/298 vs 218/298; 10/11 blend configurations degraded CV by $-0.0006$ to $-0.0023$, isolated $+0.00004$ at $w=0.05$ is sub-sample noise failing statistical significance).
+- **Open-Weight VLM Cross-Attention (`Salesforce/blip-vqa-base`)**: Closed.
+  - *Standalone Benchmark*: Standalone Composite MAP@3: `0.50376` vs S550 `0.54214`; Rare Recall@10: 193/298 vs 218/298.
+  - *Nested Cross-Validation (Outer 5-Fold, Inner 4-Fold GroupKFold)*: True out-of-fold generalization delta is **`-0.00245` Composite MAP@3** (`0.53969` vs `0.54214`). In 3 of 5 outer folds (Folds 1, 3, 4), inner selection rejected the VLM in favor of pure S550 ($w=0.0$). In the 2 folds where the inner loop selected a non-zero blend (Folds 2 and 5), both degraded on the untouched outer fold (Fold 2: $-0.00111$, Fold 5: $-0.00889$).
+  - *Question-Group Paired Uncertainty (N=462 questions)*: 12 questions degraded vs 5 improved (2.4x degradation ratio). Cluster bootstrap 95% CI is `[-0.002914, +0.002140]` (spans zero). On seen curriculum questions (95.7% metric weight), the degradation is statistically significant ($t = -2.0734$, $p = 0.0389$, $\Delta = -0.002585$). Concludes that the $+0.00004$ flat-blend delta was post-selection optimization bias.
 
 No further code modifications, weight tuning, or candidate submissions will be performed. S550 is the definitive, validated competition submission.

@@ -1,0 +1,385 @@
+{
+  "execution_time_seconds": 67.49,
+  "protocol": "Nested 5-Fold Question-Grouped CV (Inner 4-Fold GroupKFold Selection)",
+  "gate_verdict": "FAIL_MAINTAIN_S550",
+  "outer_evaluations": [
+    {
+      "outer_fold": 1,
+      "selected_config": "pure_s550",
+      "inner_composite_map3": 0.53514,
+      "inner_delta_vs_s550": 0.0,
+      "inner_evaluations": [
+        {
+          "config": "pure_s550",
+          "composite_map3": 0.53514,
+          "delta_vs_s550": 0.0
+        },
+        {
+          "config": "linear_w0.01",
+          "composite_map3": 0.53458,
+          "delta_vs_s550": -0.00056
+        },
+        {
+          "config": "linear_w0.02",
+          "composite_map3": 0.53389,
+          "delta_vs_s550": -0.00125
+        },
+        {
+          "config": "linear_w0.03",
+          "composite_map3": 0.53389,
+          "delta_vs_s550": -0.00125
+        },
+        {
+          "config": "linear_w0.05",
+          "composite_map3": 0.53347,
+          "delta_vs_s550": -0.00167
+        },
+        {
+          "config": "linear_w0.08",
+          "composite_map3": 0.53347,
+          "delta_vs_s550": -0.00167
+        },
+        {
+          "config": "linear_w0.10",
+          "composite_map3": 0.53514,
+          "delta_vs_s550": 0.0
+        },
+        {
+          "config": "protected_w0.02",
+          "composite_map3": 0.53458,
+          "delta_vs_s550": -0.00056
+        },
+        {
+          "config": "protected_w0.05",
+          "composite_map3": 0.53444,
+          "delta_vs_s550": -0.00069
+        },
+        {
+          "config": "protected_w0.10",
+          "composite_map3": 0.53444,
+          "delta_vs_s550": -0.00069
+        },
+        {
+          "config": "protected_w0.15",
+          "composite_map3": 0.53319,
+          "delta_vs_s550": -0.00194
+        },
+        {
+          "config": "protected_w0.20",
+          "composite_map3": 0.53431,
+          "delta_vs_s550": -0.00083
+        }
+      ]
+    },
+    {
+      "outer_fold": 2,
+      "selected_config": "protected_w0.10",
+      "inner_composite_map3": 0.53528,
+      "inner_delta_vs_s550": 0.00056,
+      "inner_evaluations": [
+        {
+          "config": "pure_s550",
+          "composite_map3": 0.53472,
+          "delta_vs_s550": 0.0
+        },
+        {
+          "config": "linear_w0.01",
+          "composite_map3": 0.53333,
+          "delta_vs_s550": -0.00139
+        },
+        {
+          "config": "linear_w0.02",
+          "composite_map3": 0.53333,
+          "delta_vs_s550": -0.00139
+        },
+        {
+          "config": "linear_w0.03",
+          "composite_map3": 0.53361,
+          "delta_vs_s550": -0.00111
+        },
+        {
+          "config": "linear_w0.05",
+          "composite_map3": 0.53444,
+          "delta_vs_s550": -0.00028
+        },
+        {
+          "config": "linear_w0.08",
+          "composite_map3": 0.53486,
+          "delta_vs_s550": 0.00014
+        },
+        {
+          "config": "linear_w0.10",
+          "composite_map3": 0.53306,
+          "delta_vs_s550": -0.00167
+        },
+        {
+          "config": "protected_w0.02",
+          "composite_map3": 0.53319,
+          "delta_vs_s550": -0.00153
+        },
+        {
+          "config": "protected_w0.05",
+          "composite_map3": 0.53458,
+          "delta_vs_s550": -0.00014
+        },
+        {
+          "config": "protected_w0.10",
+          "composite_map3": 0.53528,
+          "delta_vs_s550": 0.00056
+        },
+        {
+          "config": "protected_w0.15",
+          "composite_map3": 0.53528,
+          "delta_vs_s550": 0.00056
+        },
+        {
+          "config": "protected_w0.20",
+          "composite_map3": 0.53431,
+          "delta_vs_s550": -0.00042
+        }
+      ]
+    },
+    {
+      "outer_fold": 3,
+      "selected_config": "pure_s550",
+      "inner_composite_map3": 0.54597,
+      "inner_delta_vs_s550": 0.0,
+      "inner_evaluations": [
+        {
+          "config": "pure_s550",
+          "composite_map3": 0.54597,
+          "delta_vs_s550": 0.0
+        },
+        {
+          "config": "linear_w0.01",
+          "composite_map3": 0.54514,
+          "delta_vs_s550": -0.00083
+        },
+        {
+          "config": "linear_w0.02",
+          "composite_map3": 0.54458,
+          "delta_vs_s550": -0.00139
+        },
+        {
+          "config": "linear_w0.03",
+          "composite_map3": 0.54347,
+          "delta_vs_s550": -0.0025
+        },
+        {
+          "config": "linear_w0.05",
+          "composite_map3": 0.54264,
+          "delta_vs_s550": -0.00333
+        },
+        {
+          "config": "linear_w0.08",
+          "composite_map3": 0.54069,
+          "delta_vs_s550": -0.00528
+        },
+        {
+          "config": "linear_w0.10",
+          "composite_map3": 0.54181,
+          "delta_vs_s550": -0.00417
+        },
+        {
+          "config": "protected_w0.02",
+          "composite_map3": 0.54542,
+          "delta_vs_s550": -0.00056
+        },
+        {
+          "config": "protected_w0.05",
+          "composite_map3": 0.54306,
+          "delta_vs_s550": -0.00292
+        },
+        {
+          "config": "protected_w0.10",
+          "composite_map3": 0.54514,
+          "delta_vs_s550": -0.00083
+        },
+        {
+          "config": "protected_w0.15",
+          "composite_map3": 0.54181,
+          "delta_vs_s550": -0.00417
+        },
+        {
+          "config": "protected_w0.20",
+          "composite_map3": 0.54361,
+          "delta_vs_s550": -0.00236
+        }
+      ]
+    },
+    {
+      "outer_fold": 4,
+      "selected_config": "pure_s550",
+      "inner_composite_map3": 0.53903,
+      "inner_delta_vs_s550": 0.0,
+      "inner_evaluations": [
+        {
+          "config": "pure_s550",
+          "composite_map3": 0.53903,
+          "delta_vs_s550": 0.0
+        },
+        {
+          "config": "linear_w0.01",
+          "composite_map3": 0.5375,
+          "delta_vs_s550": -0.00153
+        },
+        {
+          "config": "linear_w0.02",
+          "composite_map3": 0.53708,
+          "delta_vs_s550": -0.00194
+        },
+        {
+          "config": "linear_w0.03",
+          "composite_map3": 0.53625,
+          "delta_vs_s550": -0.00278
+        },
+        {
+          "config": "linear_w0.05",
+          "composite_map3": 0.535,
+          "delta_vs_s550": -0.00403
+        },
+        {
+          "config": "linear_w0.08",
+          "composite_map3": 0.53458,
+          "delta_vs_s550": -0.00444
+        },
+        {
+          "config": "linear_w0.10",
+          "composite_map3": 0.53292,
+          "delta_vs_s550": -0.00611
+        },
+        {
+          "config": "protected_w0.02",
+          "composite_map3": 0.53792,
+          "delta_vs_s550": -0.00111
+        },
+        {
+          "config": "protected_w0.05",
+          "composite_map3": 0.53694,
+          "delta_vs_s550": -0.00208
+        },
+        {
+          "config": "protected_w0.10",
+          "composite_map3": 0.53597,
+          "delta_vs_s550": -0.00306
+        },
+        {
+          "config": "protected_w0.15",
+          "composite_map3": 0.53611,
+          "delta_vs_s550": -0.00292
+        },
+        {
+          "config": "protected_w0.20",
+          "composite_map3": 0.53375,
+          "delta_vs_s550": -0.00528
+        }
+      ]
+    },
+    {
+      "outer_fold": 5,
+      "selected_config": "protected_w0.15",
+      "inner_composite_map3": 0.53917,
+      "inner_delta_vs_s550": 0.00264,
+      "inner_evaluations": [
+        {
+          "config": "pure_s550",
+          "composite_map3": 0.53653,
+          "delta_vs_s550": 0.0
+        },
+        {
+          "config": "linear_w0.01",
+          "composite_map3": 0.53431,
+          "delta_vs_s550": -0.00222
+        },
+        {
+          "config": "linear_w0.02",
+          "composite_map3": 0.53389,
+          "delta_vs_s550": -0.00264
+        },
+        {
+          "config": "linear_w0.03",
+          "composite_map3": 0.53583,
+          "delta_vs_s550": -0.00069
+        },
+        {
+          "config": "linear_w0.05",
+          "composite_map3": 0.53444,
+          "delta_vs_s550": -0.00208
+        },
+        {
+          "config": "linear_w0.08",
+          "composite_map3": 0.53486,
+          "delta_vs_s550": -0.00167
+        },
+        {
+          "config": "linear_w0.10",
+          "composite_map3": 0.53486,
+          "delta_vs_s550": -0.00167
+        },
+        {
+          "config": "protected_w0.02",
+          "composite_map3": 0.53556,
+          "delta_vs_s550": -0.00097
+        },
+        {
+          "config": "protected_w0.05",
+          "composite_map3": 0.53597,
+          "delta_vs_s550": -0.00056
+        },
+        {
+          "config": "protected_w0.10",
+          "composite_map3": 0.53889,
+          "delta_vs_s550": 0.00236
+        },
+        {
+          "config": "protected_w0.15",
+          "composite_map3": 0.53917,
+          "delta_vs_s550": 0.00264
+        },
+        {
+          "config": "protected_w0.20",
+          "composite_map3": 0.53861,
+          "delta_vs_s550": 0.00208
+        }
+      ]
+    }
+  ],
+  "dataset_aggregate_metrics": {
+    "s550_composite_map3": 0.54214,
+    "s550_seen_map3": 0.54295,
+    "s550_unseen_map3": 0.52424,
+    "nested_composite_map3": 0.53969,
+    "nested_seen_map3": 0.5402,
+    "nested_unseen_map3": 0.52828,
+    "generalization_delta_composite_map3": -0.00245
+  },
+  "question_paired_uncertainty_analysis": {
+    "n_question_groups": 462,
+    "improved_questions": 5,
+    "degraded_questions": 12,
+    "neutral_questions": 445,
+    "mean_question_delta": -0.000482,
+    "std_question_delta": 0.027644,
+    "sem_question_delta": 0.001286,
+    "paired_t_test": {
+      "t_statistic": -0.3747,
+      "p_value": 0.7081,
+      "df": 461
+    },
+    "wilcoxon_test": {
+      "statistic": 64.5,
+      "p_value": 0.5791
+    },
+    "cluster_bootstrap_95_ci": {
+      "ci_lower": -0.002914,
+      "ci_upper": 0.00214,
+      "contains_zero": true
+    },
+    "subgroups": {
+      "seen_mean_delta": -0.002585,
+      "seen_t_p": 0.0389,
+      "unseen_mean_delta": 0.00565,
+      "unseen_t_p": 0.1027
+    }
+  }
+}

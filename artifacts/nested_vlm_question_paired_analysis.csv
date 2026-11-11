@@ -1,0 +1,463 @@
+question_id,outer_fold,topic_name,grade,is_seen,n_traces,s550_mean_map3,nested_mean_map3,delta_map3,n_improved,n_degraded,n_unchanged
+0058a6a3-2c37-4fd3-83d2-725a575711ac,2,Konversi Pecahan,6,False,2,0.25,0.25,0.0,0,0,2
+023387e8-833c-4aba-a698-abba66d24eb0,5,Operasi Bentuk Akar,9,True,5,0.5,0.5,0.0,0,0,5
+025f845e-3e89-4700-9fda-ced312c0a265,4,Korelasi,11,False,1,1.0,1.0,0.0,0,0,1
+038dc7bf-1724-47cd-9493-7a9a1be70d75,5,Ukuran Penyebaran Data,10,True,4,0.25,0.25,0.0,0,0,4
+046dc0ae-4f50-4189-8682-ef9fc8261f82,1,Peluang Kejadian,8,False,1,0.0,0.0,0.0,0,0,1
+0496f06a-38cb-4882-a85b-31f8f9ab77f1,3,Operasi Bilangan Rasional,6,False,4,0.5,0.5,0.0,0,0,4
+04e66837-3b0d-4d37-8f4d-a3f0ba16561e,2,Operasi Bilangan Cacah Sampai 100.000,5,False,1,0.0,0.0,0.0,0,0,1
+0553a258-6878-491e-aaf0-86f45dbee04e,4,Operasi pecahan,6,False,1,1.0,1.0,0.0,0,0,1
+056036fe-2371-4ca6-b56c-1466d2bfeae5,3,Operasi pecahan,6,True,4,0.25,0.25,0.0,0,0,4
+05b6e449-44f3-4279-bcb6-4eadf9f92dc1,4,Aplikasi PLSV,7,True,2,0.0,0.0,0.0,0,0,2
+05fa8744-5752-47be-9297-ce384828b248,1,Aplikasi PLSV,7,True,2,0.0,0.16667,0.16667,1,0,1
+0686a2ec-02b7-4441-9e7f-a04c12694094,3,Komposisi Fungsi,11,True,3,0.33333,0.33333,0.0,0,0,3
+08348564-2850-4e92-b05b-d3fe49f2d48a,2,Merasionalkan Bentuk Akar,8,True,3,0.0,0.0,0.0,0,0,3
+095028dd-6e62-4e53-8405-dbc94dc0f0dc,2,Operasi Fungsi,11,True,3,0.33333,0.33333,0.0,0,0,3
+0a42f51a-d7fa-4abf-a079-73db2cc8f5ca,5,Jenis-Jenis Fungsi,11,False,1,0.0,0.0,0.0,0,0,1
+0afe42a7-c92b-4589-a2e3-5b37969c1a04,5,Peluang Kejadian,8,False,1,0.0,0.0,0.0,0,0,1
+0b889da6-7fba-44c7-b75d-750c1373a3b1,1,Penyajian dan Penafsiran Data,7,True,2,0.66667,0.66667,0.0,0,0,2
+0c3cb26a-eed5-428e-b787-7b2248c45d85,3,Residu,11,True,3,0.27778,0.27778,0.0,0,0,3
+0c602f9c-14a3-437a-a795-457858228974,2,Operasi Bilangan Berpangkat,8,True,3,0.38889,0.38889,0.0,0,0,3
+0c6eea6c-bb0a-4050-9e49-9f300a8bb502,5,Bilangan Berpangkat,8,True,7,0.16667,0.16667,0.0,0,0,7
+0c905a73-7533-44f2-9a45-61ee9e654fe9,2,Komposisi Transformasi Geometri,12,False,2,0.5,0.5,0.0,0,0,2
+0f6ee218-2e5e-46fe-ade2-244f2773a788,3,Operasi Biner Bilangan Bulat,12,False,1,0.0,0.0,0.0,0,0,1
+0fcb8b25-b20b-435f-9c2f-a616662bb31e,5,Sudut,8,True,4,1.0,1.0,0.0,0,0,4
+0fdd63fe-9e91-4317-bf92-467b393bd1bf,5,Permutasi,12,True,2,0.75,0.75,0.0,0,0,2
+10612ce4-02d1-428f-aa86-3718191a1012,4,Penerapan Bilangan Bulat,7,False,2,0.0,0.0,0.0,0,0,2
+120a47c4-7fc9-4cb3-a141-444791cfeb92,3,Persamaan Linear Satu Variabel (PLSV),9,True,8,0.375,0.375,0.0,0,0,8
+131fa6ed-f198-4cd2-850d-38e6467b6896,5,Penyajian dan Penafsiran Data,5,False,2,0.75,0.75,0.0,0,0,2
+13549c60-4128-4085-953a-1b45a514bfcd,2,Operasi Bilangan Cacah Sampai 10.000,4,True,2,0.75,0.75,0.0,0,0,2
+13e309c9-6635-4996-a8df-69896426f9f1,3,Ukuran Penyebaran Data,10,False,2,0.25,0.25,0.0,0,0,2
+1488a463-7646-4b7f-aa4f-35c90d81b698,1,Konversi Pecahan,6,True,7,0.42857,0.42857,0.0,0,0,7
+14ba05d9-b9a7-4aed-8a54-e18dea904478,3,Operasi Bilangan Bulat,7,True,5,0.7,0.7,0.0,0,0,5
+150eb620-34de-45c3-b674-a70797128a31,1,Komposisi Fungsi,11,True,7,0.21429,0.21429,0.0,0,0,7
+1789caa0-2e24-42da-a0b2-48a774142550,2,Aplikasi Eksponensial (Bilangan Berpangkat),10,True,3,0.66667,0.66667,0.0,0,0,3
+187b3e4c-e5ea-4545-aede-ef2bf57815c2,3,Penyajian dan Penafsiran Data,5,False,1,0.33333,0.33333,0.0,0,0,1
+189286ec-c85a-421e-b5f9-2ba86167112c,2,Komposisi Transformasi Geometri,12,False,1,0.0,0.0,0.0,0,0,1
+18afebdb-8753-442e-837c-cd1c8a55b8de,5,Ukuran Pemusatan Data,8,True,3,0.33333,0.33333,0.0,0,0,3
+18b075bb-b8bb-4fe4-83be-7bfc8f9b25bb,3,Peluang Kejadian Majemuk,12,True,2,0.5,0.5,0.0,0,0,2
+1901a05c-f410-4f98-a292-708af1df5ce2,4,Penyajian dan Penafsiran Data,5,True,6,0.66667,0.66667,0.0,0,0,6
+191460d0-e3e3-43f2-830a-3007819fe18e,1,Operasi Bilangan Bulat,7,True,3,0.33333,0.33333,0.0,0,0,3
+199a53db-6260-400c-82b1-66e0a33029e0,1,Ukuran Penyebaran Data,10,True,2,0.66667,0.5,-0.16667,0,1,1
+19ef511c-1cd9-48ab-bf4f-85e904f0a911,3,Konversi Pecahan,6,True,5,0.0,0.0,0.0,0,0,5
+1a222b5d-60f4-414f-b225-e5961970cece,2,Pendahuluan Bilangan Rasional,7,True,6,0.61111,0.61111,0.0,0,0,6
+1aa7c3af-9079-4834-af9d-2141c42bbb7a,5,Pendahuluan Logaritma,9,False,2,0.0,0.0,0.0,0,0,2
+1bf78316-7c6a-494b-9495-fb60e7361fe1,2,Residu,11,True,4,0.625,0.625,0.0,0,0,4
+1ca1457a-516c-43d9-b845-8a46d904fd31,5,Volume Bangun Ruang,5,True,2,0.0,0.0,0.0,0,0,2
+1d0c541c-3c2a-4316-9111-7aa0eff9bbd3,3,Merasionalkan Bentuk Akar,10,True,8,0.39583,0.39583,0.0,0,0,8
+1e7776d3-d27e-4aa9-bbab-9008d6006a31,3,Operasi Bentuk Akar,10,True,3,0.0,0.0,0.0,0,0,3
+1eb8c55a-860d-4271-9082-c8135ccbb971,1,Operasi Bilangan Berpangkat,8,True,5,0.4,0.4,0.0,0,0,5
+1f8cea80-1cb4-4e08-98af-54a8bb3c4a81,5,Aplikasi KPK dan FPB,7,True,7,0.54762,0.54762,0.0,0,0,7
+1ff0eb3b-2bc1-4c2e-b0ca-c177b3d22e17,1,Operasi Bilangan Cacah Sampai 100.000,5,True,4,0.33333,0.33333,0.0,0,0,4
+20663e28-bbb0-499e-9ccc-fd799e6825b7,1,Operasi pecahan,6,True,6,0.66667,0.66667,0.0,0,0,6
+211c1c3c-39f7-40e3-83df-9356d68e6ead,2,Operasi Bentuk Akar,8,True,7,0.57143,0.57143,0.0,0,0,7
+22bc6623-aa5c-4d03-91cd-ad59a2c88726,5,Operasi Bilangan Bulat,7,True,2,1.0,1.0,0.0,0,0,2
+22c8c798-4e89-4967-a0a4-94c9c923b900,1,Operasi Fungsi,11,True,2,0.5,0.5,0.0,0,0,2
+22cb0a1b-25ca-4267-8eef-74bf07057ca6,2,Ukuran Pemusatan Data,10,True,2,0.66667,0.5,-0.16667,0,1,1
+22fbd74f-d204-48b3-8c0c-f2c566fa0315,3,Operasi Bilangan Cacah Sampai 10.000,4,True,3,0.77778,0.77778,0.0,0,0,3
+23028b5f-c9e4-4cf1-a586-7d24010c3a67,4,Operasi Bilangan Berpangkat,8,True,4,0.5,0.5,0.0,0,0,4
+24cb6c7d-e814-4c61-8497-a63ff85a6630,3,Persamaan Garis Regresi,11,False,1,1.0,1.0,0.0,0,0,1
+24f4e214-661d-43bb-a1ed-0e990518f7ef,3,Merasionalkan Bentuk Akar,8,True,3,0.27778,0.27778,0.0,0,0,3
+2560181c-86cf-4f28-9a41-112162aeb758,4,Operasi pecahan,6,True,6,0.5,0.5,0.0,0,0,6
+25a9d934-ecb1-4bd2-aa66-c19a73c5ceba,3,Jenis-Jenis Fungsi,11,True,5,0.8,0.8,0.0,0,0,5
+26c0d428-e0d0-4276-9943-8c4988976aad,2,Pendahuluan KPK dan FPB,7,True,4,0.375,0.375,0.0,0,0,4
+277453c5-b863-4602-96a6-399bd4e2b8c1,4,Fungsi Eksponen,10,True,2,0.0,0.0,0.0,0,0,2
+279f68ce-7526-4c74-afab-97a5d28dd8fa,1,Operasi Bilangan Cacah Sampai 100.000,5,True,3,0.44444,0.44444,0.0,0,0,3
+289b413e-1ced-441e-b325-cf0d26b7d9ed,5,Penyajian dan Penafsiran Data,5,True,4,0.75,0.625,-0.125,0,1,3
+2937257a-9e66-4489-bcdd-80c7cada5f4c,1,Pengenalan Transformasi Geometri,12,True,3,0.83333,0.83333,0.0,0,0,3
+29c50fb4-efd1-41c9-8bcb-8deaaa28715f,5,Penyajian dan Penafsiran Data,5,False,2,1.0,1.0,0.0,0,0,2
+2a6264a9-76bb-4fbd-8e7c-91cde4188ad1,3,Ukuran Pemusatan Data,10,True,4,0.75,0.75,0.0,0,0,4
+2ae171f4-c337-4098-98a7-7c770cb25b46,5,Permutasi,12,True,3,0.5,0.5,0.0,0,0,3
+2b33793b-1da2-41b4-bc68-4558d05bdff9,3,Persamaan Garis Regresi,11,False,2,1.0,1.0,0.0,0,0,2
+2d34b6a4-d334-47ff-a439-dd50c098b6ca,4,Bilangan Berpangkat,8,True,8,0.16667,0.16667,0.0,0,0,8
+2d827de0-764b-4163-b283-fef285997201,2,Bilangan Berpangkat,8,True,4,0.08333,0.08333,0.0,0,0,4
+2dadd073-183e-454c-8560-48c103a0c527,1,Operasi pecahan,6,True,3,0.66667,0.66667,0.0,0,0,3
+2db13905-3a69-47d4-b589-f9e16c6dac41,2,Peluang Kejadian,8,True,3,0.66667,0.66667,0.0,0,0,3
+2f6df60c-e40c-4664-90b2-c9400d6675ae,2,Luas Permukaan Bangun Ruang,7,True,3,0.77778,0.77778,0.0,0,0,3
+2f753132-e422-41f1-ad91-b7e0947c05d3,3,Luas Permukaan Bangun Ruang,7,False,2,0.75,0.75,0.0,0,0,2
+32a3ce75-2b5a-442d-8cfc-975ccf7b9f70,3,Aplikasi KPK dan FPB,5,True,2,0.5,0.5,0.0,0,0,2
+32abcbdc-2930-41a2-81ad-f91366209da2,5,Komposisi Bangun Datar,4,False,1,1.0,1.0,0.0,0,0,1
+341faabb-19c5-4225-a9a3-556ad804d662,1,Aplikasi KPK dan FPB,7,True,11,0.48485,0.48485,0.0,0,0,11
+34a5d7a6-28f8-4e19-90e0-065746de9e44,1,Ukuran Penyebaran Data,8,False,1,1.0,1.0,0.0,0,0,1
+384b3a83-65bf-41d2-ba6c-9bc64a2878ce,3,Penerapan Bilangan Bulat,7,False,2,1.0,1.0,0.0,0,0,2
+39278a9d-ffef-4dd6-b074-23bd1c2ee76f,2,Persamaan Garis Regresi,11,True,3,0.0,0.0,0.0,0,0,3
+3a668af7-a683-4faa-a9a8-1be78bafa1f0,1,Bilangan Berpangkat,8,False,1,0.0,0.0,0.0,0,0,1
+3a69bd62-fcd8-4868-8774-ae5be1a6e281,1,Operasi Bilangan Bulat,7,True,3,0.66667,0.66667,0.0,0,0,3
+3a7b8d9c-0fef-43dd-ba9c-048148132e7f,3,Ukuran Pemusatan Data,10,True,3,0.66667,0.66667,0.0,0,0,3
+3b8e25fb-5b09-4c61-a107-3ccd36e056f9,1,Konversi Bilangan Rasional,6,True,2,1.0,1.0,0.0,0,0,2
+3c3c040a-348d-4f1c-93fc-f66cc339f9bb,1,Ukuran Penyebaran Data,10,True,2,0.5,0.5,0.0,0,0,2
+3caaf819-936c-4096-98b6-da969d9bdaa0,1,Operasi Bilangan Berpangkat,8,True,4,0.33333,0.33333,0.0,0,0,4
+3d2c4f9e-fcde-48a2-9c17-b58a45fa29f6,5,Volume Bangun Ruang,5,True,3,0.5,0.5,0.0,0,0,3
+3d4de56c-f015-49e0-820b-a039d936050d,4,Operasi Bilangan Cacah Sampai 100.000,5,True,3,0.66667,0.66667,0.0,0,0,3
+3f3205a9-79a7-4355-8221-8e67ff5eb60a,4,Penyajian dan Penafsiran Data,7,True,2,0.66667,0.66667,0.0,0,0,2
+40385d78-6736-4949-819a-ecc1a702b4a5,3,Penerapan Bilangan Bulat,7,True,3,0.66667,0.66667,0.0,0,0,3
+403eaeff-ed10-4af6-8f6b-6b4ad9844fdb,4,Kaidah Pencacahan,12,True,4,0.5,0.5,0.0,0,0,4
+4044d7ad-de53-4053-a9ba-c50e7355281d,2,Operasi pecahan,6,True,3,0.66667,0.66667,0.0,0,0,3
+4067b767-c7f1-43fe-abb6-7ee7540fa49c,4,Operasi Fungsi,11,False,1,1.0,1.0,0.0,0,0,1
+409a57d7-62a8-4ba9-a250-64e4cd1f3990,2,Permutasi,12,True,4,0.875,0.875,0.0,0,0,4
+40d54ef3-f905-40ab-a30d-5b1f2f683bb7,4,Operasi Bilangan Berpangkat,8,False,2,0.0,0.0,0.0,0,0,2
+41569cc9-35bb-4064-85b0-6c2b3a708be8,2,Operasi Bilangan Berpangkat,10,True,4,0.70833,0.70833,0.0,0,0,4
+41594ec6-f393-4bfa-89ab-72f63687f779,3,Penyajian dan Penafsiran Data,5,True,3,0.66667,0.66667,0.0,0,0,3
+42304acd-337d-4bd4-a93d-83a048479b45,5,Penyajian dan Penafsiran Data,5,True,3,0.77778,0.77778,0.0,0,0,3
+432ddafb-a523-47de-9bcf-3e85afedaca7,5,Ukuran Pemusatan Data,8,True,5,0.4,0.4,0.0,0,0,5
+4390683c-953d-46cd-8f1d-71e7ede134c4,2,Operasi Bilangan Bulat,7,True,2,0.5,0.5,0.0,0,0,2
+44303e74-85aa-4d1c-934a-3d0265922de3,5,Fungsi Eksponen,10,False,1,0.33333,0.33333,0.0,0,0,1
+448c5f09-24c4-447c-972b-faa6f7aeda54,2,Ukuran Penyebaran Data,7,True,4,0.5,0.5,0.0,0,0,4
+44da3ba9-96e3-4e7c-90b3-b9888a4b6301,1,Operasi Bilangan Bulat,7,True,7,0.64286,0.64286,0.0,0,0,7
+44f869ba-4636-4ce6-9237-f7076fea4ddc,5,Ukuran Pemusatan Data,8,False,1,1.0,1.0,0.0,0,0,1
+45258946-d4df-41b8-835d-5b87252c6cee,1,Persamaan Linear Satu Variabel (PLSV),9,True,2,0.16667,0.16667,0.0,0,0,2
+45504f85-d91f-4583-8301-183531039630,5,Kombinasi,12,False,1,0.0,0.33333,0.33333,1,0,0
+4556cb5f-82b2-42f0-b7b3-d4a3107bc5c7,4,Operasi Bilangan Rasional,6,True,3,0.5,0.5,0.0,0,0,3
+45f366b7-1a1f-42fc-8581-f41cebf414cf,3,Ukuran Pemusatan Data,10,True,3,0.66667,0.66667,0.0,0,0,3
+463d71c7-adab-462b-846a-82894bb76111,1,Aplikasi Fungsi,11,False,1,1.0,1.0,0.0,0,0,1
+471f67ec-ef64-443f-a492-d4886113de44,4,Peluang Kejadian Majemuk,12,True,4,0.625,0.625,0.0,0,0,4
+47e5509d-c1c8-4f17-971b-bdb7b238e603,4,Barisan dan Deret Aritmatika,8,True,11,0.5,0.5,0.0,0,0,11
+47ec930b-4013-4cd1-9f47-aeaea09d3853,2,Operasi Bilangan Bulat,7,True,6,0.47222,0.44444,-0.02778,0,1,5
+4814deb9-c74d-426f-adbc-9fc502bc88bf,5,Fungsi Eksponen,10,True,3,0.16667,0.16667,0.0,0,0,3
+48d0ff6d-937b-4796-87b6-252fdafd0b82,4,Operasi Logaritma,10,True,5,0.6,0.6,0.0,0,0,5
+49445fd7-8793-410e-9f53-4184398b6ea7,1,Aplikasi barisan dan deret geometri,9,False,1,1.0,1.0,0.0,0,0,1
+49485f28-9abe-4b7d-9640-204034d9f61d,4,Penyajian dan Penafsiran Data,5,False,2,1.0,1.0,0.0,0,0,2
+49d7f7ea-7d5f-4e91-ace9-707a12e9a50a,5,Sudut,9,True,5,0.8,0.8,0.0,0,0,5
+4a6fb55d-9c0d-41cc-ae45-470a31e97715,1,Operasi Bilangan Berpangkat,8,True,4,0.625,0.625,0.0,0,0,4
+4a9f36c7-a202-441f-ac57-c50c340b06c4,4,Luas Permukaan Bangun Ruang,9,True,2,0.75,0.75,0.0,0,0,2
+4afbf6ab-ad65-45b9-aadd-fe6233103cff,1,Nilai dan Bentuk Fungsi,11,True,3,0.66667,0.66667,0.0,0,0,3
+4be69d4b-62e9-4b8d-982c-9d228d3c5bd0,1,Ukuran Pemusatan Data,8,True,2,0.41667,0.41667,0.0,0,0,2
+4d3c4339-d2b3-4eb5-862f-a00ff107ac6e,1,Aplikasi KPK dan FPB,5,False,1,1.0,1.0,0.0,0,0,1
+4d5a3273-e3d1-4e97-bbd1-0bc354a36cef,5,Sudut,7,True,9,0.77778,0.77778,0.0,0,0,9
+4dd06fd2-6bd9-484f-bded-751d4d2a30ef,2,Pendahuluan Logaritma,10,True,4,0.45833,0.45833,0.0,0,0,4
+4dd692e6-048b-4d0b-b840-d43928cafdad,5,Penyajian dan Penafsiran Data,4,False,1,1.0,1.0,0.0,0,0,1
+4ddd3782-39b6-452a-82d9-9b8167406823,3,Segiempat,4,False,1,0.0,0.0,0.0,0,0,1
+4f22de0e-e683-495d-b115-486e4b293f74,3,Operasi Bilangan Cacah Sampai 10.000,4,False,2,1.0,1.0,0.0,0,0,2
+4f9adb85-17b2-4a95-8a13-dd9ad56d381c,2,Sudut,8,False,1,1.0,1.0,0.0,0,0,1
+4fb3d4e8-d375-4717-87cc-e3bcbabc430b,1,Aplikasi KPK dan FPB,5,False,2,1.0,1.0,0.0,0,0,2
+501b548c-a5a6-4200-bc6f-003263deb2d8,1,Kaidah Pencacahan,12,True,6,0.61111,0.61111,0.0,0,0,6
+510d2ec1-6efd-46df-ab68-147c81529145,5,Aplikasi Eksponensial (Bilangan Berpangkat),10,True,2,0.5,0.5,0.0,0,0,2
+512efe8b-964d-44f8-8401-6a02a67434f1,3,Bilangan Berpangkat,8,True,2,0.5,0.5,0.0,0,0,2
+52208d52-96e5-4300-87cd-540e0bab9418,3,Operasi pecahan,6,True,3,0.77778,0.77778,0.0,0,0,3
+523497ab-59d0-4104-9f09-b2afcd75b432,1,Persamaan Linear Satu Variabel (PLSV),9,True,8,0.625,0.625,0.0,0,0,8
+530a1947-445b-496d-9368-0dd86b248958,5,Ukuran Penyebaran Data,8,False,1,0.5,0.5,0.0,0,0,1
+558af892-7014-4a66-aaa0-cc8d0495487e,4,Peluang Kejadian Majemuk,8,False,1,1.0,1.0,0.0,0,0,1
+55b36c67-91bf-4e50-8d01-6eeafcb2195f,4,Aplikasi Fungsi,11,True,2,1.0,1.0,0.0,0,0,2
+55c15ea7-9091-4baf-9da1-a7bba82f6327,3,Operasi Bilangan Berpangkat,8,True,7,0.5,0.5,0.0,0,0,7
+55ff4c0b-c972-4c84-b3d2-a06cafb7030f,3,Operasi pecahan,6,True,3,0.66667,0.66667,0.0,0,0,3
+560e5592-a2a7-4de4-b793-479c879f75e5,5,Ukuran Penyebaran Data,10,True,3,0.33333,0.33333,0.0,0,0,3
+5672f10d-72ca-4e32-a6aa-3041d048cdf2,5,Persamaan Garis Regresi,11,True,3,0.66667,0.66667,0.0,0,0,3
+56928a3a-bed6-41bf-aca4-2f31b95fec1f,3,Nilai Bilangan Bulat,6,True,2,1.0,1.0,0.0,0,0,2
+573708d5-0245-4ef0-aa93-a2dfe790c7f8,5,Operasi Bilangan Berpangkat,8,True,4,0.0,0.0,0.0,0,0,4
+574249c9-13cc-4d21-9ec0-9f8719f16930,4,Operasi Bilangan Cacah Sampai 10.000,4,False,1,0.33333,0.33333,0.0,0,0,1
+57e71ad1-5465-4e82-85ba-5d3dc69213de,4,Operasi Bilangan Bulat,7,True,5,0.4,0.4,0.0,0,0,5
+581aeeb7-d5d9-42ba-9a3b-e5e4e952a191,1,Operasi Bilangan Bulat,7,True,2,0.25,0.25,0.0,0,0,2
+58fd0242-2edb-497e-abb8-e2e99baab2d1,5,Peluang Kejadian,8,True,2,1.0,1.0,0.0,0,0,2
+59ec0d6f-7dbd-4716-8818-6481abe3ca98,5,Persamaan Garis Regresi,11,False,2,1.0,1.0,0.0,0,0,2
+5a40c9f0-e18b-4b99-84e6-17a45b37e4fd,4,Pendahuluan Logaritma,10,True,5,0.73333,0.73333,0.0,0,0,5
+5b089b17-b846-4340-b5b2-dc2b5f77df9e,1,Ukuran Penyebaran Data,10,False,4,0.33333,0.33333,0.0,0,0,4
+5b522960-8332-45f3-a242-0ab7776f954e,1,Operasi pecahan,6,False,4,1.0,1.0,0.0,0,0,4
+5b6b9051-c8ac-4a18-9cfd-c20ee5d0f544,5,Operasi Bilangan Cacah Sampai 10.000,4,True,4,0.08333,0.08333,0.0,0,0,4
+5beb8fc6-d282-4610-bce4-6962a3b17cb1,4,Pendahuluan Eksponensial,10,True,5,0.3,0.3,0.0,0,0,5
+5bf6971e-9f28-4fc2-ac32-798c27af2775,1,Barisan dan Deret Aritmatika,8,False,1,1.0,1.0,0.0,0,0,1
+5c3928e2-f0ed-48bd-9f40-e8e0834880ff,4,Operasi Bilangan Berpangkat,8,True,5,0.73333,0.73333,0.0,0,0,5
+5c59d604-d6a4-4fc3-97f1-e239abb1779e,3,Operasi Bilangan Cacah Sampai 100.000,5,False,1,0.0,0.0,0.0,0,0,1
+5ca250de-e51c-423a-80d5-f19524f31103,4,Ukuran Penyebaran Data,7,True,3,0.66667,0.66667,0.0,0,0,3
+5df1a278-c69f-4575-8ef6-c61d9e02d27c,2,Volume Bangun Ruang,5,True,3,0.66667,0.66667,0.0,0,0,3
+5e93a0f1-318f-44b5-b073-25d0b8a3f482,4,Persamaan Garis Regresi,11,True,2,0.5,0.5,0.0,0,0,2
+5ed8b644-9748-41d8-bae3-7b655c0669db,3,Aplikasi SPLDV,9,True,2,0.5,0.5,0.0,0,0,2
+5f05f106-8dad-4618-bffe-12581e86137d,4,Operasi Bilangan Bulat,7,True,2,0.75,0.75,0.0,0,0,2
+5fe7daf2-1ef2-4537-b609-75d7c0411209,5,Aplikasi KPK dan FPB,7,True,4,0.83333,0.83333,0.0,0,0,4
+6013468c-0812-4590-8155-d058809ef893,3,Ukuran Penyebaran Data,8,True,5,0.9,0.9,0.0,0,0,5
+605c4341-7c5b-4bd6-971f-e6610d549ee5,5,Sudut,8,False,1,1.0,1.0,0.0,0,0,1
+61c0c5c0-7bee-4298-ac1a-a07cbca4b371,2,Perbandingan Pecahan,6,True,3,0.0,0.0,0.0,0,0,3
+61cdf870-15a8-4d89-add8-24324c5825a4,4,Penyajian dan Penafsiran Data,5,True,2,0.75,0.75,0.0,0,0,2
+622083b4-6a07-4b58-a6aa-84e6baaededb,4,Penyajian dan Penafsiran Data,5,True,2,1.0,1.0,0.0,0,0,2
+62a721dc-7aa5-44fc-8b78-ca43c1b655e0,5,Operasi Bilangan Cacah Sampai 10.000,4,True,4,0.29167,0.125,-0.16667,0,2,2
+62b1f795-eda7-4989-9919-0f34ac7ae5a8,3,Operasi Bentuk Akar,8,True,4,0.66667,0.54167,-0.125,0,1,3
+6315fbe1-8b05-4110-b4f6-781a1ca832f2,4,Komposisi Fungsi,11,True,4,0.5,0.5,0.0,0,0,4
+63561503-c776-4234-8a20-019a0e191180,1,Aplikasi KPK dan FPB,7,True,2,0.0,0.0,0.0,0,0,2
+63591060-15e4-4311-8690-74a4d8177e46,2,Operasi Bilangan Cacah Sampai 10.000,4,True,3,0.66667,0.66667,0.0,0,0,3
+6359eca9-1629-4ba4-be35-25c4e7dcc830,5,Peluang Kejadian Majemuk,8,True,3,0.22222,0.22222,0.0,0,0,3
+64c53253-bac8-4ef7-88ce-f29c0b11194e,2,Komposisi Fungsi,11,True,2,0.5,0.5,0.0,0,0,2
+64d15dac-49ce-41d8-9187-806f975d753d,4,Nilai Bilangan Bulat,6,True,2,1.0,1.0,0.0,0,0,2
+64e45c7e-1c00-4b9e-9b63-adaa8f996499,2,Operasi pecahan,6,True,9,0.5,0.5,0.0,0,0,9
+6580ddf1-213f-4bce-b5bc-5d3e393b9635,3,Aplikasi Fungsi,11,False,1,1.0,1.0,0.0,0,0,1
+65bf81af-6d24-4013-8243-9623b1991562,3,Operasi Bilangan Berpangkat,8,True,4,0.375,0.375,0.0,0,0,4
+66f48359-db7e-44c6-96b6-d8fc888f1dc3,3,Pendahuluan Bilangan Bulat,6,False,1,0.5,0.5,0.0,0,0,1
+67387bc8-9c70-4584-b84b-b768d5627811,2,Konversi Pecahan,6,True,6,0.61111,0.61111,0.0,0,0,6
+6792c375-4c03-4cde-94df-e56952c6f9d7,2,Luas Permukaan Bangun Ruang,9,True,2,0.66667,0.66667,0.0,0,0,2
+680917df-5944-4680-bf6d-616fb487b54f,3,Invers Fungsi,11,True,6,0.66667,0.66667,0.0,0,0,6
+685c7ac2-b0ea-4188-ba61-6c771d51c7ee,5,Persamaan Garis Regresi,11,False,1,1.0,1.0,0.0,0,0,1
+68845295-ffb8-4243-b58f-d705d296eb29,2,Aplikasi SPLDV,9,True,2,1.0,1.0,0.0,0,0,2
+6899cec4-9c53-4715-86fe-8c50b0742de0,5,Komposisi Fungsi,11,True,5,0.16667,0.16667,0.0,0,0,5
+689c3f79-7513-48ab-acb6-d45bad634098,4,Sudut,7,True,4,1.0,1.0,0.0,0,0,4
+69b096e8-88a6-4da4-b658-355a7b190703,2,Ukuran Penyebaran Data,10,True,3,0.55555,0.55555,0.0,0,0,3
+6a248036-3783-49ce-8c85-1cf0828a0440,5,Barisan dan Deret Aritmatika,8,False,1,0.0,0.0,0.0,0,0,1
+6a3ebb9c-2505-433a-932f-3cdc3860aa16,2,Pendahuluan Bangun Ruang,9,True,7,0.52381,0.52381,0.0,0,0,7
+6aa7f650-2cbd-4531-a220-1e3d8f54e458,4,Konversi Bilangan Rasional,6,True,2,0.5,0.5,0.0,0,0,2
+6b8edf81-dd06-4045-aa66-87f151ec1a22,3,Operasi Bilangan Bulat,7,True,4,0.45833,0.45833,0.0,0,0,4
+6ba43cef-15f8-4bb5-8c01-4a5e5811fd19,3,Kaidah Pencacahan,12,True,5,0.36666,0.36666,0.0,0,0,5
+6ca4c358-986b-4caa-8fed-55bf2437b38a,1,Ukuran Pemusatan Data,10,True,2,1.0,1.0,0.0,0,0,2
+6d3b90bf-5ad2-4077-ae98-ad5dd5512a3c,5,Aplikasi Eksponensial (Bilangan Berpangkat),10,True,3,0.66667,0.66667,0.0,0,0,3
+6d5f6f39-ac9d-4bde-a482-ff4f12ffb8bb,4,Operasi Bentuk Akar,8,True,7,0.7619,0.7619,0.0,0,0,7
+6dc6d94a-1da1-4c2c-9ed6-ba0b1ca4b222,1,Peluang Kejadian Majemuk,12,True,2,0.5,0.5,0.0,0,0,2
+6e32ba55-e0d3-4caf-ac78-df7e2f563167,2,FPB,5,False,1,0.5,0.5,0.0,0,0,1
+6e3cbc44-0287-4557-b1ca-0621051b90e1,3,Merasionalkan Bentuk Akar,10,True,3,0.0,0.0,0.0,0,0,3
+6e682cc9-2d76-4b95-8c67-8216f79b757d,4,Ukuran Pemusatan Data,8,True,4,0.75,0.75,0.0,0,0,4
+6f2ea46f-c471-4f46-a4d9-f5bb7581f23e,3,Persamaan Garis Regresi,11,True,2,0.5,0.5,0.0,0,0,2
+703c35bb-968d-47f4-b4a8-a584279db7c6,1,Volume Bangun Ruang,7,True,4,0.5,0.5,0.0,0,0,4
+70c4e8c1-a130-41a3-830a-0c19cd32d3a9,4,Aplikasi barisan dan deret geometri,9,False,1,1.0,1.0,0.0,0,0,1
+70d36408-5b33-4545-87ec-b88b935009d7,1,Operasi Bilangan Cacah Sampai 10.000,4,True,2,1.0,1.0,0.0,0,0,2
+71062ce7-cab3-45a5-8a22-fb4fed92adfb,2,Pendahuluan Logaritma,9,False,1,0.0,0.0,0.0,0,0,1
+716e08ed-fa99-4107-aa4f-96fcf152ab19,1,Operasi Bilangan Bulat,7,True,5,0.6,0.6,0.0,0,0,5
+7211692e-329b-4523-8118-2df957c9c7d5,2,Konversi Pecahan,6,True,7,0.42857,0.42857,0.0,0,0,7
+7238104b-c4f3-4ba7-b593-670dadf2b168,3,Peluang Kejadian,8,True,4,0.625,0.625,0.0,0,0,4
+7348b688-6256-492b-8b2d-7e99b18e7749,2,Operasi Bilangan Berpangkat,8,True,5,0.7,0.7,0.0,0,0,5
+73a3820b-4f95-4b3c-8735-2def85101a03,3,Operasi Bentuk Akar,8,True,7,0.61905,0.61905,0.0,0,0,7
+74842aee-f403-48a1-adc2-0d3251e0dfad,2,Operasi Bilangan Cacah Sampai 10.000,4,True,5,0.7,0.7,0.0,0,0,5
+74bc10f9-b9a0-49e3-bf91-68b4c0893baa,5,Ukuran Penyebaran Data,10,True,3,1.0,1.0,0.0,0,0,3
+7652eab4-8104-4068-bf25-911edc7fd310,5,Komposisi Transformasi Geometri,12,True,3,0.66667,0.66667,0.0,0,0,3
+7697bae3-ac42-4618-9405-aa58506f724e,2,Penyajian dan Penafsiran Data,4,True,3,0.83333,0.83333,0.0,0,0,3
+792ffb7a-944a-4e8d-8c03-b1884a1e6bdc,4,Penyajian dan Penafsiran Data,5,True,3,0.66667,0.66667,0.0,0,0,3
+79807bf0-88e6-429e-b950-0068023086b1,2,Pendahuluan Bilangan Rasional,7,True,2,0.75,0.75,0.0,0,0,2
+79fc008f-0010-41af-8b27-21053d82435b,3,Luas Permukaan Bangun Ruang,9,True,4,0.5,0.5,0.0,0,0,4
+7a1269e5-3fbf-4930-8679-ac1ce2f5ad07,4,Ukuran Penyebaran Data,7,False,1,1.0,1.0,0.0,0,0,1
+7b0df01b-239e-4337-be32-202f26e67cce,2,Komposisi Transformasi Geometri,12,False,1,0.33333,0.33333,0.0,0,0,1
+7b6dac81-cd52-4b77-aee2-cc6a7986b0a7,5,Ukuran Penyebaran Data,7,False,2,0.5,0.5,0.0,0,0,2
+7b959754-8f3d-409f-958b-e447f76c1706,1,Ukuran Penyebaran Data,8,True,2,0.5,0.5,0.0,0,0,2
+7c769c99-4086-4520-927b-3584fc154ce9,1,Kombinasi,12,False,2,0.0,0.0,0.0,0,0,2
+7c8e574c-d3da-4799-a84c-684941b40035,3,Sudut,8,True,2,1.0,1.0,0.0,0,0,2
+7d1ab79e-6c0c-4788-8b01-9360ffd9785e,5,FPB,5,True,4,0.20833,0.20833,0.0,0,0,4
+7d47e4f8-126e-4b54-91a9-e8aa2919e690,1,Konversi Pecahan,6,True,2,0.0,0.0,0.0,0,0,2
+7dbe8490-24bc-40eb-a9b4-e8cf4386cae4,5,Operasi Bilangan Cacah Sampai 10.000,4,True,2,0.5,0.5,0.0,0,0,2
+7dfcbaad-cd95-4401-b5fb-049ac3403213,2,Operasi Bilangan Cacah Sampai 100.000,5,True,2,0.5,0.5,0.0,0,0,2
+7f14497b-b808-45c5-9e8b-9b8c727246ed,4,Ukuran Penyebaran Data,10,True,2,0.5,0.5,0.0,0,0,2
+7f91a67a-7c76-4b62-b3b9-df1ce9101302,5,Ukuran Pemusatan Data,10,True,3,0.33333,0.44444,0.11111,1,0,2
+8017c570-a4fc-49a9-b54c-db9c7b3f6abe,4,Pendahuluan KPK dan FPB,7,True,6,0.55556,0.55556,0.0,0,0,6
+814f0cb8-daa9-4957-8618-f473c13bbede,4,Luas Permukaan Bangun Ruang,9,True,3,0.66667,0.66667,0.0,0,0,3
+8173421b-839a-4221-aaae-e86760117175,5,Barisan dan Deret Aritmatika,8,True,3,0.44444,0.44444,0.0,0,0,3
+81aee03f-87cd-4278-8b13-b7ecbf2d7cab,1,Ukuran Penyebaran Data,7,True,2,1.0,1.0,0.0,0,0,2
+828ed757-aceb-4dbc-bef8-800d9e507623,4,Pendahuluan Logaritma,10,True,6,0.22222,0.22222,0.0,0,0,6
+82adb361-2ba0-4fc3-a1dc-59c866f5274b,1,Penyajian dan Penafsiran Data,5,True,3,0.33333,0.33333,0.0,0,0,3
+830fcdc2-c265-4803-bfd5-9a0d647deb34,5,Penyajian dan Penafsiran Data,4,True,2,1.0,1.0,0.0,0,0,2
+833cde74-18cf-4472-99bb-f8656f56f81d,1,Operasi Bilangan Cacah Sampai 10.000,4,True,9,0.72222,0.72222,0.0,0,0,9
+8514c177-382b-4d3c-9c06-0404112080b5,2,Nilai dan Bentuk Fungsi,11,False,3,0.66667,0.66667,0.0,0,0,3
+85a4fda9-098c-47f8-a319-5c68ad77b97c,2,KPK,5,True,6,0.33333,0.33333,0.0,0,0,6
+867e0dfd-08a9-452c-be63-95b72ce9e988,1,Ukuran Pemusatan Data,10,True,2,0.5,0.5,0.0,0,0,2
+86c47b41-3130-45cf-9618-8443d2b59d18,3,Kombinasi,12,True,2,0.0,0.0,0.0,0,0,2
+880dbaff-5a3f-4d70-b5f4-f436a8bb6e86,5,Peluang Kejadian Majemuk,8,False,1,0.33333,0.5,0.16667,1,0,0
+88475fd5-17ca-4ad8-8f20-fcc9682edadf,3,Operasi Bilangan Cacah Sampai 10.000,4,True,3,1.0,1.0,0.0,0,0,3
+88ea8875-6752-40c4-b16c-4f5ca1f73a92,5,Penyajian dan Penafsiran Data,5,True,3,0.66667,0.66667,0.0,0,0,3
+890063ed-61f9-4384-bdc0-443bd4f97ee7,3,Ukuran Penyebaran Data,10,False,1,1.0,1.0,0.0,0,0,1
+893125bd-1759-4caa-a776-d35692e5bfb3,5,Operasi Bilangan Bulat,7,True,2,0.75,0.75,0.0,0,0,2
+8a066c2b-abb8-4d5a-8145-ab9aa9a91ef1,1,Luas Permukaan Bangun Ruang,7,True,3,0.38889,0.38889,0.0,0,0,3
+8a511e96-aeca-4e69-a633-a80c1fd1669a,4,Invers Fungsi,11,True,3,0.44444,0.44444,0.0,0,0,3
+8b84ab34-a41c-4b9e-81a2-883e5bdb6f82,1,KPK,5,True,4,0.5,0.5,0.0,0,0,4
+8b8f3287-fdd8-40b2-8a82-7f76e806af61,3,Penyajian dan Penafsiran Data,4,True,2,1.0,1.0,0.0,0,0,2
+8ba78e9f-c805-4a14-8031-5933e86ba373,3,Persamaan Linear Satu Variabel (PLSV),9,False,3,0.0,0.0,0.0,0,0,3
+8d39027b-7c60-435d-afa5-4f98f4d90ef1,1,Operasi Bilangan Cacah Sampai 10.000,4,False,1,1.0,1.0,0.0,0,0,1
+8da19d89-8e48-47c4-a715-9737d340f1c9,1,Ukuran Penyebaran Data,7,False,1,0.0,0.0,0.0,0,0,1
+8dde1edf-36e2-4710-a8bd-fbd479bed5f0,5,Operasi pecahan,6,True,3,0.77778,0.77778,0.0,0,0,3
+8e42d7e8-213d-45ab-8e47-477f3dde87a0,1,Ukuran Penyebaran Data,10,True,2,0.5,0.5,0.0,0,0,2
+8ea8122b-2bf2-4156-8269-e1fcae31c003,3,Operasi Bilangan Cacah Sampai 10.000,4,True,2,1.0,1.0,0.0,0,0,2
+8ec049f4-98fc-4ba7-b052-c9d694e1ad6c,5,Operasi pecahan,6,True,5,0.66667,0.66667,0.0,0,0,5
+8faff696-aa15-40da-b2c1-15996fcc9057,5,Ukuran Penyebaran Data,10,False,1,0.0,0.0,0.0,0,0,1
+903ee08f-92fa-45c3-8eb8-2510208b76d8,4,Operasi Bilangan Cacah Sampai 10.000,4,True,4,0.75,0.75,0.0,0,0,4
+905114d7-53f2-4c93-807a-4c57f029d295,3,Operasi Bilangan Cacah Sampai 10.000,4,True,2,1.0,1.0,0.0,0,0,2
+90b648d3-b69a-428e-888e-89af12a2e927,3,Komposisi Fungsi,11,True,2,0.5,0.5,0.0,0,0,2
+90e54ed2-adf2-45ad-b264-44292226a028,2,Operasi Bilangan Cacah Sampai 10.000,4,False,1,0.0,0.0,0.0,0,0,1
+91afd66e-8ffd-42b4-98f9-cb548ac81a25,4,Aplikasi KPK dan FPB,5,True,2,0.5,0.5,0.0,0,0,2
+93498527-4d7e-4af4-a89b-db3adb4a39ae,5,Operasi Bilangan Bulat,7,True,4,0.75,0.75,0.0,0,0,4
+948f43c4-3007-4cde-93dc-c38ebd2061eb,4,FPB,5,True,11,0.43939,0.43939,0.0,0,0,11
+94e763c3-e413-4db8-82a6-6c69c573909b,4,Aplikasi KPK dan FPB,5,True,3,0.83333,0.83333,0.0,0,0,3
+954c0987-838e-4a85-bed0-ca12d8d4a472,5,Peluang Kejadian,8,False,2,0.5,0.5,0.0,0,0,2
+95875d26-51b2-4db5-8814-3fe8b010f18b,2,Pendahuluan Eksponensial,10,False,2,0.16667,0.16667,0.0,0,0,2
+96282719-aa49-4a4b-89ab-1fc262ba420d,5,Korelasi,11,False,1,0.0,0.0,0.0,0,0,1
+967ff442-5429-4898-81be-a961ebc7407b,2,Invers Fungsi,11,True,3,0.11111,0.11111,0.0,0,0,3
+96c45bcc-7965-4920-bd14-79a7af1b0102,2,Persamaan Garis Regresi,11,False,1,0.0,0.0,0.0,0,0,1
+96ddb428-7686-43ae-a082-b6f47501520f,5,Penyajian dan Penafsiran Data,5,True,2,1.0,1.0,0.0,0,0,2
+972c6b83-e951-43c3-8262-e371583f5468,4,Pendahuluan Bilangan Bulat,6,False,1,0.5,0.5,0.0,0,0,1
+98258cc7-0b8a-491a-b7a1-c717cd7f295d,3,Operasi Bentuk Akar,8,True,5,0.76667,0.76667,0.0,0,0,5
+98402ddc-353c-4c17-95a4-29b40403742b,4,Luas Permukaan Bangun Ruang,9,True,3,0.66667,0.66667,0.0,0,0,3
+98cfb448-042e-4844-96b6-50b5aecd5f9e,4,Volume Bangun Ruang,5,True,5,0.6,0.6,0.0,0,0,5
+98e0f3be-0644-4cba-81e4-65c595af0598,1,KPK,5,True,5,0.4,0.4,0.0,0,0,5
+98fd3d8e-1143-4697-a64f-ef837634ab62,1,Persamaan Garis Regresi,11,False,1,0.0,0.0,0.0,0,0,1
+9a447df2-4fbf-434c-b2ee-8faa2b5716cf,2,Kombinasi,12,True,6,0.72222,0.72222,0.0,0,0,6
+9a99514c-ab0e-40ab-a908-7e91aa8c94ab,2,Jenis-Jenis Fungsi,11,True,4,0.75,0.75,0.0,0,0,4
+9a9f10ec-1244-4686-8bc9-22c56ff31fd0,3,Penyajian dan Penafsiran Data,5,True,4,0.25,0.25,0.0,0,0,4
+9ae5c22f-4aae-42ab-864f-b6f19323acf9,5,Operasi Bilangan Cacah Sampai 100.000,5,True,3,0.5,0.5,0.0,0,0,3
+9af77729-31e8-4f1d-8749-0172f2029b52,1,Pendahuluan Eksponensial,10,True,2,0.16667,0.16667,0.0,0,0,2
+9b911bd1-a4f6-42f3-a18a-455b53e75c54,2,Aplikasi Eksponensial (Bilangan Berpangkat),10,False,1,1.0,1.0,0.0,0,0,1
+9c542026-6a31-4c3d-8e88-1c9419023b1d,5,Penyajian dan Penafsiran Data,4,True,4,0.25,0.25,0.0,0,0,4
+9c5f1d32-e181-49ca-b038-c198c70e3597,5,Pendahuluan Logaritma,10,True,5,0.6,0.6,0.0,0,0,5
+9cf0c6ed-0199-4f9a-827b-1e05920f0d4c,3,Pendahuluan KPK dan FPB,7,True,7,0.28571,0.23809,-0.04762,0,1,6
+9d2edf7b-179e-48ac-8422-775a320491c8,1,Operasi pecahan,6,True,5,0.66667,0.66667,0.0,0,0,5
+9e149d64-6968-4ce1-b5e5-da0ae0449c9e,4,Operasi Bilangan Berpangkat,8,True,6,0.33333,0.33333,0.0,0,0,6
+9e1b9080-6111-40c2-997b-b9b83efd1308,3,KPK,5,True,5,0.46667,0.46667,0.0,0,0,5
+a092dbf1-c890-48fb-8227-3b3524375e66,1,Aplikasi Fungsi,11,False,2,1.0,1.0,0.0,0,0,2
+a2b86e62-e961-4a48-8c78-3980821148cb,2,Operasi Bilangan Bulat,7,True,4,0.875,0.875,0.0,0,0,4
+a2cef920-27f2-4adf-ae11-ed320635ae84,2,Aplikasi KPK dan FPB,7,True,5,0.2,0.2,0.0,0,0,5
+a355dd9f-a3ba-4c90-80a1-9fe4c7eda2ca,2,Operasi Bilangan Cacah Sampai 10.000,4,False,1,0.33333,0.5,0.16667,1,0,0
+a42cc708-5725-4283-9efe-08ec6238dba9,3,Operasi Bilangan Bulat,7,True,7,0.85714,0.85714,0.0,0,0,7
+a82007af-9c1b-4f78-9e4f-900ec951a05f,2,Peluang Kejadian Majemuk,12,True,2,0.5,0.5,0.0,0,0,2
+a83422c9-b8c8-4df2-a9d7-3bdd3f28ec59,1,Komposisi Transformasi Geometri,12,True,4,0.33333,0.33333,0.0,0,0,4
+a871dc9f-fa10-4967-839f-f5eb2f08cc4a,2,Pengenalan Transformasi Geometri,12,True,2,0.5,0.5,0.0,0,0,2
+a94206a4-cbb1-4176-92b2-07251c9c5ba1,4,Pendahuluan Bangun Ruang,9,True,4,0.75,0.75,0.0,0,0,4
+a96a26fc-8d31-435e-88ba-2339063f1a24,3,Luas Permukaan Bangun Ruang,9,True,4,0.41667,0.375,-0.04167,0,1,3
+a9ddb3ce-9922-4dc4-ada3-25545af3a311,2,Aplikasi PLSV,7,True,4,0.5,0.5,0.0,0,0,4
+aa4cceb9-0714-4df8-951f-95d0effa41d0,5,Sudut,7,False,1,0.0,0.0,0.0,0,0,1
+ab07ee64-74af-4d03-adef-de31fca51a4d,1,FPB,5,True,10,0.61667,0.61667,0.0,0,0,10
+ab550925-d00d-4c76-b17e-93bd4c777d33,5,Penerapan Bilangan Bulat,7,True,3,0.27778,0.27778,0.0,0,0,3
+ac7b1366-d25f-479c-87f6-37c85e12e245,4,Pendahuluan Bangun Ruang,9,True,2,0.5,0.5,0.0,0,0,2
+ac960123-6658-43e5-bc77-4d449da20475,1,Peluang Kejadian Majemuk,8,True,3,0.66667,0.66667,0.0,0,0,3
+acb22cca-cc70-49bd-be27-b4b3c14c2e04,3,Pendahuluan Logaritma,9,False,1,0.0,0.0,0.0,0,0,1
+acc1f01f-7b5c-4c60-bf70-92b8f2721373,4,Sudut,8,False,1,0.5,0.5,0.0,0,0,1
+acd544bc-236d-4c3d-8714-a3a98aa99b1b,1,Ukuran Pemusatan Data,10,False,1,0.5,0.5,0.0,0,0,1
+ae31a63c-4403-4604-a0a1-2ffbb0f5b228,1,Penyajian dan Penafsiran Data,7,True,4,0.45833,0.45833,0.0,0,0,4
+ae42b7f3-6910-42fa-80a4-828455ec2d4e,5,Operasi Bilangan Cacah Sampai 10.000,4,False,3,0.66667,0.66667,0.0,0,0,3
+aef6c0d8-0a6a-4350-9bf1-55d0537ff825,2,Operasi Bilangan Cacah Sampai 100.000,5,True,4,0.5,0.5,0.0,0,0,4
+b044d1ac-e10b-43a4-8396-d4e5f2c8eab8,4,Persamaan Linear Satu Variabel (PLSV),9,True,3,0.0,0.0,0.0,0,0,3
+b12d59cf-a744-4fb7-a832-11974d3053a5,4,Merasionalkan Bentuk Akar,8,True,3,0.61111,0.61111,0.0,0,0,3
+b14a4f42-b4f9-4e4b-b1cc-d08dc1c6abf6,5,Operasi Bilangan Cacah Sampai 10.000,4,True,5,0.56667,0.56667,0.0,0,0,5
+b19b9a1f-0db8-4ed2-b16b-9d6ee88cdf14,1,Ukuran Pemusatan Data,8,False,1,0.0,0.0,0.0,0,0,1
+b1b3217e-1c2c-4fef-b338-17ee8216cb98,1,Komposisi Transformasi Geometri,12,True,4,0.5,0.5,0.0,0,0,4
+b3f425df-37df-4449-9ffd-94631596de3a,1,Sudut,8,False,2,1.0,1.0,0.0,0,0,2
+b47b4c3f-134a-4085-a31b-731618c9d09e,2,Operasi Bilangan Cacah Sampai 100.000,5,True,2,0.5,0.5,0.0,0,0,2
+b4afe0d5-f504-4c38-9077-d7f43959ee39,3,Luas Permukaan Bangun Ruang,9,True,3,0.33333,0.33333,0.0,0,0,3
+b66cb169-f7de-4e8c-aa8e-b362caf5eae1,5,Koefisien Determinasi,11,True,2,1.0,1.0,0.0,0,0,2
+b71bacbb-344a-48b7-af51-b0fd23dff779,5,Konversi Bilangan Rasional,6,True,2,0.5,0.5,0.0,0,0,2
+b72f5833-8aaf-4cb8-8541-17a4b03f5d69,2,Pendahuluan Bilangan Bulat,6,True,2,0.16667,0.16667,0.0,0,0,2
+b768877b-75ca-412d-b571-3f943905d5b1,4,Operasi Bilangan Cacah Sampai 10.000,4,True,3,1.0,1.0,0.0,0,0,3
+b859cd7f-04bf-4982-a5de-c849f3ee92b7,1,Operasi Fungsi,11,True,4,0.75,0.75,0.0,0,0,4
+b874c469-e5dc-4afb-aa1e-d460d8668ab9,4,Pendahuluan KPK dan FPB,7,True,8,0.41667,0.41667,0.0,0,0,8
+b965492d-57ba-455c-9223-296726c8a7f8,2,Ukuran Penyebaran Data,8,True,4,0.5,0.5,0.0,0,0,4
+bb06f9c2-1949-460d-bea9-5d0e061ab324,1,Aplikasi KPK dan FPB,7,True,5,0.1,0.1,0.0,0,0,5
+bb107c46-58c7-4293-9d00-e66b8b73d413,1,Operasi pecahan,6,True,2,0.5,0.5,0.0,0,0,2
+bb5df6c4-49e4-4933-9384-b4dfa854ffc7,4,Komposisi Fungsi,11,False,1,0.0,0.0,0.0,0,0,1
+bbd7670c-c0ce-45c0-9a8b-f868ec8686cb,5,Komposisi Fungsi,11,True,8,0.5625,0.5625,0.0,0,0,8
+bc7a2fd7-f25e-44ac-af7f-90285cd46659,1,Pendahuluan Logaritma,9,False,1,0.0,0.0,0.0,0,0,1
+bc7bcb43-e51e-4862-b807-1f72aed9f41f,4,Operasi Fungsi,11,True,2,0.5,0.5,0.0,0,0,2
+bd059860-8798-42b9-a866-f266f092782c,1,Operasi Bilangan Berpangkat,10,True,2,0.16667,0.16667,0.0,0,0,2
+bd520787-2a81-47a0-bf04-0d282fb8c6d1,4,Konversi Pecahan,6,True,6,0.66667,0.66667,0.0,0,0,6
+bd96647d-8e34-467c-a5eb-09f1d5ad2565,4,Fungsi Eksponen,10,True,6,0.5,0.5,0.0,0,0,6
+be118c71-0575-4a05-95b0-5a2e121f12d0,3,Penyajian dan Penafsiran Data,5,True,2,0.5,0.5,0.0,0,0,2
+bfc79aa4-8c45-488d-903c-0daeccc40cac,5,Pengenalan Transformasi Geometri,12,True,4,0.25,0.25,0.0,0,0,4
+c0005917-6fcd-4715-8aef-c85be71482a2,5,Sudut,7,False,2,0.75,0.75,0.0,0,0,2
+c01d815c-d2b8-49a6-beb2-7a5d77c59f18,2,Operasi Bilangan Berpangkat,8,True,5,0.16667,0.1,-0.06667,0,1,4
+c0c5a18b-c079-4b66-a72a-9076ebda2da6,2,Pendahuluan Bangun Ruang,9,True,3,1.0,1.0,0.0,0,0,3
+c13fc463-1f4b-4470-9956-379b4023abc5,2,Operasi Bentuk Akar,10,True,3,0.11111,0.11111,0.0,0,0,3
+c1831e7f-23c3-4aa6-b48d-db6eb9c04620,3,Aplikasi SPLDV,9,True,2,0.5,0.5,0.0,0,0,2
+c19def7f-428b-4363-9a3c-f06a1b533e0a,3,Volume Bangun Ruang,7,False,1,0.33333,0.33333,0.0,0,0,1
+c1b92068-198e-4836-8507-530586057162,2,Operasi pecahan,6,True,2,0.5,0.5,0.0,0,0,2
+c2763463-7ec5-47dd-8a3c-0cf32af72a39,5,Permutasi,12,True,2,0.0,0.0,0.0,0,0,2
+c3727d2f-773b-40a1-8b44-163e8d7625d9,4,Peluang Kejadian Majemuk,8,True,3,0.66667,0.66667,0.0,0,0,3
+c3fd2381-ec54-47bb-8c92-ff00be2030ea,1,Persamaan Garis Regresi,11,False,1,0.0,0.0,0.0,0,0,1
+c4277e31-4a6a-45ca-86b6-be94f5d98732,3,Operasi Bentuk Akar,8,True,5,0.26667,0.26667,0.0,0,0,5
+c441cb0b-ad5d-4d9f-9ff5-04c467acd38b,1,Luas Permukaan Bangun Ruang,7,True,2,0.66667,0.66667,0.0,0,0,2
+c579de7b-e73d-4023-9d37-dcb1d71a92e5,3,Operasi Bilangan Bulat,7,True,9,0.59259,0.59259,0.0,0,0,9
+c5a10588-3c9f-4a4c-a552-e1c6161d6209,1,Nilai dan Bentuk Fungsi,11,True,9,0.44444,0.44444,0.0,0,0,9
+c618d383-d6d7-4b03-a128-cf5ef59c1742,1,Operasi Bilangan Berpangkat,8,False,1,0.0,0.0,0.0,0,0,1
+c6989258-14f0-4301-a567-ed0a8cfe7c59,2,Barisan dan Deret Aritmatika,8,True,2,0.66667,0.66667,0.0,0,0,2
+c6af47cc-61e4-4e80-9772-b186675a63db,2,Aplikasi KPK dan FPB,5,True,3,0.5,0.5,0.0,0,0,3
+c6e7d3fb-90e0-4945-a4c7-c692289a7628,4,Operasi Bilangan Bulat,6,True,4,0.83333,0.83333,0.0,0,0,4
+c7ea7b26-de79-4a5d-aa26-c828009ad20b,5,Peluang Kejadian Majemuk,8,False,2,0.0,0.0,0.0,0,0,2
+c8736e61-5e20-4530-b127-568dd280ca23,1,FPB,5,False,3,0.11111,0.11111,0.0,0,0,3
+c8da00c8-acb7-4758-a39d-4e37dc5bb379,4,Nilai Bilangan Bulat,6,False,1,0.5,0.5,0.0,0,0,1
+cb66d949-fdaf-4d5a-9bfa-3b24ffa210cb,5,Volume Bangun Ruang,5,False,1,0.0,0.0,0.0,0,0,1
+cc019cfd-0553-4d13-bd9c-544fd8897294,2,Ukuran Penyebaran Data,10,True,3,0.44444,0.44444,0.0,0,0,3
+ce1e890b-499b-4e00-a18c-afc93d3dec51,4,Penyajian dan Penafsiran Data,7,False,2,0.75,0.75,0.0,0,0,2
+ce3ec4e1-4f99-4e70-94e1-4b07d877020d,3,Peluang Kejadian,8,True,3,0.44444,0.44444,0.0,0,0,3
+ce5a3aa0-4e93-48b3-9063-01ad4048225e,2,Penyajian dan Penafsiran Data,4,False,2,1.0,1.0,0.0,0,0,2
+ce71eb4d-4451-4dda-b54b-f151eab807eb,1,Kecepatan,6,False,2,0.25,0.25,0.0,0,0,2
+ce90a215-7ffa-40ae-a9a0-62b070a8b484,3,Operasi pecahan,6,False,1,0.33333,0.33333,0.0,0,0,1
+cea15907-bf81-4cc3-9f98-35029bf8003a,4,Operasi Bentuk Akar,10,True,2,1.0,1.0,0.0,0,0,2
+ceb54dd2-4fbe-4ba1-99c3-88da3b7f48f3,3,Operasi Logaritma,10,True,3,0.33333,0.33333,0.0,0,0,3
+cf0e1df4-e5f8-4a9f-9b3b-51e2e29e576d,5,Volume Bangun Ruang,7,True,2,0.66667,0.66667,0.0,0,0,2
+d02ef5b5-5a8a-4e27-aae7-787b2ddfc6d4,2,Bilangan Berpangkat,8,False,1,1.0,1.0,0.0,0,0,1
+d1caf333-65c9-4d64-8276-99fe7ac2026c,4,Penyajian dan Penafsiran Data,5,True,2,0.66667,0.66667,0.0,0,0,2
+d255519c-002f-4801-a6e8-5def7b1f43ba,4,Pendahuluan Eksponensial,10,True,2,0.0,0.0,0.0,0,0,2
+d2b2590a-1e20-4a81-bdc9-f0eae4f3a4c1,5,Jenis-Jenis Fungsi,11,True,4,0.625,0.625,0.0,0,0,4
+d2e6036c-f787-4077-8b6c-f0de7c2c83a0,5,Luas Permukaan Bangun Ruang,9,True,4,0.625,0.625,0.0,0,0,4
+d42a22c2-afb8-48b6-ae14-eae2dc549ea5,3,Ukuran Pemusatan Data,10,False,1,1.0,1.0,0.0,0,0,1
+d42f1b44-4abe-4a02-8416-2047934d1ac5,4,Nilai dan Bentuk Fungsi,11,True,4,0.125,0.08333,-0.04167,0,1,3
+d614f07c-b132-42e3-920b-f276a1be333c,5,Penyajian dan Penafsiran Data,5,True,3,0.55555,0.55555,0.0,0,0,3
+d63f4316-1ced-4ecd-bfc7-b5b643c8fcd5,4,Perbandingan Pecahan,6,True,6,0.77778,0.77778,0.0,0,0,6
+d6541e7f-81ea-470b-ba89-a6d80c1c29a1,4,Operasi Bilangan Cacah Sampai 100.000,5,True,5,0.7,0.7,0.0,0,0,5
+d78e5e85-1110-4ee6-ac87-8fad3ffeec67,3,Konversi Pecahan,6,True,5,0.76667,0.76667,0.0,0,0,5
+d81e90ae-699f-435c-a242-cb1a34d2c0ac,5,Luas Bangun Datar,9,True,3,0.33333,0.33333,0.0,0,0,3
+d8f67cff-8587-4831-8c97-fd7629f11cf7,2,Merasionalkan Bentuk Akar,10,True,5,0.5,0.5,0.0,0,0,5
+d909cdf1-4f89-4296-8b14-75fd4cdd22f7,5,Ukuran Penyebaran Data,10,True,2,0.5,0.5,0.0,0,0,2
+da7edadc-b6ca-4cb0-a91a-976a4d220ff7,5,Nilai Bilangan Bulat,6,False,1,1.0,1.0,0.0,0,0,1
+db9c6ab6-0a37-4979-98a5-16c61d5a7285,3,Operasi Bilangan Bulat,7,True,5,0.66667,0.66667,0.0,0,0,5
+dbf5a8b8-6ec1-49b0-85c8-04c81346ae6a,3,Aplikasi SPLDV,9,True,2,1.0,1.0,0.0,0,0,2
+dc3979aa-a111-4091-932f-53d2afa19637,5,Aplikasi KPK dan FPB,5,True,7,0.90476,0.90476,0.0,0,0,7
+dcc5d532-ac70-417e-bb71-2c3f6c3bc869,1,Ukuran Penyebaran Data,7,False,1,0.0,0.0,0.0,0,0,1
+dcf1cfc8-1786-4170-a828-bb3d5669b2e8,3,Ukuran Penyebaran Data,10,True,2,0.5,0.5,0.0,0,0,2
+dd5bb6e9-5136-4747-aea9-102467d1068f,1,Operasi pecahan,6,True,6,0.83333,0.83333,0.0,0,0,6
+dd6443a8-aa35-4db4-b5c8-5dd1a1472294,3,Ukuran Penyebaran Data,10,True,6,0.47222,0.47222,0.0,0,0,6
+dd6aca04-379b-44cd-be21-ab27887498f7,1,Sudut,7,False,1,0.5,0.5,0.0,0,0,1
+dd6cd752-e9aa-4def-9ce9-48fb6126c083,5,Penyajian dan Penafsiran Data,7,True,4,0.375,0.375,0.0,0,0,4
+ddc9ab07-6722-4e94-9ecf-8e33c39309cc,2,Invers Fungsi,11,True,7,0.33333,0.33333,0.0,0,0,7
+ddcc79d6-4290-45a8-95fe-ef4eeebe7ff3,3,Penyajian dan Penafsiran Data,7,True,4,0.75,0.75,0.0,0,0,4
+ddedd609-105b-490b-93d0-0781e1d3a549,3,Komposisi Transformasi Geometri,12,False,1,1.0,1.0,0.0,0,0,1
+df1ca4f6-ad84-49d0-9623-d11540ffbed2,1,Operasi pecahan,6,True,5,0.66667,0.66667,0.0,0,0,5
+df7fc5ff-d4c8-4742-b531-c3194c91047a,5,Aplikasi SPLDV,9,True,4,0.45833,0.45833,0.0,0,0,4
+dfba1cc6-f775-4fe3-95fa-22ea1c99e21d,3,Ukuran Pemusatan Data,10,False,1,0.0,0.0,0.0,0,0,1
+dfed0ea4-7196-40f5-b0fb-e3f2452d6b8b,4,Perbandingan Pecahan,6,False,2,0.5,0.5,0.0,0,0,2
+e025b4e2-9718-41a7-b3c1-4b20eb0a4488,4,Luas Permukaan Bangun Ruang,9,True,5,0.56667,0.5,-0.06667,0,1,4
+e027a589-d103-412b-9e41-7a0f8de01945,1,Merasionalkan Bentuk Akar,8,True,8,0.41667,0.41667,0.0,0,0,8
+e0aeea43-bbb7-4beb-8363-317819371bba,2,Operasi Bilangan Cacah Sampai 10.000,4,True,5,0.4,0.4,0.0,0,0,5
+e0cc4b92-d19c-4211-9deb-964b12600ae5,1,Luas Permukaan Bangun Ruang,9,True,5,0.6,0.6,0.0,0,0,5
+e174e80e-0b76-4967-bb60-b6070fe69a60,4,Aplikasi PLSV,7,False,1,1.0,1.0,0.0,0,0,1
+e2ab89ba-68ff-4df4-b802-50c38f786cdd,4,Operasi Bentuk Akar,8,True,3,0.33333,0.33333,0.0,0,0,3
+e4cc830b-7a3d-4b31-b0d5-90555388cb6d,4,Luas Permukaan Bangun Ruang,7,True,5,0.8,0.8,0.0,0,0,5
+e4cf6395-041b-4640-8fc0-b30b650b377f,3,Operasi Bilangan Cacah Sampai 10.000,4,False,1,0.0,0.0,0.0,0,0,1
+e626aa22-d09c-4dad-be97-abe8becda450,2,Operasi Bentuk Akar,8,True,2,0.5,0.5,0.0,0,0,2
+e668e549-910f-4c88-9c34-6d48ac036681,5,Bilangan Berpangkat,8,True,2,0.25,0.25,0.0,0,0,2
+e69884ee-14e7-4f63-a8c0-741d47b8fe0a,3,Sudut,8,True,5,0.4,0.4,0.0,0,0,5
+e69f2401-015f-47d8-87fb-7f38c82a0b3f,5,Operasi Bilangan Cacah Sampai 10.000,4,False,1,0.0,0.0,0.0,0,0,1
+e6ac2bd0-03d4-4f34-a523-76ead885a7e6,1,Operasi Bilangan Cacah Sampai 100.000,5,True,3,0.27778,0.27778,0.0,0,0,3
+e747129e-834e-46da-a767-1e1be11d4205,1,Perbandingan Pecahan,6,True,3,0.77778,0.77778,0.0,0,0,3
+e7a22485-158a-4aaf-b51f-f391e4f3ac9c,1,Persamaan Linear Satu Variabel (PLSV),9,True,4,0.625,0.625,0.0,0,0,4
+e822db3a-bca5-4434-a414-a7b01eb6149a,1,Operasi Bilangan Cacah Sampai 100.000,5,False,1,0.0,0.0,0.0,0,0,1
+e8375150-68d4-4794-b783-a07b1ef97ba3,1,Operasi pecahan,6,True,5,0.4,0.4,0.0,0,0,5
+e89a5ba7-400b-41c6-9289-db2d3289111c,4,Merasionalkan Bentuk Akar,10,True,4,0.0,0.0,0.0,0,0,4
+e89e1616-e04e-4ac6-a56a-b768f00484b2,5,Aplikasi PLSV,7,True,3,1.0,1.0,0.0,0,0,3
+e8b6b25b-b476-43cf-a491-986304f4b6b7,1,Aplikasi SPLDV,9,False,2,1.0,1.0,0.0,0,0,2
+e98c06f6-98db-4f49-b6b6-b204259a1a80,3,Operasi Bilangan Cacah Sampai 10.000,4,True,4,0.75,0.75,0.0,0,0,4
+e9ecc830-48a5-4e75-b081-d549dff74fca,2,Volume Bangun Ruang,5,False,1,0.33333,0.33333,0.0,0,0,1
+ea46712a-7ada-45c8-a564-6eeb3bd72b0a,5,Aplikasi KPK dan FPB,7,True,12,0.41667,0.41667,0.0,0,0,12
+ea964ddd-bdbb-4a34-9a4f-b05e30c538ad,1,Operasi Bilangan Cacah Sampai 10.000,4,True,2,1.0,1.0,0.0,0,0,2
+ec0a8b57-2966-4088-932e-54c3f8443f79,2,Aplikasi SPLDV,9,True,4,1.0,1.0,0.0,0,0,4
+ed39a567-e549-4515-9dd8-8f18e9cc0d39,3,Penyajian dan Penafsiran Data,5,True,3,0.66667,0.66667,0.0,0,0,3
+eda0abd4-be96-4e94-a918-d776950e8bdf,2,Barisan dan Deret Aritmatika,8,True,6,0.63889,0.63889,0.0,0,0,6
+eda110d5-a393-4189-8dc6-0c420b4e8e88,3,Operasi Bentuk Akar,8,True,3,0.83333,0.83333,0.0,0,0,3
+edb27b6a-6ce3-47c3-a048-24704d90dd3e,5,Luas Bangun Datar,9,True,4,0.75,0.75,0.0,0,0,4
+ee02dbde-8013-487e-978a-0f3717671f67,4,Operasi Bilangan Cacah Sampai 100.000,5,True,2,0.0,0.0,0.0,0,0,2
+ee0c9dee-4c1f-41c6-99ee-517dcd22b86d,4,Pengenalan Transformasi Geometri,12,True,2,0.5,0.5,0.0,0,0,2
+ef06cd19-5e36-430b-bb73-e9289ae3cdce,2,Pendahuluan Bilangan Bulat,6,False,1,1.0,1.0,0.0,0,0,1
+ef650de8-cd47-4936-8684-655d5100e9aa,4,Volume Bangun Ruang,5,True,2,0.5,0.5,0.0,0,0,2
+f1b4af02-aa59-4e48-b610-6f2ec8db546a,2,FPB,5,True,3,0.66667,0.66667,0.0,0,0,3
+f1d5c528-10a2-4bed-bac7-ef390898880f,5,Operasi Bentuk Akar,10,True,2,0.5,0.5,0.0,0,0,2
+f2b89492-4df9-4aed-98b9-625510b49f06,3,Operasi Bentuk Akar,8,True,7,0.2619,0.2619,0.0,0,0,7
+f30cf895-e9ce-4bfc-a2b1-ad8feebbf0a6,5,Barisan dan Deret Aritmatika,8,True,2,1.0,1.0,0.0,0,0,2
+f3296ce6-ce56-4daf-b022-782b0cb3853d,1,Operasi Bilangan Cacah Sampai 100.000,5,True,3,0.66667,0.66667,0.0,0,0,3
+f337109c-2736-4c22-b786-822f4214ebba,5,Operasi Bilangan Cacah Sampai 100.000,5,True,5,1.0,1.0,0.0,0,0,5
+f34bb251-7e30-40ae-9964-3e665a70d912,2,Operasi Bilangan Cacah Sampai 100.000,5,True,5,0.56667,0.56667,0.0,0,0,5
+f36d6279-a673-46ff-8f8b-4e7ee9f88947,5,Operasi Logaritma,10,False,1,0.0,0.0,0.0,0,0,1
+f38858af-7362-4ec9-a46b-6090b83feabd,3,Merasionalkan Bentuk Akar,8,True,4,0.375,0.375,0.0,0,0,4
+f3f313ab-5df4-4eed-815b-4fe348a2df98,1,Operasi Bilangan Bulat,7,False,1,1.0,1.0,0.0,0,0,1
+f3fb2bfb-33cd-4033-a504-689dfd56c252,2,Penyajian dan Penafsiran Data,5,False,1,1.0,1.0,0.0,0,0,1
+f5e4e7bd-5a01-45f5-8e93-3f375c06d60b,2,Operasi Bilangan Bulat,7,True,11,0.77273,0.77273,0.0,0,0,11
+f8becd35-2208-4d18-910d-9fc07f7d1520,1,Volume Bangun Ruang,5,True,2,1.0,1.0,0.0,0,0,2
+f996f821-a0c1-4c9f-b823-59f94ce81f8a,1,Aplikasi barisan dan deret geometri,9,True,2,1.0,1.0,0.0,0,0,2
+f9b708f0-29b7-49d9-af7b-c94b19260552,4,Penyajian dan Penafsiran Data,5,False,2,1.0,1.0,0.0,0,0,2
+fa4b04b3-394e-47c1-886f-a35a7943eb8e,3,Kaidah Pencacahan,12,True,3,0.77778,0.77778,0.0,0,0,3
+fabc5165-c182-4421-a80f-283e369805c2,3,Operasi Bilangan Cacah Sampai 10.000,4,True,2,0.0,0.0,0.0,0,0,2
+fb17eb43-340d-4d33-9136-2090a0f05bac,5,Operasi pecahan,6,True,8,0.4375,0.4375,0.0,0,0,8
+fb66d0b7-87ab-4a5e-83a3-82515adfc5d6,1,Kecepatan,6,True,3,0.5,0.5,0.0,0,0,3
+fb90aec0-8b2e-4338-b73a-fb4880d12b9e,1,Persamaan Linear Satu Variabel (PLSV),9,False,1,0.0,0.0,0.0,0,0,1
+fbaa2c79-f5fb-4480-a9b7-211e1f49c27b,4,Luas Permukaan Bangun Ruang,9,False,1,1.0,1.0,0.0,0,0,1
+fbc2cbcf-db75-495e-92a8-08deb3d9a4a6,3,Operasi Bilangan Cacah Sampai 10.000,4,False,2,0.5,0.5,0.0,0,0,2
+fc5691ed-1827-40f3-950e-0f5d9e7c7291,4,Persamaan Linear Satu Variabel (PLSV),9,True,4,0.75,0.625,-0.125,0,1,3
+fe1a1f92-e29b-4924-9f9e-4986db60a2a2,4,Operasi Bilangan Bulat,7,True,3,0.33333,0.33333,0.0,0,0,3
+fe1fd605-1ec4-46ca-9e19-5cc4f8bbcc9f,2,Volume Bangun Ruang,5,True,2,1.0,1.0,0.0,0,0,2
+fec2c9a6-4225-4c34-9d60-4d10d700d7bc,4,Operasi Bilangan Bulat,7,True,8,0.75,0.75,0.0,0,0,8
+ff19aee4-5761-478d-a01c-b11fb922049d,5,Ukuran Penyebaran Data,10,True,2,0.66667,0.66667,0.0,0,0,2
+ff45411c-7d23-4206-836b-c9c757b1fe07,2,Operasi Bentuk Akar,8,True,10,0.75,0.75,0.0,0,0,10
