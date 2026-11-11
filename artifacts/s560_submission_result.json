@@ -1,0 +1,13 @@
+{
+  "candidate": "blend_sota560_convnext448_protected_fusion_submission.csv",
+  "ref": 58238070,
+  "date": "2026-11-11T12:50:57",
+  "status": "COMPLETE",
+  "public_score": 0.54749,
+  "s559_unprotected_score": 0.54616,
+  "delta_vs_s559": 0.00133,
+  "champion_s550_reference": 0.55049,
+  "delta_vs_s550": -0.00300,
+  "cv_composite": 0.54286,
+  "conclusion": "The NONE protection rule successfully recovered +0.00133 on the public leaderboard (0.54616 -> 0.54749), proving the false NONE demotion thesis. However, S560 remains below S550 champion (0.55049). The existing visual representations have reached their physical ceiling. The visual avenue is officially closed in favor of genuine input transformation (math OCR transcription)."
+}
