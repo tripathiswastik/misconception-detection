@@ -1,0 +1,35 @@
+{
+  "s550_reference": {
+    "composite_map3": 0.542142049710589,
+    "seen_map3": 0.5429463171036204,
+    "unseen_map3": 0.5242424242424243,
+    "rare_r10": 218,
+    "rare_r3": 156,
+    "false_none": 104
+  },
+  "isolated_false_none_trace": {
+    "row_idx": 85,
+    "details": {
+      "question_id": "20663e28-bbb0-499e-9ccc-fd799e6825b7",
+      "seen_status": true,
+      "s550_p_none": 0.368664764370506,
+      "film_p_none": 0.16265419862118333,
+      "promoted_class": "FRA-06"
+    }
+  },
+  "rare_gained_traces": [
+    826,
+    898
+  ],
+  "fold_isolated_protected_results": {
+    "composite_map3": 0.5428589036431732,
+    "seen_map3": 0.5436953807740325,
+    "unseen_map3": 0.5242424242424243,
+    "delta_map3": 0.0007168539325842493,
+    "rare_r10": 220,
+    "delta_rare_r10": 2,
+    "false_none": 101,
+    "delta_false_none": -3,
+    "passes_gate": true
+  }
+}
