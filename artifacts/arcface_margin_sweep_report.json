@@ -1,0 +1,428 @@
+{
+  "execution_time_seconds": 1019.35,
+  "s550_reference": {
+    "seen_map3": 0.54295,
+    "unseen_map3": 0.52424,
+    "composite_map3": 0.54214,
+    "folds": [
+      0.55611,
+      0.55,
+      0.51,
+      0.53833,
+      0.55
+    ],
+    "rare_r10_hits": 218,
+    "rare_r3_hits": 156,
+    "false_none_promotions": 104
+  },
+  "sweep_candidates": [
+    {
+      "name": "ArcFace_m020_s30 (Baseline)",
+      "margin": 0.2,
+      "scale": 30.0,
+      "standalone_map3": {
+        "seen": 0.3422,
+        "unseen": 0.36667,
+        "composite": 0.34325,
+        "folds": [
+          0.33833,
+          0.35167,
+          0.325,
+          0.36611,
+          0.34333
+        ],
+        "fold_mean": 0.34489,
+        "fold_std": 0.01369
+      },
+      "standalone_rare_recall": {
+        "recall_10": 0.5336,
+        "recall_5": 0.3792,
+        "recall_3": 0.3054,
+        "hits_10": 159,
+        "hits_5": 113,
+        "hits_3": 91,
+        "total_rare": 298
+      },
+      "standalone_false_none": {
+        "count": 242,
+        "rate": 0.4783,
+        "total_none": 506
+      },
+      "s550_integrated_map3": {
+        "seen": 0.54295,
+        "unseen": 0.52424,
+        "composite": 0.54214,
+        "delta_vs_s550": 0.0,
+        "folds": [
+          0.55611,
+          0.55,
+          0.51,
+          0.53833,
+          0.55
+        ],
+        "fold_mean": 0.54089,
+        "fold_std": 0.01648
+      },
+      "s550_integrated_rare_recall": {
+        "hits_10": 218,
+        "hits_3": 156,
+        "delta_hits_10": 0,
+        "delta_hits_3": 0
+      },
+      "s550_integrated_false_none": {
+        "count": 104,
+        "delta_count": 0
+      }
+    },
+    {
+      "name": "ArcFace_m025_s30",
+      "margin": 0.25,
+      "scale": 30.0,
+      "standalone_map3": {
+        "seen": 0.3382,
+        "unseen": 0.38283,
+        "composite": 0.34012,
+        "folds": [
+          0.33389,
+          0.35556,
+          0.32389,
+          0.33833,
+          0.36389
+        ],
+        "fold_mean": 0.34311,
+        "fold_std": 0.01459
+      },
+      "standalone_rare_recall": {
+        "recall_10": 0.5235,
+        "recall_5": 0.3557,
+        "recall_3": 0.2483,
+        "hits_10": 156,
+        "hits_5": 106,
+        "hits_3": 74,
+        "total_rare": 298
+      },
+      "standalone_false_none": {
+        "count": 237,
+        "rate": 0.4684,
+        "total_none": 506
+      },
+      "s550_integrated_map3": {
+        "seen": 0.54257,
+        "unseen": 0.52424,
+        "composite": 0.54178,
+        "delta_vs_s550": -0.00036,
+        "folds": [
+          0.55611,
+          0.55,
+          0.51,
+          0.53833,
+          0.54833
+        ],
+        "fold_mean": 0.54056,
+        "fold_std": 0.01631
+      },
+      "s550_integrated_rare_recall": {
+        "hits_10": 218,
+        "hits_3": 156,
+        "delta_hits_10": 0,
+        "delta_hits_3": 0
+      },
+      "s550_integrated_false_none": {
+        "count": 105,
+        "delta_count": 1
+      }
+    },
+    {
+      "name": "ArcFace_m025_s32",
+      "margin": 0.25,
+      "scale": 32.0,
+      "standalone_map3": {
+        "seen": 0.3412,
+        "unseen": 0.36263,
+        "composite": 0.34212,
+        "folds": [
+          0.345,
+          0.38111,
+          0.29333,
+          0.34389,
+          0.35444
+        ],
+        "fold_mean": 0.34356,
+        "fold_std": 0.02847
+      },
+      "standalone_rare_recall": {
+        "recall_10": 0.5168,
+        "recall_5": 0.3557,
+        "recall_3": 0.2483,
+        "hits_10": 154,
+        "hits_5": 106,
+        "hits_3": 74,
+        "total_rare": 298
+      },
+      "standalone_false_none": {
+        "count": 240,
+        "rate": 0.4743,
+        "total_none": 506
+      },
+      "s550_integrated_map3": {
+        "seen": 0.5422,
+        "unseen": 0.52424,
+        "composite": 0.54143,
+        "delta_vs_s550": -0.00072,
+        "folds": [
+          0.55611,
+          0.55,
+          0.50833,
+          0.53833,
+          0.54833
+        ],
+        "fold_mean": 0.54022,
+        "fold_std": 0.01694
+      },
+      "s550_integrated_rare_recall": {
+        "hits_10": 218,
+        "hits_3": 156,
+        "delta_hits_10": 0,
+        "delta_hits_3": 0
+      },
+      "s550_integrated_false_none": {
+        "count": 106,
+        "delta_count": 2
+      }
+    },
+    {
+      "name": "ArcFace_m030_s30",
+      "margin": 0.3,
+      "scale": 30.0,
+      "standalone_map3": {
+        "seen": 0.34332,
+        "unseen": 0.33838,
+        "composite": 0.34311,
+        "folds": [
+          0.31722,
+          0.37389,
+          0.31778,
+          0.35778,
+          0.34722
+        ],
+        "fold_mean": 0.34278,
+        "fold_std": 0.02232
+      },
+      "standalone_rare_recall": {
+        "recall_10": 0.5268,
+        "recall_5": 0.4027,
+        "recall_3": 0.3054,
+        "hits_10": 157,
+        "hits_5": 120,
+        "hits_3": 91,
+        "total_rare": 298
+      },
+      "standalone_false_none": {
+        "count": 245,
+        "rate": 0.4842,
+        "total_none": 506
+      },
+      "s550_integrated_map3": {
+        "seen": 0.54257,
+        "unseen": 0.52424,
+        "composite": 0.54178,
+        "delta_vs_s550": -0.00036,
+        "folds": [
+          0.55611,
+          0.55,
+          0.51,
+          0.53833,
+          0.54833
+        ],
+        "fold_mean": 0.54056,
+        "fold_std": 0.01631
+      },
+      "s550_integrated_rare_recall": {
+        "hits_10": 218,
+        "hits_3": 156,
+        "delta_hits_10": 0,
+        "delta_hits_3": 0
+      },
+      "s550_integrated_false_none": {
+        "count": 105,
+        "delta_count": 1
+      }
+    },
+    {
+      "name": "ArcFace_m030_s32",
+      "margin": 0.3,
+      "scale": 32.0,
+      "standalone_map3": {
+        "seen": 0.34444,
+        "unseen": 0.34444,
+        "composite": 0.34444,
+        "folds": [
+          0.35278,
+          0.36111,
+          0.32889,
+          0.33611,
+          0.34333
+        ],
+        "fold_mean": 0.34444,
+        "fold_std": 0.01149
+      },
+      "standalone_rare_recall": {
+        "recall_10": 0.5302,
+        "recall_5": 0.3758,
+        "recall_3": 0.2785,
+        "hits_10": 158,
+        "hits_5": 112,
+        "hits_3": 83,
+        "total_rare": 298
+      },
+      "standalone_false_none": {
+        "count": 237,
+        "rate": 0.4684,
+        "total_none": 506
+      },
+      "s550_integrated_map3": {
+        "seen": 0.54257,
+        "unseen": 0.52424,
+        "composite": 0.54178,
+        "delta_vs_s550": -0.00036,
+        "folds": [
+          0.55611,
+          0.55,
+          0.51,
+          0.53833,
+          0.54833
+        ],
+        "fold_mean": 0.54056,
+        "fold_std": 0.01631
+      },
+      "s550_integrated_rare_recall": {
+        "hits_10": 218,
+        "hits_3": 156,
+        "delta_hits_10": 0,
+        "delta_hits_3": 0
+      },
+      "s550_integrated_false_none": {
+        "count": 105,
+        "delta_count": 1
+      }
+    },
+    {
+      "name": "ArcFace_m035_s30",
+      "margin": 0.35,
+      "scale": 30.0,
+      "standalone_map3": {
+        "seen": 0.34345,
+        "unseen": 0.36566,
+        "composite": 0.3444,
+        "folds": [
+          0.34778,
+          0.36722,
+          0.31444,
+          0.33889,
+          0.36111
+        ],
+        "fold_mean": 0.34589,
+        "fold_std": 0.01859
+      },
+      "standalone_rare_recall": {
+        "recall_10": 0.5503,
+        "recall_5": 0.3792,
+        "recall_3": 0.2886,
+        "hits_10": 164,
+        "hits_5": 113,
+        "hits_3": 86,
+        "total_rare": 298
+      },
+      "standalone_false_none": {
+        "count": 236,
+        "rate": 0.4664,
+        "total_none": 506
+      },
+      "s550_integrated_map3": {
+        "seen": 0.54257,
+        "unseen": 0.52424,
+        "composite": 0.54178,
+        "delta_vs_s550": -0.00036,
+        "folds": [
+          0.55611,
+          0.55,
+          0.51,
+          0.53833,
+          0.54833
+        ],
+        "fold_mean": 0.54056,
+        "fold_std": 0.01631
+      },
+      "s550_integrated_rare_recall": {
+        "hits_10": 218,
+        "hits_3": 156,
+        "delta_hits_10": 0,
+        "delta_hits_3": 0
+      },
+      "s550_integrated_false_none": {
+        "count": 105,
+        "delta_count": 1
+      }
+    },
+    {
+      "name": "ArcFace_m035_s32",
+      "margin": 0.35,
+      "scale": 32.0,
+      "standalone_map3": {
+        "seen": 0.33695,
+        "unseen": 0.36162,
+        "composite": 0.33801,
+        "folds": [
+          0.33556,
+          0.37,
+          0.31056,
+          0.32333,
+          0.35889
+        ],
+        "fold_mean": 0.33967,
+        "fold_std": 0.022
+      },
+      "standalone_rare_recall": {
+        "recall_10": 0.547,
+        "recall_5": 0.396,
+        "recall_3": 0.2752,
+        "hits_10": 163,
+        "hits_5": 118,
+        "hits_3": 82,
+        "total_rare": 298
+      },
+      "standalone_false_none": {
+        "count": 243,
+        "rate": 0.4802,
+        "total_none": 506
+      },
+      "s550_integrated_map3": {
+        "seen": 0.5422,
+        "unseen": 0.52424,
+        "composite": 0.54143,
+        "delta_vs_s550": -0.00072,
+        "folds": [
+          0.55611,
+          0.55,
+          0.50833,
+          0.53833,
+          0.54833
+        ],
+        "fold_mean": 0.54022,
+        "fold_std": 0.01694
+      },
+      "s550_integrated_rare_recall": {
+        "hits_10": 218,
+        "hits_3": 156,
+        "delta_hits_10": 0,
+        "delta_hits_3": 0
+      },
+      "s550_integrated_false_none": {
+        "count": 106,
+        "delta_count": 2
+      }
+    }
+  ],
+  "best_candidate": "ArcFace_m020_s30 (Baseline)",
+  "gate_cleared": false
+}
