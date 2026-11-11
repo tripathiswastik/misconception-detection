@@ -16,24 +16,52 @@ Questions Addressed per User Directive:
    - How many true NONE rows sit within the same probability gap margin?
    - How many false promotions would be triggered by demoting NONE on this margin?
 """
+
+from collections import Counter
 import json
 from pathlib import Path
 import sys
-from typing import Any, Dict, List, Set, Tuple, cast
+from typing import Any, Dict, List, Set, Tuple, TypedDict, cast
+
 import numpy as np
 import pandas as pd
 
 PROJECT_ROOT = Path("d:/ag-ai/misconception-detection")
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
+SCRATCH_DIR = PROJECT_ROOT / "scratch"
+if str(SCRATCH_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRATCH_DIR))
 
 DATA_DIR = PROJECT_ROOT / "data"
 ART_DIR = PROJECT_ROOT / "artifacts"
 
 from src.data.taxonomy import TaxonomyManager
 from src.metrics.map3 import calculate_map3
+from audit_rare_class_s550_oof_error_breakdown import S550AuditEngine
 
-def main():
+
+class RareTraceRecord(TypedDict):
+    trace_id: str
+    question_id: str
+    gold_code: str
+    gold_count: int
+    is_seen: bool
+    in_top3: bool
+    prob_rank: int
+    is_rank_4_5: bool
+    r1_pred: str
+    r1_is_none: bool
+    top3_pred: List[str]
+    p_gold: float
+    p_none: float
+    p_r3: float
+    gap_none: float
+    gap_to_top3: float
+    p_bin_error: float
+
+
+def main() -> None:
     print("=" * 95)
     print("AUDIT: INTERSECTION OF S550 RANK 4-5 RARE ERRORS AND NONE AT RANK 1")
     print("=" * 95)
@@ -48,14 +76,11 @@ def main():
     n_samples = len(train_df)
 
     # Class frequencies
-    from collections import Counter
     class_counts = Counter(y_raw)
-    rare_classes = {c for c, cnt in class_counts.items() if c != "NONE" and cnt < 15}
+    rare_classes: Set[str] = {c for c, cnt in class_counts.items() if c != "NONE" and cnt < 15}
     print(f"Total Traces: {n_samples} | Total Rare Classes (<15): {len(rare_classes)}")
 
     # Load S550 OOF audit records
-    # Let's run the exact in-fold S550 prediction
-    from scratch.audit_rare_class_s550_oof_error_breakdown import S550AuditEngine
     engine = S550AuditEngine()
 
     oof_p_s550 = np.zeros((n_samples, engine.n_classes), dtype=np.float64)
@@ -82,7 +107,7 @@ def main():
     p_bin_error = np.load(ART_DIR / "oof_compact_binary_prob.npy")
 
     # Filter to traces where true label is a rare misconception
-    rare_traces = []
+    rare_traces: List[RareTraceRecord] = []
     for i in range(n_samples):
         y_gold = y_raw[i]
         if y_gold not in rare_classes:
@@ -102,17 +127,16 @@ def main():
         p_gold = float(p_row[gold_idx])
         p_none = float(p_row[none_idx])
         p_r3 = float(p_row[prob_ranking[2]])
-        p_r1 = float(p_row[prob_ranking[0]])
 
         gap_none = p_none - p_gold
         gap_to_top3 = max(0.0, p_r3 - p_gold)
         bin_prob = float(p_bin_error[i])
 
-        rare_traces.append({
+        record: RareTraceRecord = {
             "trace_id": str(train_df.iloc[i]["trace_id"]),
             "question_id": str(train_df.iloc[i]["question_id"]),
             "gold_code": y_gold,
-            "gold_count": class_counts[y_gold],
+            "gold_count": int(class_counts[y_gold]),
             "is_seen": bool(seen_mask[i]),
             "in_top3": in_top3,
             "prob_rank": prob_rank,
@@ -126,7 +150,8 @@ def main():
             "gap_none": round(gap_none, 5),
             "gap_to_top3": round(gap_to_top3, 5),
             "p_bin_error": round(bin_prob, 4)
-        })
+        }
+        rare_traces.append(record)
 
     # Intersections
     total_rare = len(rare_traces)
@@ -139,7 +164,7 @@ def main():
     intersection = [r for r in r45_errors if r["r1_is_none"]]
     n_intersect = len(intersection)
 
-    print(f"\n1. SET SIZES & INTERSECTION:")
+    print("\n1. SET SIZES & INTERSECTION:")
     print(f"  Total Rare Misconception Traces:        {total_rare}")
     print(f"  Total Rare Misconception Errors:        {n_rare_err} (47.7%)")
     print(f"  Traces with True Rare in Rank 4-5:      {len(r45_errors)} (26.1% of rare errors)")
@@ -156,14 +181,14 @@ def main():
     )
     print("-" * 115)
 
-    gaps_none = []
-    gaps_top3 = []
-    bin_probs = []
+    gaps_none: List[float] = []
+    gaps_top3: List[float] = []
+    bin_probs: List[float] = []
 
     for r in intersection:
-        gaps_none.append(r["gap_none"])
-        gaps_top3.append(r["gap_to_top3"])
-        bin_probs.append(r["p_bin_error"])
+        gaps_none.append(float(r["gap_none"]))
+        gaps_top3.append(float(r["gap_to_top3"]))
+        bin_probs.append(float(r["p_bin_error"]))
         top3_str = " ".join(r["top3_pred"])
         print(
             f"{r['trace_id']:14s} | {r['gold_code']:10s} | {r['prob_rank']:4d} | "
@@ -171,14 +196,9 @@ def main():
         )
 
     # Upper-bound Oracle Gain Estimation
-    # There are n_intersect traces
-    # In S550, their score is 0.0 (since they are not in Top 3)
-    # If promoted to Rank 1: each gives +1.0 -> Delta = n_intersect * 1.0 / 1500
-    # If promoted to Rank 2: each gives +0.5 -> Delta = n_intersect * 0.5 / 1500
-    # If promoted to Rank 3: each gives +0.3333 -> Delta = n_intersect * 0.3333 / 1500
-    oracle_delta_r1 = (n_intersect * 1.0) / 1500.0
-    oracle_delta_r2 = (n_intersect * 0.5) / 1500.0
-    oracle_delta_r3 = (n_intersect * (1.0 / 3.0)) / 1500.0
+    oracle_delta_r1 = (float(n_intersect) * 1.0) / 1500.0
+    oracle_delta_r2 = (float(n_intersect) * 0.5) / 1500.0
+    oracle_delta_r3 = (float(n_intersect) * (1.0 / 3.0)) / 1500.0
 
     print("\n" + "=" * 95)
     print("2. THEORETICAL REACHABLE ORACLE MAP@3 GAIN:")
@@ -189,39 +209,53 @@ def main():
     print(f"  If ALL {n_intersect} traces promoted to Rank 3:  +{oracle_delta_r3:.5f} Composite MAP@3 (Conservative Edge)")
 
     # Gap distribution
+    min_gap = min(gaps_top3)
+    med_gap = float(np.median(np.array(gaps_top3, dtype=np.float64)))
+    mean_gap = float(np.mean(np.array(gaps_top3, dtype=np.float64)))
+    max_gap = max(gaps_top3)
+    count_gap_lt_004 = sum(1 for g in gaps_top3 if float(g) < 0.04)
+    count_gap_lt_008 = sum(1 for g in gaps_top3 if float(g) < 0.08)
+
     print("\n" + "=" * 95)
     print("3. PROBABILITY GAP & FEASIBILITY ANALYSIS:")
     print("=" * 95)
-    print(f"  Gap to Top 3 [P(Rank 3) - P(gold)]:")
-    print(f"    - Min:    {min(gaps_top3):.4f}")
-    print(f"    - Median: {float(np.median(gaps_top3)):.4f}")
-    print(f"    - Mean:   {float(np.mean(gaps_top3)):.4f}")
-    print(f"    - Max:    {max(gaps_top3):.4f}")
-    print(f"    - Traces with Gap < 0.04 (Razor-Thin): {sum(1 for g in gaps_top3 if g < 0.04)} / {n_intersect}")
-    print(f"    - Traces with Gap < 0.08:              {sum(1 for g in gaps_top3 if g < 0.08)} / {n_intersect}")
+    print("  Gap to Top 3 [P(Rank 3) - P(gold)]:")
+    print(f"    - Min:    {min_gap:.4f}")
+    print(f"    - Median: {med_gap:.4f}")
+    print(f"    - Mean:   {mean_gap:.4f}")
+    print(f"    - Max:    {max_gap:.4f}")
+    print(f"    - Traces with Gap < 0.04 (Razor-Thin): {count_gap_lt_004} / {n_intersect}")
+    print(f"    - Traces with Gap < 0.08:              {count_gap_lt_008} / {n_intersect}")
 
-    print(f"\n  Binary Error Detector P(is_error):")
-    print(f"    - Min:    {min(bin_probs):.4f}")
-    print(f"    - Median: {float(np.median(bin_probs)):.4f}")
-    print(f"    - Mean:   {float(np.mean(bin_probs)):.4f}")
-    print(f"    - Max:    {max(bin_probs):.4f}")
-    print(f"    - Traces with P(is_error) >= 0.78:     {sum(1 for p in bin_probs if p >= 0.78)} / {n_intersect}")
-    print(f"    - Traces with P(is_error) >= 0.65:     {sum(1 for p in bin_probs if p >= 0.65)} / {n_intersect}")
+    min_bin = min(bin_probs)
+    med_bin = float(np.median(np.array(bin_probs, dtype=np.float64)))
+    mean_bin = float(np.mean(np.array(bin_probs, dtype=np.float64)))
+    max_bin = max(bin_probs)
+    count_bin_gte_078 = sum(1 for p in bin_probs if float(p) >= 0.78)
+    count_bin_gte_065 = sum(1 for p in bin_probs if float(p) >= 0.65)
+
+    print("\n  Binary Error Detector P(is_error):")
+    print(f"    - Min:    {min_bin:.4f}")
+    print(f"    - Median: {med_bin:.4f}")
+    print(f"    - Mean:   {mean_bin:.4f}")
+    print(f"    - Max:    {max_bin:.4f}")
+    print(f"    - Traces with P(is_error) >= 0.78:     {count_bin_gte_078} / {n_intersect}")
+    print(f"    - Traces with P(is_error) >= 0.65:     {count_bin_gte_065} / {n_intersect}")
 
     # Collateral risk: How many TRUE NONE traces sit in this exact gap / error zone?
     true_none_in_zone = 0
     for i in range(n_samples):
         if y_raw[i] == "NONE" and final_preds_all[i][0] == "NONE":
-            if p_bin_error[i] >= 0.65:
+            if float(p_bin_error[i]) >= 0.65:
                 true_none_in_zone += 1
 
-    print(f"\n  COLLATERAL DAMAGE RISK:")
+    print("\n  COLLATERAL DAMAGE RISK:")
     print(f"    - True NONE traces with P(is_error) >= 0.65: {true_none_in_zone} traces")
-    print(f"    - If gating is widened to capture the {sum(1 for p in bin_probs if p >= 0.65)} rare traces, it risks falsely demoting {true_none_in_zone} true NONE traces!")
-    print(f"    - Falsely demoting 1 true NONE costs -0.50 MAP@3 pts (-0.00033 per trace).")
+    print(f"    - If gating is widened to capture the {count_bin_gte_065} rare traces, it risks falsely demoting {true_none_in_zone} true NONE traces!")
+    print("    - Falsely demoting 1 true NONE costs -0.50 MAP@3 pts (-0.00033 per trace).")
     print("=" * 95)
 
-    report_dict = {
+    report_dict: Dict[str, Any] = {
         "total_rare_traces": total_rare,
         "total_rare_errors": n_rare_err,
         "r45_rare_errors": len(r45_errors),
@@ -233,20 +267,20 @@ def main():
             "all_to_rank3": round(oracle_delta_r3, 5)
         },
         "gap_to_top3_stats": {
-            "min": round(min(gaps_top3), 4),
-            "median": round(float(np.median(gaps_top3)), 4),
-            "mean": round(float(np.mean(gaps_top3)), 4),
-            "max": round(max(gaps_top3), 4),
-            "count_gap_lt_004": sum(1 for g in gaps_top3 if g < 0.04),
-            "count_gap_lt_008": sum(1 for g in gaps_top3 if g < 0.08)
+            "min": round(min_gap, 4),
+            "median": round(med_gap, 4),
+            "mean": round(mean_gap, 4),
+            "max": round(max_gap, 4),
+            "count_gap_lt_004": count_gap_lt_004,
+            "count_gap_lt_008": count_gap_lt_008
         },
         "p_bin_error_stats": {
-            "min": round(min(bin_probs), 4),
-            "median": round(float(np.median(bin_probs)), 4),
-            "mean": round(float(np.mean(bin_probs)), 4),
-            "max": round(max(bin_probs), 4),
-            "count_gte_078": sum(1 for p in bin_probs if p >= 0.78),
-            "count_gte_065": sum(1 for p in bin_probs if p >= 0.65)
+            "min": round(min_bin, 4),
+            "median": round(med_bin, 4),
+            "mean": round(mean_bin, 4),
+            "max": round(max_bin, 4),
+            "count_gte_078": count_bin_gte_078,
+            "count_gte_065": count_bin_gte_065
         },
         "intersecting_traces": intersection
     }
@@ -256,6 +290,6 @@ def main():
         json.dump(report_dict, f, indent=2)
     print(f"\n[Saved Audit Report] {out_path.name}")
 
+
 if __name__ == "__main__":
     main()
-

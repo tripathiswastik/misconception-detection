@@ -40,6 +40,9 @@ from torch.utils.data import DataLoader, Dataset
 PROJECT_ROOT = Path("d:/ag-ai/misconception-detection")
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
+SCRATCH_DIR = PROJECT_ROOT / "scratch"
+if str(SCRATCH_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRATCH_DIR))
 
 DATA_DIR = PROJECT_ROOT / "data"
 ART_DIR = PROJECT_ROOT / "artifacts"
@@ -47,7 +50,7 @@ ART_DIR = PROJECT_ROOT / "artifacts"
 from src.data.taxonomy import TaxonomyManager
 from src.diagnoser.domain_mask import DomainConstraintEngine
 from src.metrics.map3 import calculate_map3
-from scratch.audit_rare_class_s550_oof_error_breakdown import S550AuditEngine, sharp
+from audit_rare_class_s550_oof_error_breakdown import S550AuditEngine, sharp
 
 
 def set_seed(seed: int = 42) -> None:
