@@ -1,0 +1,44 @@
+{
+  "execution_time_seconds": 10664.42,
+  "s550_reference": {
+    "seen_map3": 0.54295,
+    "unseen_map3": 0.52424,
+    "composite_map3": 0.54214,
+    "rare_r10_hits": 218,
+    "false_none_count": 104
+  },
+  "standalone_finetuned_convnext": {
+    "seen_map3": 0.35568,
+    "unseen_map3": 0.47172,
+    "composite_map3": 0.36067,
+    "folds": [
+      0.36667,
+      0.37222,
+      0.36722,
+      0.36611,
+      0.37
+    ],
+    "rare_r10_hits": 10,
+    "rare_r5_hits": 2,
+    "rare_r3_hits": 1,
+    "false_none_count": 12
+  },
+  "s550_integrated": {
+    "seen_map3": 0.54295,
+    "unseen_map3": 0.52424,
+    "composite_map3": 0.54214,
+    "delta_vs_s550": 0.0,
+    "folds": [
+      0.55611,
+      0.55,
+      0.51,
+      0.53833,
+      0.55
+    ],
+    "rare_r10_hits": 218,
+    "delta_rare_r10": 0,
+    "false_none_count": 104,
+    "delta_false_none": 0
+  },
+  "gate_cleared": false
+}
