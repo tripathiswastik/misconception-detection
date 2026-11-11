@@ -21,7 +21,11 @@ from collections import Counter
 import json
 from pathlib import Path
 import sys
-from typing import Any, Dict, List, Set, Tuple, TypedDict, cast
+from typing import Any, Dict, List, Set, Tuple, cast
+try:
+    from typing import TypedDict
+except ImportError:
+    from typing_extensions import TypedDict
 
 import numpy as np
 import pandas as pd
