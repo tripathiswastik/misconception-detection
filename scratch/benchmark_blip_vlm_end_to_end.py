@@ -188,7 +188,7 @@ def extract_blip_multimodal_features(
     if ckpt_path.exists():
         try:
             ckpt_path.unlink()
-        except Exception:
+        except OSError:
             pass
     return features_matrix
 

@@ -440,7 +440,7 @@ def main():
                             print(f"Result: TIED LEADERBOARD PEAK (0.55049)")
                         else:
                             print(f"Result: Below Champion ({delta:+.5f})")
-                    except Exception:
+                    except (ValueError, TypeError):
                         pass
                 print("=" * 80)
                 break
