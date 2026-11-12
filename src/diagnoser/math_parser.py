@@ -79,7 +79,7 @@ class MathFeatureExtractor:
             if re.search(flip_pattern, working_text) and not re.search(pos_pattern, working_text):
                 return True
         except ValueError:
-            pass
+            return False
 
         return False
 

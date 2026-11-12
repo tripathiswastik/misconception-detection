@@ -9,7 +9,10 @@ import sys
 import time
 from pathlib import Path
 from typing import List
+import logging
 import numpy as np
+
+logger = logging.getLogger(__name__)
 import torch
 import torchvision.models as models
 from torchvision import transforms
@@ -38,8 +41,8 @@ class ImagePathDataset(Dataset):
             if p.exists():
                 with Image.open(p) as img:
                     return self.transform(img.convert("RGB"))
-        except Exception:
-            pass
+        except (OSError, ValueError) as img_err:
+            logger.debug("Failed to read image %s: %s", p, img_err)
         return torch.zeros(3, 224, 224)
 
 

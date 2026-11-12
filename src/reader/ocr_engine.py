@@ -89,7 +89,6 @@ class HandwritingReaderEngine:
         if info.get("cuda_available"):
             print(f"[HandwritingReader] Active GPU: {info['device_name']} ({info['total_memory_gb']} GB VRAM)")
 
-        # Initialize vision backbone on GPU
         self.encoder = HandwritingVisionEncoder().to(self.device)
         self.encoder.eval()
 

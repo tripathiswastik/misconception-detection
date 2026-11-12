@@ -107,14 +107,12 @@ def build_and_validate_competition_submission(
     tax_path = data_dir / "taxonomy_v1.csv"
 
     print(f"[Submission] Building submission for {len(test_traces)} test traces (alpha={alpha})...")
-    
-    # Initialize and train pipeline on full 1,500 training traces with tuned alpha
+
     tax = TaxonomyManager(tax_path)
     diagnoser = TextMisconceptionDiagnoser(taxonomy_manager=tax, alpha=alpha)
     pipeline = TwoStageDiagnosticPipeline(diagnoser=diagnoser, taxonomy=tax, use_gpu=use_gpu)
     pipeline.fit_diagnoser(train_df)
 
-    # Batch diagnose test traces
     results = pipeline.diagnose_batch(test_traces, batch_size=200, show_progress=True)
 
     # Construct submission DataFrame

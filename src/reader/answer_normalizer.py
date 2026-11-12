@@ -132,59 +132,39 @@ class AnswerNormalizer:
         # 1. LaTeX/Unicode fraction: (a)/(b) or a/b
         frac_match = re.fullmatch(r"\(?([+-]?\d+(?:\.\d+)?)\)?\s*/\s*\(?([+-]?\d+(?:\.\d+)?)\)?", raw)
         if frac_match:
-            try:
-                num = float(frac_match.group(1))
-                den = float(frac_match.group(2))
-                if abs(den) > 1e-9:
-                    candidates.append(num / den)
-                    return candidates
-            except ValueError:
-                pass
+            num = float(frac_match.group(1))
+            den = float(frac_match.group(2))
+            if abs(den) > 1e-9:
+                candidates.append(num / den)
+                return candidates
 
         # 2. Mixed fraction: "11 39/45"
         mixed_match = re.fullmatch(r"([+-]?\d+)\s+(\d+)\s*/\s*(\d+)", raw)
         if mixed_match:
-            try:
-                whole = float(mixed_match.group(1))
-                num = float(mixed_match.group(2))
-                den = float(mixed_match.group(3))
-                if abs(den) > 1e-9:
-                    sign = -1.0 if whole < 0 else 1.0
-                    candidates.append(whole + sign * (num / den))
-                    return candidates
-            except ValueError:
-                pass
+            whole = float(mixed_match.group(1))
+            num = float(mixed_match.group(2))
+            den = float(mixed_match.group(3))
+            if abs(den) > 1e-9:
+                sign = -1.0 if whole < 0 else 1.0
+                candidates.append(whole + sign * (num / den))
+                return candidates
 
         # 3. Indonesian thousands grouping: "1.250.000" or "10.000" (dot followed by exactly 3 digits)
         if re.fullmatch(r"[+-]?[1-9]\d{0,2}(?:\.\d{3})+", raw):
-            try:
-                candidates.append(float(raw.replace(".", "")))
-                return candidates
-            except ValueError:
-                pass
+            candidates.append(float(raw.replace(".", "")))
+            return candidates
 
         # 4. Indonesian decimal with comma: "54,5" or "0,125"
         if re.fullmatch(r"[+-]?\d+,\d+", raw):
             comma_parts = raw.split(",")
             if len(comma_parts) == 2 and len(comma_parts[1]) == 3 and not comma_parts[0].startswith("0"):
-                try:
-                    candidates.append(float(raw.replace(",", "")))
-                    candidates.append(float(raw.replace(",", ".")))
-                    return candidates
-                except ValueError:
-                    pass
-            try:
-                candidates.append(float(raw.replace(",", ".")))
-                return candidates
-            except ValueError:
-                pass
+                candidates.append(float(raw.replace(",", "")))
+            candidates.append(float(raw.replace(",", ".")))
+            return candidates
 
         # 5. Standard decimal or integer: "0.125" or "120"
-        try:
+        if re.fullmatch(r"[+-]?(?:\d+(?:\.\d*)?|\.\d+)", raw):
             candidates.append(float(raw))
-            return candidates
-        except ValueError:
-            pass
 
         return candidates
 

@@ -81,7 +81,7 @@ Direct argmax predicts `NONE`. To correct this without suffering false-positive 
 
 ### Pitfall 3: Dropping `NONE` Below Rank 2 (Unanchored Risk)
 - **Mechanism:** Predicting $[c^*, c_2, c_3]$ and completely discarding `NONE`.
-- **Mathematical Penalty:** If the trace is actually clean, the score drops from $1.000$ to $0.000$ ($\Delta = -1.000$ instead of $-0.500$). Furthermore, if $c^*$ is incorrect and $Y=\text{NONE}$, the entire prediction yields zero points.
+- **Mathematical Penalty:** If the trace is actually clean, the score drops from $1.000$ to $0.000$ ($\Delta = -1.000$ instead of $-0.500$). On top of that, if $c^*$ is incorrect and $Y=\text{NONE}$, the entire prediction yields zero points.
 - **Rule:** `NONE` must **never** be placed below Rank 2 during a targeted flip.
 
 ### Pitfall 4: Out-of-Distribution Misconception Hallucination

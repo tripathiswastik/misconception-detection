@@ -403,7 +403,7 @@ def main():
     # Save Row-Level Predictions
     row_df = pd.DataFrame(row_records)
     row_df = cast(pd.DataFrame, row_df.sort_values("global_index"))
-    row_df = cast(pd.DataFrame, row_df.reset_index(drop=True))
+    row_df = row_df.reset_index(drop=True)
     row_csv_path = ART_DIR / "nested_vlm_row_level_predictions.csv"
     row_df.to_csv(row_csv_path, index=False)
     print(f"\nSaved {len(row_df)} row-level predictions to {row_csv_path}")
@@ -461,7 +461,7 @@ def main():
 
     q_df = pd.DataFrame(q_records)
     q_df = cast(pd.DataFrame, q_df.sort_values("question_id"))
-    q_df = cast(pd.DataFrame, q_df.reset_index(drop=True))
+    q_df = q_df.reset_index(drop=True)
     q_csv_path = ART_DIR / "nested_vlm_question_paired_analysis.csv"
     q_df.to_csv(q_csv_path, index=False)
     print(f"Saved {len(q_df)} question-group paired records to {q_csv_path}")
